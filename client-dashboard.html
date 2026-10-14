@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth" data-theme="immigration-blue">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Client Portal | Horizon Visa — Immigration Consultancy</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='16' fill='%231e3a8a'/><path fill='%23FFFFFF' d='M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z' transform='translate(20 20) scale(1.5)'/></svg>">
+
+  <!-- Tailwind CSS with Local & CDN Fallback -->
+  <script src="tailwind.js"></script>
+  <script>
+    if (typeof tailwind === 'undefined') {
+      document.write('<script src="https://cdn.tailwindcss.com"><\/script>');
+    }
+  </script>
+  <script>
+    // Prevent theme flash on reload
+    if (localStorage.getItem('visa-theme') === 'dark') {
+      document.documentElement.classList.add('dark');
+    }
+    if (localStorage.getItem('visa-dir') === 'rtl') {
+      document.documentElement.dir = 'rtl';
+      document.documentElement.lang = 'ar';
+    }
+  </script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'visa-primary': 'rgba(var(--color-rgb-primary), <alpha-value>)',
+            'visa-primary-light': 'rgba(var(--color-rgb-light), <alpha-value>)',
+            'visa-primary-dark': 'rgba(var(--color-rgb-dark), <alpha-value>)',
+            'visa-primary-bright': 'rgba(var(--color-rgb-bright), <alpha-value>)',
+            'visa-accent': 'rgba(var(--color-rgb-accent), <alpha-value>)',
+            'bg-warm': 'var(--color-bg-warm)',
+            'neutral-dark': 'rgba(var(--color-rgb-text), <alpha-value>)',
+            'neutral-light': '#E8EDF2',
+            'dark-bg': '#0A0D12',
+            'dark-card': '#141A24',
+            'dark-surface': '#1C2432',
+          },
+          fontFamily: {
+            'sans': ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+            'display': ['Playfair Display', 'Georgia', 'serif'],
+            'premium': ['Inter', 'system-ui', 'sans-serif'],
+          },
+          animation: {
+            'slide-up': 'slideUp 0.5s ease-out',
+            'fade-in': 'fadeIn 0.3s ease-out',
+            'pulse-glow': 'pulseGlow 3s infinite',
+            'float-slow': 'floatSlow 6s ease-in-out infinite',
+          },
+          keyframes: {
+            slideUp: { '0%': { transform: 'translateY(30px)', opacity: '0' }, '100%': { transform: 'translateY(0)', opacity: '1' } },
+            fadeIn: { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
+            pulseGlow: { '0%, 100%': { opacity: '0.6' }, '50%': { opacity: '1' } },
+            floatSlow: { '0%,100%': { transform: 'translateY(0px)' }, '50%': { transform: 'translateY(-8px)' } },
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  <style>
+    :root, [data-theme="immigration-blue"] {
+      --color-primary: #1e3a8a;
+      --color-primary-light: #3b82f6;
+      --color-primary-dark: #172554;
+      --color-primary-bright: #93c5fd;
+      --color-accent: #f59e0b;
+      --color-bg-warm: #f8fafc;
+      --color-bg: #f8fafc;
+      --color-text-dark: #0f172a;
+      --color-text: #0f172a;
+      --color-rgb-primary: 30, 58, 138;
+      --color-rgb-light: 59, 130, 246;
+      --color-rgb-dark: 23, 37, 84;
+      --color-rgb-bright: 147, 197, 253;
+      --color-rgb-accent: 245, 158, 11;
+      --color-rgb-text: 15, 23, 42;
+    }
+
+    [data-theme="teal-trust"] {
+      --color-primary: #0f766e;
+      --color-primary-light: #14b8a6;
+      --color-primary-dark: #115e59;
+      --color-primary-bright: #5eead4;
+      --color-accent: #f59e0b;
+      --color-bg-warm: #f0fdfa;
+      --color-bg: #f0fdfa;
+      --color-text-dark: #042f2e;
+      --color-text: #042f2e;
+      --color-rgb-primary: 15, 118, 110;
+      --color-rgb-light: 20, 184, 166;
+      --color-rgb-dark: 17, 94, 89;
+      --color-rgb-bright: 94, 234, 212;
+      --color-rgb-accent: 245, 158, 11;
+      --color-rgb-text: 4, 47, 46;
+    }
+
+    [data-theme="burgundy-authority"] {
+      --color-primary: #7f1d1d;
+      --color-primary-light: #b91c1c;
+      --color-primary-dark: #450a0a;
+      --color-primary-bright: #fca5a5;
+      --color-accent: #eab308;
+      --color-bg-warm: #fef2f2;
+      --color-bg: #fef2f2;
+      --color-text-dark: #450a0a;
+      --color-text: #450a0a;
+      --color-rgb-primary: 127, 29, 29;
+      --color-rgb-light: 185, 28, 28;
+      --color-rgb-dark: 69, 10, 10;
+      --color-rgb-bright: 252, 165, 165;
+      --color-rgb-accent: 234, 179, 8;
+      --color-rgb-text: 69, 10, 10;
+    }
+
+    body { font-family: 'Inter', system-ui, sans-serif; background-color: var(--color-bg-warm); color: var(--color-text-dark); transition: background-color 0.4s ease, color 0.4s ease; }
+    .dark body { background-color: #0a0f1e; color: #e2e8f0; }
+    h1,h2,h3,h4,h5,h6 { font-family: 'Playfair Display', Georgia, serif; font-weight: 600; letter-spacing: -0.02em; }
+    .visa-gradient-text {
+      background: linear-gradient(135deg, #93c5fd 0%, #3b82f6 50%, #1e3a8a 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .dark .visa-gradient-text {
+      background: linear-gradient(135deg, #93c5fd 0%, #60a5fa 50%, #3b82f6 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .dark .text-visa-primary { color: var(--color-primary-bright) !important; }
+    .dark .border-visa-primary { border-color: var(--color-primary-bright) !important; }
+    .dark .text-neutral-dark { color: #e2e8f0; }
+    body::-webkit-scrollbar { display: none; }
+    body { -ms-overflow-style: none; scrollbar-width: none; }
+
+    /* Sidebar */
+    .sidebar {
+      position: fixed;
+      left: 0; top: 0; height: 100vh;
+      width: 280px;
+      background: #FFFFFF;
+      border-right: 1px solid rgba(var(--color-rgb-primary), 0.12);
+      transition: transform 0.3s ease;
+      z-index: 100;
+      overflow-y: auto;
+    }
+    .dark .sidebar { background: #0f172a; border-right-color: rgba(var(--color-rgb-bright), 0.15); }
+    @media (max-width: 768px) { .sidebar { transform: translateX(-100%); } .sidebar.open { transform: translateX(0); } }
+    .sidebar-overlay { position: fixed; top:0;left:0;right:0;bottom:0; background: rgba(0,0,0,0.5); z-index:99; display:none; }
+    .sidebar-overlay.open { display:block; }
+
+    .sidebar-item {
+      display: flex; align-items: center; gap: 0.75rem;
+      padding: 0.85rem 1.5rem; margin: 0.25rem 0.75rem;
+      border-radius: 12px; color: var(--color-text-dark);
+      transition: all 0.2s; cursor: pointer;
+      font-size: 0.9rem; font-weight: 500;
+    }
+    .dark .sidebar-item { color: #cbd5e1; }
+    .sidebar-item:hover { background: rgba(var(--color-rgb-primary), 0.08); color: var(--color-primary); }
+    .dark .sidebar-item:hover { background: rgba(var(--color-rgb-bright), 0.12); color: var(--color-primary-bright); }
+    .sidebar-item.active { background: var(--color-primary); color: #FFFFFF; }
+    .dark .sidebar-item.active { background: var(--color-primary-bright); color: #0a0f1e; }
+    .sidebar-item i { width: 24px; font-size: 1.05rem; text-align: center; }
+
+    .main-content { margin-left: 280px; padding: 1.5rem; min-height: 100vh; }
+    @media (max-width: 768px) { .main-content { margin-left: 0; padding-top: 70px; } }
+
+    .mobile-header {
+      display: none; position: fixed; top:0;left:0;right:0;
+      background: #FFFFFF; padding: 0.75rem 1rem;
+      border-bottom: 1px solid rgba(var(--color-rgb-primary), 0.12);
+      z-index: 50; align-items: center; justify-content: space-between;
+    }
+    .dark .mobile-header { background: #0f172a; border-bottom-color: rgba(var(--color-rgb-bright), 0.15); }
+    @media (max-width: 768px) { .mobile-header { display: flex; } }
+
+    .toggle-btn {
+      width: 36px; height: 36px; border-radius: 10px;
+      background: rgba(var(--color-rgb-primary), 0.08);
+      color: var(--color-text-dark); display: inline-flex;
+      align-items: center; justify-content: center; cursor: pointer;
+      transition: all 0.2s; border: none;
+    }
+    .dark .toggle-btn { background: rgba(var(--color-rgb-bright), 0.12); color: #e2e8f0; }
+    .toggle-btn:hover { background: var(--color-primary); color: #FFFFFF; }
+    .dark .toggle-btn:hover { background: var(--color-primary-bright); color: #0a0f1e; }
+
+    .card-design {
+      background: #FFFFFF; border-radius: 24px;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(var(--color-rgb-primary), 0.12);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+    }
+    .dark .card-design { background: #111827; border-color: rgba(var(--color-rgb-bright), 0.15); }
+    .card-design:hover { border-color: var(--color-primary-light); }
+
+    .btn-primary-design {
+      background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
+      color: #FFFFFF;
+      font-weight: 600; border-radius: 60px; transition: all 0.3s;
+      box-shadow: 0 4px 12px rgba(var(--color-rgb-primary), 0.3);
+      white-space: nowrap; border: none;
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; vertical-align: middle;
+    }
+    .btn-primary-design:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(var(--color-rgb-primary), 0.4); color: #FFFFFF; }
+    .dark .btn-primary-design { background: linear-gradient(135deg, var(--color-primary-bright) 0%, var(--color-primary-light) 100%); color: #0a0f1e; }
+    .dark .btn-primary-design:hover { color: #0a0f1e; }
+
+    .btn-outline-design {
+      border: 1.5px solid rgba(var(--color-rgb-primary), 0.3); color: var(--color-primary);
+      background: transparent; border-radius: 60px; font-weight: 600;
+      transition: all 0.3s; white-space: nowrap;
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; vertical-align: middle;
+    }
+    .btn-outline-design:hover { background: var(--color-primary); color: #FFFFFF; transform: translateY(-2px); border-color: var(--color-primary); }
+    .dark .btn-outline-design { border-color: rgba(var(--color-rgb-bright), 0.3); color: var(--color-primary-bright); }
+    .dark .btn-outline-design:hover { background: var(--color-primary-bright); color: #0a0f1e; }
+
+    .stat-card {
+      background: #FFFFFF; border-radius: 20px; padding: 1.2rem;
+      border: 1px solid rgba(var(--color-rgb-primary), 0.12);
+      transition: all 0.3s;
+    }
+    .dark .stat-card { background: #111827; border-color: rgba(var(--color-rgb-bright), 0.15); }
+    .stat-card:hover { transform: translateY(-3px); border-color: var(--color-primary-light); }
+
+    .status-badge {
+      display: inline-flex; align-items: center; padding: 0.25rem 0.75rem;
+      border-radius: 40px; font-size: 0.7rem; font-weight: 700;
+      white-space: nowrap;
+    }
+    .status-submitted { background: #E3F2FD; color: #0D47A1; }
+    .status-review { background: #FFF3E0; color: #E65100; }
+    .status-biometrics { background: #F3E5F5; color: #6A1B9A; }
+    .status-approved { background: #E8F5E9; color: #1B5E20; }
+    .status-pending { background: #FEF3C7; color: #92400E; }
+    .status-rejected { background: #FEE2E2; color: #991B1B; }
+    .status-active { background: #E8F5E9; color: #1B5E20; }
+    .dark .status-submitted { background: #0D47A1; color: #90CAF9; }
+    .dark .status-review { background: #E65100; color: #FFCC80; }
+    .dark .status-biometrics { background: #4A148C; color: #CE93D8; }
+    .dark .status-approved { background: #1B5E20; color: #A5D6A7; }
+    .dark .status-pending { background: #92400E; color: #FDE68A; }
+    .dark .status-rejected { background: #991B1B; color: #FECACA; }
+    .dark .status-active { background: #1B5E20; color: #A5D6A7; }
+
+    .form-input {
+      width: 100%; padding: 0.75rem 1rem;
+      border-radius: 14px; border: 1.5px solid rgba(var(--color-rgb-primary), 0.2);
+      background-color: #FFFFFF; transition: all 0.3s;
+      color: var(--color-text-dark); font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+    }
+    .dark .form-input { background-color: #0a0f1e; border-color: rgba(var(--color-rgb-bright), 0.2); color: #e2e8f0; }
+    .form-input:focus { outline: none; border-color: var(--color-primary-light); box-shadow: 0 0 0 4px rgba(var(--color-rgb-primary), 0.15); }
+    .form-label { display: block; font-weight: 600; font-size: 0.85rem; margin-bottom: 0.4rem; color: var(--color-text-dark); }
+    .dark .form-label { color: #e2e8f0; }
+
+    input[type="date"]::-webkit-calendar-picker-indicator {
+      cursor: pointer; opacity: 0.85; transition: all 0.2s ease;
+    }
+    input[type="date"]::-webkit-calendar-picker-indicator:hover { opacity: 1; }
+    .dark input[type="date"]::-webkit-calendar-picker-indicator {
+      filter: invert(1) brightness(1.2); opacity: 0.9;
+    }
+
+    .progress-bar { height: 8px; background: rgba(var(--color-rgb-primary), 0.12); border-radius: 10px; overflow: hidden; }
+    .dark .progress-bar { background: rgba(var(--color-rgb-bright), 0.15); }
+    .progress-fill { height: 100%; background: linear-gradient(90deg, var(--color-primary-light), var(--color-primary)); border-radius: 10px; transition: width 0.6s ease; }
+    .dark .progress-fill { background: linear-gradient(90deg, var(--color-primary-bright), var(--color-primary-light)); }
+
+    .page-content.hidden { display: none; }
+    .client-card { transition: all 0.3s; cursor: pointer; }
+    .client-card:hover { transform: translateY(-2px); border-color: var(--color-primary-light); }
+
+    /* RTL support */
+    [dir="rtl"] .sidebar { left: auto; right: 0; border-right: none; border-left: 1px solid rgba(var(--color-rgb-primary), 0.12); }
+    [dir="rtl"] .main-content { margin-left: 0; margin-right: 280px; }
+    [dir="rtl"] .sidebar-item i { margin-right: 0; margin-left: 0.75rem; }
+    @media (max-width: 768px) {
+      [dir="rtl"] .sidebar { transform: translateX(100%); }
+      [dir="rtl"] .sidebar.open { transform: translateX(0); }
+      [dir="rtl"] .main-content { margin-right: 0; }
+    }
+    /* Upload zone */
+    .upload-zone {
+      border: 2px dashed rgba(var(--color-rgb-primary), 0.3);
+      border-radius: 20px; padding: 1.5rem; text-align: center;
+      transition: all 0.2s; cursor: pointer;
+    }
+    .upload-zone:hover { border-color: var(--color-primary-light); background: rgba(var(--color-rgb-primary), 0.04); }
+    .dark .upload-zone { border-color: rgba(var(--color-rgb-bright), 0.3); }
+    .dark .upload-zone:hover { border-color: var(--color-primary-bright); background: rgba(var(--color-rgb-bright), 0.05); }
+  </style>
+</head>
+<body>
+
+  <!-- Mobile Header -->
+  <div class="mobile-header">
+    <div class="flex items-center gap-3">
+      <button id="menuToggle" class="toggle-btn"><i class="fas fa-bars"></i></button>
+      <a href="index.html" class="flex items-center gap-2 group shrink-0">
+        <div class="w-8 h-8 bg-gradient-to-br from-visa-primary-light to-visa-primary-dark rounded-full flex items-center justify-center">
+          <i class="fas fa-passport text-white text-sm"></i>
+        </div>
+        <span class="text-lg font-display font-bold text-neutral-dark dark:text-white">Horizon<span class="visa-gradient-text">Visa</span></span>
+      </a>
+    </div>
+    <div class="flex gap-2">
+      <button id="theme-toggle-mobile" class="toggle-btn"><i class="fas fa-moon dark:hidden"></i><i class="fas fa-sun hidden dark:inline"></i></button>
+      <button id="rtl-toggle-mobile" class="toggle-btn"><i class="fas fa-exchange-alt"></i></button>
+    </div>
+  </div>
+
+  <div id="sidebarOverlay" class="sidebar-overlay"></div>
+
+  <!-- Sidebar (client version) -->
+  <div class="sidebar" id="sidebar">
+    <div class="p-5 border-b border-[rgba(var(--color-rgb-primary),0.12)] dark:border-[rgba(var(--color-rgb-bright),0.15)]">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 bg-gradient-to-br from-visa-primary-light to-visa-primary-dark rounded-full flex items-center justify-center flex-shrink-0 shadow-md">
+          <i class="fas fa-passport text-white text-base"></i>
+        </div>
+        <div>
+          <span class="text-lg font-display font-bold text-neutral-dark dark:text-white tracking-tight">Horizon<span class="visa-gradient-text">Visa</span></span>
+          <p class="text-xs text-neutral-dark/60 dark:text-gray-400 font-medium">Client Portal</p>
+        </div>
+      </a>
+    </div>
+    <nav class="py-4">
+      <div class="sidebar-item active" data-page="dashboard"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></div>
+      <div class="sidebar-item" data-page="my-applications"><i class="fas fa-passport"></i><span>My Applications</span></div>
+      <div class="sidebar-item" data-page="documents"><i class="fas fa-folder-open"></i><span>My Documents</span></div>
+      <div class="sidebar-item" data-page="appointments"><i class="fas fa-calendar-check"></i><span>Appointments</span></div>
+      <div class="sidebar-item" data-page="messages"><i class="fas fa-comments"></i><span>Messages</span></div>
+      <div class="sidebar-item" data-page="profile"><i class="fas fa-user-circle"></i><span>My Profile</span></div>
+    </nav>
+    <div class="absolute bottom-0 left-0 right-0 p-4 border-t border-[rgba(var(--color-rgb-primary),0.12)] dark:border-[rgba(var(--color-rgb-bright),0.15)]">
+      <a href="login.html" class="flex items-center justify-center gap-2 w-full p-2.5 rounded-xl bg-[rgba(var(--color-rgb-primary),0.08)] hover:bg-visa-primary transition font-semibold text-sm text-neutral-dark dark:text-gray-200 hover:text-white">
+        <i class="fas fa-sign-out-alt"></i><span>Logout</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Top bar -->
+    <div class="card-design p-4 md:p-6 flex justify-between items-center flex-wrap gap-3 mb-6">
+      <div>
+        <h1 class="text-2xl font-display font-bold" id="page-title">Dashboard</h1>
+        <p class="text-sm text-neutral-dark/60 dark:text-gray-400" id="page-subtitle">Welcome back, Priya</p>
+      </div>
+      <div class="hidden lg:flex items-center gap-4">
+        <button id="theme-toggle" class="toggle-btn"><i class="fas fa-moon dark:hidden"></i><i class="fas fa-sun hidden dark:inline"></i></button>
+        <button id="rtl-toggle" class="toggle-btn"><i class="fas fa-exchange-alt"></i></button>
+        <div class="flex items-center gap-3 border-l border-[rgba(var(--color-rgb-primary),0.12)] dark:border-[rgba(var(--color-rgb-bright),0.15)] pl-4">
+          <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-visa-primary-light shadow-sm shrink-0 bg-visa-primary">
+            <img src="images/client-ananya.jpg" alt="Priya Sharma" class="w-full h-full object-cover">
+          </div>
+          <div class="text-left hidden lg:block">
+            <p class="text-sm font-bold text-neutral-dark dark:text-white leading-tight">Priya Sharma</p>
+            <p class="text-[10px] text-neutral-dark/60 dark:text-gray-400">Skilled Worker Visa</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== DASHBOARD (CLIENT) ========== -->
+    <div id="page-dashboard" class="page-content">
+      <!-- Stat cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+        <div class="stat-card">
+          <div class="flex justify-between">
+            <div>
+              <p class="text-xs text-neutral-dark/60 dark:text-gray-400 mb-1 font-medium">Active Application</p>
+              <p class="text-2xl font-bold text-neutral-dark dark:text-white">#HV-2026-042</p>
+              <p class="text-xs text-neutral-dark/60 dark:text-gray-400 mt-1">Skilled Worker · UK</p>
+            </div>
+            <div class="w-10 h-10 bg-[rgba(var(--color-rgb-primary),0.08)] dark:bg-[rgba(var(--color-rgb-bright),0.12)] rounded-full flex items-center justify-center">
+              <i class="fas fa-passport text-visa-primary-light"></i>
+            </div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="flex justify-between">
+            <div>
+              <p class="text-xs text-neutral-dark/60 dark:text-gray-400 mb-1 font-medium">Current Stage</p>
+              <p class="text-2xl font-bold text-neutral-dark dark:text-white">Review</p>
+              <p class="text-xs text-neutral-dark/60 dark:text-gray-400 mt-1">Next: Biometrics</p>
+            </div>
+            <div class="w-10 h-10 bg-[rgba(var(--color-rgb-primary),0.08)] dark:bg-[rgba(var(--color-rgb-bright),0.12)] rounded-full flex items-center justify-center">
+              <i class="fas fa-file-signature text-visa-primary-light"></i>
+            </div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="flex justify-between">
+            <div>
+              <p class="text-xs text-neutral-dark/60 dark:text-gray-400 mb-1 font-medium">Documents Pending</p>
+              <p class="text-2xl font-bold text-amber-600 dark:text-amber-400">2</p>
+              <p class="text-xs text-neutral-dark/60 dark:text-gray-400 mt-1">Upload required</p>
+            </div>
+            <div class="w-10 h-10 bg-[rgba(var(--color-rgb-primary),0.08)] dark:bg-[rgba(var(--color-rgb-bright),0.12)] rounded-full flex items-center justify-center">
+              <i class="fas fa-file-upload text-visa-primary-light"></i>
+            </div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="flex justify-between">
+            <div>
+              <p class="text-xs text-neutral-dark/60 dark:text-gray-400 mb-1 font-medium">Upcoming Appointment</p>
+              <p class="text-2xl font-bold text-neutral-dark dark:text-white">Mar 12</p>
+              <p class="text-xs text-neutral-dark/60 dark:text-gray-400 mt-1">Biometrics · 10:30 AM</p>
+            </div>
+            <div class="w-10 h-10 bg-[rgba(var(--color-rgb-primary),0.08)] dark:bg-[rgba(var(--color-rgb-bright),0.12)] rounded-full flex items-center justify-center">
+              <i class="fas fa-calendar-check text-visa-primary-light"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <!-- Application progress -->
+        <div class="card-design p-6 lg:col-span-2">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="font-display font-bold text-lg">My Application Progress</h3>
+            <span class="status-badge status-review">Under Review</span>
+          </div>
+          <p class="text-sm font-semibold text-neutral-dark dark:text-white mb-1">#HV-2026-042 · Skilled Worker Visa</p>
+          <p class="text-xs text-neutral-dark/60 dark:text-gray-400 mb-5">Submitted: Jan 15, 2025 · UK Standard Route</p>
+
+          <!-- 5-step timeline -->
+          <div class="grid grid-cols-5 text-[10px] sm:text-xs text-neutral-dark/60 dark:text-gray-400 mb-2 font-medium">
+            <span class="text-left truncate">Submitted</span>
+            <span class="text-center truncate">Review</span>
+            <span class="text-center truncate">Biometrics</span>
+            <span class="text-center truncate">Decision</span>
+            <span class="text-right truncate">Approved</span>
+          </div>
+          <div class="progress-bar"><div class="progress-fill" style="width:40%"></div></div>
+          <div class="flex justify-between mt-3 text-[10px] text-neutral-dark/50 dark:text-gray-500">
+            <span>✅ Submitted</span>
+            <span>🔄 Review (current)</span>
+            <span>⏳ Biometrics</span>
+            <span>⏳ Decision</span>
+            <span>⏳ Approved</span>
+          </div>
+
+          <div class="mt-6 p-4 bg-[rgba(var(--color-rgb-primary),0.04)] dark:bg-[rgba(var(--color-rgb-bright),0.06)] rounded-xl flex items-start gap-3">
+            <i class="fas fa-info-circle text-visa-primary-light mt-0.5"></i>
+            <p class="text-sm text-neutral-dark/80 dark:text-slate-300">Your documents are being reviewed by our team. You will be notified once biometrics instructions are available.</p>
+          </div>
+        </div>
+
+        <!-- Quick actions -->
+        <div class="card-design p-6">
+          <h3 class="font-display font-bold text-lg mb-4">Quick Actions</h3>
+          <div class="space-y-3">
+            <button data-nav="documents" class="w-full text-left px-4 py-3 bg-[rgba(var(--color-rgb-primary),0.06)] dark:bg-[rgba(var(--color-rgb-bright),0.08)] text-neutral-dark dark:text-white rounded-xl hover:bg-[rgba(var(--color-rgb-primary),0.15)] transition flex items-center gap-3 text-sm font-medium">
+              <i class="fas fa-upload text-visa-primary-light"></i>
+              <span>Upload Document</span>
+              <span class="ml-auto text-xs bg-amber-100 dark:bg-amber-900/40 text-amber-600 dark:text-amber-300 px-2 py-0.5 rounded-full font-bold">2</span>
+            </button>
+            <button data-nav="appointments" class="w-full text-left px-4 py-3 bg-[rgba(var(--color-rgb-primary),0.06)] dark:bg-[rgba(var(--color-rgb-bright),0.08)] text-neutral-dark dark:text-white rounded-xl hover:bg-[rgba(var(--color-rgb-primary),0.15)] transition flex items-center gap-3 text-sm font-medium">
+              <i class="fas fa-calendar-plus text-visa-primary-light"></i>
+              <span>Schedule Counseling</span>
+            </button>
+            <button data-nav="messages" class="w-full text-left px-4 py-3 bg-[rgba(var(--color-rgb-primary),0.06)] dark:bg-[rgba(var(--color-rgb-bright),0.08)] text-neutral-dark dark:text-white rounded-xl hover:bg-[rgba(var(--color-rgb-primary),0.15)] transition flex items-center gap-3 text-sm font-medium">
+              <i class="fas fa-comments text-visa-primary-light"></i>
+              <span>Message Advisor</span>
+              <span class="ml-auto text-xs bg-visa-primary/15 dark:bg-visa-primary-bright/20 text-visa-primary-light px-2 py-0.5 rounded-full font-bold">1</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent updates -->
+      <div class="card-design p-6 mt-6">
+        <h3 class="font-display font-bold text-lg mb-4">Recent Updates</h3>
+        <div class="space-y-3">
+          <div class="flex gap-3 items-start">
+            <div class="w-8 h-8 rounded-full bg-visa-primary/10 dark:bg-visa-primary-bright/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <i class="fas fa-file-alt text-visa-primary-light text-xs"></i>
+            </div>
+            <div>
+              <p class="text-sm font-semibold text-neutral-dark dark:text-white">Document request: Employment letter</p>
+              <p class="text-xs text-neutral-dark/60 dark:text-gray-400">Please upload the updated employment letter · Due Mar 10</p>
+            </div>
+            <span class="text-xs text-neutral-dark/50 dark:text-gray-500 ml-auto">2h ago</span>
+          </div>
+          <div class="flex gap-3 items-start">
+            <div class="w-8 h-8 rounded-full bg-visa-primary/10 dark:bg-visa-primary-bright/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <i class="fas fa-check-circle text-visa-primary-light text-xs"></i>
+            </div>
+            <div>
+              <p class="text-sm font-semibold text-neutral-dark dark:text-white">Application moved to review</p>
+              <p class="text-xs text-neutral-dark/60 dark:text-gray-400">Your file is now with the case officer</p>
+            </div>
+            <span class="text-xs text-neutral-dark/50 dark:text-gray-500 ml-auto">1d ago</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== MY APPLICATIONS (CLIENT) ========== -->
+    <div id="page-my-applications" class="page-content hidden">
+      <div class="card-design p-6">
+        <div class="flex justify-between items-center mb-4 flex-wrap gap-3">
+          <h3 class="font-display font-bold text-2xl">My Applications</h3>
+        </div>
+        <p class="text-sm text-neutral-dark/60 dark:text-gray-400 mb-6">Track your visa applications and their current status.</p>
+        <div class="space-y-4">
+          <!-- Application 1 (active) -->
+          <div class="p-5 bg-[rgba(var(--color-rgb-primary),0.04)] dark:bg-[rgba(var(--color-rgb-bright),0.05)] rounded-2xl border border-[rgba(var(--color-rgb-primary),0.1)]">
+            <div class="flex flex-wrap justify-between items-start gap-3 mb-3">
+              <div>
+                <p class="font-bold text-lg">#HV-2026-042 · Skilled Worker Visa</p>
+                <p class="text-sm text-neutral-dark/60 dark:text-gray-400">🇬🇧 United Kingdom · Standard Route</p>
+                <div class="flex items-center gap-3 mt-2 flex-wrap">
+                  <span class="status-badge status-review">Under Review</span>
+                  <span class="text-xs text-neutral-dark/60 dark:text-gray-400">Submitted: Jan 15, 2025</span>
+                </div>
+              </div>
+              <div class="flex gap-2">
+                <button class="btn-outline-design text-xs px-4 py-1.5"><i class="fas fa-eye mr-1"></i>Details</button>
+                <button class="btn-primary-design text-xs px-4 py-1.5"><i class="fas fa-upload mr-1"></i>Upload</button>
+              </div>
+            </div>
+            <div class="grid grid-cols-5 text-[10px] sm:text-xs text-neutral-dark/60 dark:text-gray-400 mb-2 font-medium">
+              <span class="text-left truncate">Submitted</span>
+              <span class="text-center truncate">Review</span>
+              <span class="text-center truncate">Biometrics</span>
+              <span class="text-center truncate">Decision</span>
+              <span class="text-right truncate">Approved</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" style="width:40%"></div></div>
+          </div>
+
+          <!-- Application 2 (past) -->
+          <div class="p-5 bg-[rgba(var(--color-rgb-primary),0.02)] dark:bg-[rgba(var(--color-rgb-bright),0.03)] rounded-2xl border border-[rgba(var(--color-rgb-primary),0.08)] opacity-80">
+            <div class="flex flex-wrap justify-between items-start gap-3 mb-3">
+              <div>
+                <p class="font-bold text-lg">#HV-2024-019 · Visitor Visa</p>
+                <p class="text-sm text-neutral-dark/60 dark:text-gray-400">🇨🇦 Canada · Tourist</p>
+                <div class="flex items-center gap-3 mt-2 flex-wrap">
+                  <span class="status-badge status-approved">Approved</span>
+                  <span class="text-xs text-neutral-dark/60 dark:text-gray-400">Issued: Nov 20, 2024</span>
+                </div>
+              </div>
+              <button class="btn-outline-design text-xs px-4 py-1.5"><i class="fas fa-download mr-1"></i>Visa PDF</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== MY DOCUMENTS (CLIENT) ========== -->
+    <div id="page-documents" class="page-content hidden">
+      <div class="card-design p-6">
+        <div class="flex justify-between items-center mb-4 flex-wrap gap-3">
+          <div>
+            <h3 class="font-display font-bold text-2xl mb-1">My Documents</h3>
+            <p class="text-sm text-neutral-dark/60 dark:text-gray-400">Upload required documents and track their verification status.</p>
+          </div>
+          <span class="status-badge status-pending text-xs">2 pending</span>
+        </div>
+
+        <!-- Upload zone -->
+        <div class="upload-zone mb-6" id="uploadZone">
+          <i class="fas fa-cloud-upload-alt text-3xl text-visa-primary-light mb-2"></i>
+          <p class="font-semibold text-neutral-dark dark:text-white">Click to upload or drag & drop</p>
+          <p class="text-xs text-neutral-dark/60 dark:text-gray-400">PDF, JPG, PNG (max 10MB)</p>
+          <input type="file" id="fileInput" class="hidden" />
+        </div>
+
+        <!-- Document list -->
+        <div class="space-y-3">
+          <!-- Pending 1 -->
+          <div class="p-4 bg-[rgba(var(--color-rgb-primary),0.04)] dark:bg-[rgba(var(--color-rgb-bright),0.05)] rounded-xl border border-[rgba(var(--color-rgb-primary),0.1)] flex flex-wrap justify-between items-center gap-3">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-file-pdf text-amber-600 dark:text-amber-400"></i>
+              </div>
+              <div>
+                <p class="font-bold text-sm text-neutral-dark dark:text-white">Employment Letter (Updated)</p>
+                <p class="text-xs text-neutral-dark/60 dark:text-gray-400">Requested by advisor · Due Mar 10</p>
+                <p class="text-xs text-visa-primary-light mt-1">Pending upload</p>
+              </div>
+            </div>
+            <button class="btn-primary-design text-xs px-4 py-1.5"><i class="fas fa-upload mr-1"></i>Upload</button>
+          </div>
+
+          <!-- Pending 2 -->
+          <div class="p-4 bg-[rgba(var(--color-rgb-primary),0.04)] dark:bg-[rgba(var(--color-rgb-bright),0.05)] rounded-xl border border-[rgba(var(--color-rgb-primary),0.1)] flex flex-wrap justify-between items-center gap-3">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-file-pdf text-amber-600 dark:text-amber-400"></i>
+              </div>
+              <div>
+                <p class="font-bold text-sm text-neutral-dark dark:text-white">Bank Statements (Q1 2025)</p>
+                <p class="text-xs text-neutral-dark/60 dark:text-gray-400">Requested by advisor · Due Mar 12</p>
+                <p class="text-xs text-visa-primary-light mt-1">Pending upload</p>
+              </div>
+            </div>
+            <button class="btn-primary-design text-xs px-4 py-1.5"><i class="fas fa-upload mr-1"></i>Upload</button>
+          </div>
+
+          <!-- Approved -->
+          <div class="p-4 rounded-xl border border-[rgba(var(--color-rgb-primary),0.1)] dark:border-[rgba(var(--color-rgb-bright),0.1)] flex flex-wrap justify-between items-center gap-3 opacity-80">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-check text-green-600 dark:text-green-400"></i>
+              </div>
+              <div>
+                <p class="font-bold text-sm text-neutral-dark dark:text-white">Passport Copy</p>
+                <p class="text-xs text-neutral-dark/60 dark:text-gray-400">Uploaded Jan 10 · 2.4 MB</p>
+              </div>
+            </div>
+            <span class="status-badge status-approved text-xs">Verified</span>
+          </div>
+          <div class="p-4 rounded-xl border border-[rgba(var(--color-rgb-primary),0.1)] dark:border-[rgba(var(--color-rgb-bright),0.1)] flex flex-wrap justify-between items-center gap-3 opacity-80">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-check text-green-600 dark:text-green-400"></i>
+              </div>
+              <div>
+                <p class="font-bold text-sm text-neutral-dark dark:text-white">IELTS Test Results</p>
+                <p class="text-xs text-neutral-dark/60 dark:text-gray-400">Uploaded Jan 12 · 0.9 MB</p>
+              </div>
+            </div>
+            <span class="status-badge status-approved text-xs">Verified</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== APPOINTMENTS (CLIENT) ========== -->
+    <div id="page-appointments" class="page-content hidden">
+      <div class="card-design p-6">
+        <div class="flex justify-between items-center mb-4 flex-wrap gap-3">
+          <div>
+            <h3 class="font-display font-bold text-2xl mb-1">My Appointments</h3>
+            <p class="text-sm text-neutral-dark/60 dark:text-gray-400">View and schedule counseling sessions with your advisor.</p>
+          </div>
+          <button class="btn-primary-design px-4 py-2 text-sm"><i class="fas fa-calendar-plus"></i> Schedule New</button>
+        </div>
+
+        <h4 class="font-display font-bold text-sm uppercase tracking-wider text-neutral-dark/60 dark:text-gray-400 mb-3 mt-6">Upcoming</h4>
+        <div class="space-y-3 mb-6">
+          <div class="p-4 bg-[rgba(var(--color-rgb-primary),0.06)] dark:bg-[rgba(var(--color-rgb-bright),0.08)] rounded-xl border border-[rgba(var(--color-rgb-primary),0.15)] flex flex-wrap justify-between items-center gap-3">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-visa-primary flex flex-col items-center justify-center text-white flex-shrink-0">
+                <span class="text-[10px] font-bold uppercase leading-none">Mar</span>
+                <span class="text-base font-bold leading-none mt-0.5">12</span>
+              </div>
+              <div>
+                <p class="font-bold text-sm text-neutral-dark dark:text-white">Biometrics Appointment</p>
+                <p class="text-xs text-neutral-dark/60 dark:text-gray-400">10:30 AM · UK Visa Application Centre</p>
+                <p class="text-xs text-neutral-dark/60 dark:text-gray-400">with Sarah Williams</p>
+              </div>
+            </div>
+            <div class="flex gap-2">
+              <button class="btn-outline-design text-xs px-3 py-1.5">Reschedule</button>
+              <button class="btn-primary-design text-xs px-3 py-1.5"><i class="fas fa-check"></i> Confirm</button>
+            </div>
+          </div>
+          <div class="p-4 bg-[rgba(var(--color-rgb-primary),0.06)] dark:bg-[rgba(var(--color-rgb-bright),0.08)] rounded-xl border border-[rgba(var(--color-rgb-primary),0.15)] flex flex-wrap justify-between items-center gap-3">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-visa-primary flex flex-col items-center justify-center text-white flex-shrink-0">
+                <span class="text-[10px] font-bold uppercase leading-none">Mar</span>
+                <span class="text-base font-bold leading-none mt-0.5">18</span>
+              </div>
+              <div>
+                <p class="font-bold text-sm text-neutral-dark dark:text-white">Interview Prep Session</p>
+                <p class="text-xs text-neutral-dark/60 dark:text-gray-400">2:00 PM · Video Call (Zoom)</p>
+                <p class="text-xs text-neutral-dark/60 dark:text-gray-400">with David Okafor</p>
+              </div>
+            </div>
+            <div class="flex gap-2">
+              <button class="btn-outline-design text-xs px-3 py-1.5">Reschedule</button>
+              <button class="btn-primary-design text-xs px-3 py-1.5"><i class="fas fa-video"></i> Join</button>
+            </div>
+          </div>
+        </div>
+
+        <h4 class="font-display font-bold text-sm uppercase tracking-wider text-neutral-dark/60 dark:text-gray-400 mb-3">Past Appointments</h4>
+        <div class="space-y-2">
+          <div class="p-4 rounded-xl border border-[rgba(var(--color-rgb-primary),0.1)] dark:border-[rgba(var(--color-rgb-bright),0.1)] flex flex-wrap justify-between items-center gap-3 opacity-70">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-[rgba(var(--color-rgb-primary),0.12)] dark:bg-[rgba(var(--color-rgb-bright),0.12)] flex flex-col items-center justify-center text-visa-primary-light flex-shrink-0">
+                <span class="text-[10px] font-bold uppercase leading-none">Feb</span>
+                <span class="text-base font-bold leading-none mt-0.5">28</span>
+              </div>
+              <div>
+                <p class="font-bold text-sm text-neutral-dark dark:text-white">Initial Consultation</p>
+                <p class="text-xs text-neutral-dark/60 dark:text-gray-400">Completed · with Michael Chen</p>
+              </div>
+            </div>
+            <span class="status-badge status-approved text-xs">Completed</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== MESSAGES (CLIENT) ========== -->
+    <div id="page-messages" class="page-content hidden">
+      <div class="card-design p-6">
+        <h3 class="font-display font-bold text-2xl mb-4">Messages</h3>
+        <p class="text-sm text-neutral-dark/60 dark:text-gray-400 mb-6">Communicate with your immigration advisor.</p>
+        <div class="space-y-4">
+          <div class="p-4 bg-[#FFFFFF] dark:bg-[#0a0f1e] rounded-xl border border-[rgba(var(--color-rgb-primary),0.12)] dark:border-[rgba(var(--color-rgb-bright),0.15)]">
+            <div class="flex justify-between items-start flex-wrap gap-2">
+              <div class="flex items-start gap-3">
+                <div class="w-10 h-10 rounded-full overflow-hidden flex-shrink-0 bg-visa-primary">
+                  <img src="images/avatar-chen.jpg" alt="Michael Chen" class="w-full h-full object-cover">
+                </div>
+                <div>
+                  <p class="font-bold text-sm text-neutral-dark dark:text-white">Michael Chen <span class="text-xs font-normal text-neutral-dark/60">· Advisor</span></p>
+                  <p class="text-sm mt-1 text-neutral-dark/80 dark:text-slate-300">Hi Priya, your documents have been received. We'll update you once the review is complete.</p>
+                </div>
+              </div>
+              <span class="text-xs text-neutral-dark/60 dark:text-gray-400 whitespace-nowrap">Yesterday, 4:20 PM</span>
+            </div>
+          </div>
+
+          <div class="p-4 bg-[rgba(var(--color-rgb-primary),0.05)] dark:bg-[rgba(var(--color-rgb-bright),0.08)] rounded-xl">
+            <div class="flex justify-between items-start flex-wrap gap-2">
+              <div class="flex items-start gap-3">
+                <div class="w-10 h-10 rounded-full overflow-hidden flex-shrink-0 bg-visa-primary">
+                  <img src="images/client-ananya.jpg" alt="Priya" class="w-full h-full object-cover">
+                </div>
+                <div>
+                  <p class="font-bold text-sm text-neutral-dark dark:text-white">Priya Sharma <span class="text-xs font-normal text-neutral-dark/60">· You</span></p>
+                  <p class="text-sm mt-1 text-neutral-dark/80 dark:text-slate-300">Thank you! I'll upload the employment letter by tomorrow.</p>
+                </div>
+              </div>
+              <span class="text-xs text-neutral-dark/60 dark:text-gray-400 whitespace-nowrap">Today, 9:15 AM</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6">
+          <label class="form-label">New Message</label>
+          <div class="flex gap-3">
+            <input type="text" class="form-input flex-1" placeholder="Type your message..." />
+            <button class="btn-primary-design px-6 py-2"><i class="fas fa-paper-plane"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== PROFILE (CLIENT) ========== -->
+    <div id="page-profile" class="page-content hidden">
+      <div class="card-design p-6 max-w-2xl">
+        <h3 class="font-display font-bold text-2xl mb-4">My Profile</h3>
+        <p class="text-sm text-neutral-dark/60 dark:text-gray-400 mb-6">Manage your personal information.</p>
+        <form class="space-y-5">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="form-label">Full Name</label>
+              <input type="text" class="form-input" value="Priya Sharma" />
+            </div>
+            <div>
+              <label class="form-label">Email</label>
+              <input type="email" class="form-input" value="priya.sharma@example.com" />
+            </div>
+            <div>
+              <label class="form-label">Phone</label>
+              <input type="tel" class="form-input" value="+44 7700 900123" />
+            </div>
+            <div>
+              <label class="form-label">Nationality</label>
+              <input type="text" class="form-input" value="Indian" />
+            </div>
+          </div>
+          <div>
+            <label class="form-label">Passport Number</label>
+            <input type="text" class="form-input" value="Z1234567" />
+          </div>
+          <button type="button" class="btn-primary-design px-6 py-2">Save Changes</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // RTL Toggle
+      const rtlToggle = document.getElementById('rtl-toggle');
+      const rtlToggleMobile = document.getElementById('rtl-toggle-mobile');
+      function setRTL(isRTL) {
+        document.documentElement.setAttribute('dir', isRTL ? 'rtl' : 'ltr');
+        localStorage.setItem('visa-dir', isRTL ? 'rtl' : 'ltr');
+      }
+      const savedDir = localStorage.getItem('visa-dir');
+      setRTL(savedDir === 'rtl');
+      if (rtlToggle) rtlToggle.addEventListener('click', () => setRTL(document.documentElement.getAttribute('dir') !== 'rtl'));
+      if (rtlToggleMobile) rtlToggleMobile.addEventListener('click', () => setRTL(document.documentElement.getAttribute('dir') !== 'rtl'));
+
+      // Theme Toggle
+      const themeToggle = document.getElementById('theme-toggle');
+      const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+      function setTheme(isDark) {
+        if (isDark) document.documentElement.classList.add('dark');
+        else document.documentElement.classList.remove('dark');
+        [themeToggle, themeToggleMobile].forEach(btn => {
+          if (btn) {
+            let moon = btn.querySelector('.fa-moon'), sun = btn.querySelector('.fa-sun');
+            if (isDark) { moon?.classList.add('hidden'); sun?.classList.remove('hidden'); }
+            else { moon?.classList.remove('hidden'); sun?.classList.add('hidden'); }
+          }
+        });
+        localStorage.setItem('visa-theme', isDark ? 'dark' : 'light');
+      }
+      const savedTheme = localStorage.getItem('visa-theme');
+      setTheme(savedTheme === 'dark');
+      if (themeToggle) themeToggle.addEventListener('click', () => setTheme(!document.documentElement.classList.contains('dark')));
+      if (themeToggleMobile) themeToggleMobile.addEventListener('click', () => setTheme(!document.documentElement.classList.contains('dark')));
+
+      // Mobile Sidebar
+      const menuToggle = document.getElementById('menuToggle');
+      const sidebar = document.getElementById('sidebar');
+      const overlay = document.getElementById('sidebarOverlay');
+      function closeSidebar() { sidebar.classList.remove('open'); overlay.classList.remove('open'); }
+      function openSidebar() { sidebar.classList.add('open'); overlay.classList.add('open'); }
+      if (menuToggle) menuToggle.addEventListener('click', (e) => { e.stopPropagation(); sidebar.classList.contains('open') ? closeSidebar() : openSidebar(); });
+      if (overlay) overlay.addEventListener('click', closeSidebar);
+      window.addEventListener('resize', () => { if (window.innerWidth > 768 && sidebar.classList.contains('open')) closeSidebar(); });
+
+      // Navigation
+      const sidebarItems = document.querySelectorAll('.sidebar-item');
+      const pages = document.querySelectorAll('.page-content');
+      const pageTitle = document.getElementById('page-title');
+      const pageSubtitle = document.getElementById('page-subtitle');
+      const titles = {
+        dashboard: { title: 'Dashboard', subtitle: 'Welcome back, Priya' },
+        'my-applications': { title: 'My Applications', subtitle: 'Track your visa applications' },
+        documents: { title: 'My Documents', subtitle: 'Upload and manage documents' },
+        appointments: { title: 'Appointments', subtitle: 'Schedule and view sessions' },
+        messages: { title: 'Messages', subtitle: 'Chat with your advisor' },
+        profile: { title: 'My Profile', subtitle: 'Manage your account' }
+      };
+      function navigateTo(page) {
+        sidebarItems.forEach(i => i.classList.remove('active'));
+        document.querySelector(`.sidebar-item[data-page="${page}"]`)?.classList.add('active');
+        pages.forEach(p => p.classList.add('hidden'));
+        document.getElementById(`page-${page}`)?.classList.remove('hidden');
+        if (titles[page]) { pageTitle.textContent = titles[page].title; pageSubtitle.textContent = titles[page].subtitle; }
+        closeSidebar();
+      }
+      sidebarItems.forEach(item => { item.addEventListener('click', () => { navigateTo(item.getAttribute('data-page')); }); });
+      document.querySelectorAll('[data-nav]').forEach(btn => { btn.addEventListener('click', () => { navigateTo(btn.getAttribute('data-nav')); }); });
+
+      // Upload zone (simulated)
+      const uploadZone = document.getElementById('uploadZone');
+      const fileInput = document.getElementById('fileInput');
+      if (uploadZone && fileInput) {
+        uploadZone.addEventListener('click', () => fileInput.click());
+        uploadZone.addEventListener('dragover', (e) => { e.preventDefault(); uploadZone.classList.add('border-visa-primary-light', 'bg-[rgba(var(--color-rgb-primary),0.08)]'); });
+        uploadZone.addEventListener('dragleave', () => { uploadZone.classList.remove('border-visa-primary-light', 'bg-[rgba(var(--color-rgb-primary),0.08)]'); });
+        uploadZone.addEventListener('drop', (e) => { e.preventDefault(); uploadZone.classList.remove('border-visa-primary-light', 'bg-[rgba(var(--color-rgb-primary),0.08)]'); alert('File selected: ' + (e.dataTransfer?.files[0]?.name || 'unknown')); });
+        fileInput.addEventListener('change', () => { if (fileInput.files.length) alert('File selected: ' + fileInput.files[0].name); });
+      }
+    });
+  </script>
+</body>
+</html>

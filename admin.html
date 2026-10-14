@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth" data-theme="immigration-blue">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel | Horizon Visa — Immigration Consultancy</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='16' fill='%231e3a8a'/><path fill='%23FFFFFF' d='M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z' transform='translate(20 20) scale(1.5)'/></svg>">
+
+    <!-- Tailwind CSS with Local & CDN Fallback -->
+    <script src="tailwind.js"></script>
+    <script>
+        if (typeof tailwind === 'undefined') {
+            document.write('<script src="https://cdn.tailwindcss.com"><\/script>');
+        }
+    </script>
+    <script>
+        // Prevent theme flash on reload
+        if (localStorage.getItem('visa-theme') === 'dark') {
+            document.documentElement.classList.add('dark');
+        }
+        if (localStorage.getItem('visa-dir') === 'rtl') {
+            document.documentElement.dir = 'rtl';
+            document.documentElement.lang = 'ar';
+        }
+    </script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'visa-primary': 'rgba(var(--color-rgb-primary), <alpha-value>)',
+                        'visa-primary-light': 'rgba(var(--color-rgb-light), <alpha-value>)',
+                        'visa-primary-dark': 'rgba(var(--color-rgb-dark), <alpha-value>)',
+                        'visa-primary-bright': 'rgba(var(--color-rgb-bright), <alpha-value>)',
+                        'visa-accent': 'rgba(var(--color-rgb-accent), <alpha-value>)',
+                        'bg-warm': 'var(--color-bg-warm)',
+                        'neutral-dark': 'rgba(var(--color-rgb-text), <alpha-value>)',
+                        'neutral-light': '#E8EDF2',
+                        'dark-bg': '#0A0D12',
+                        'dark-card': '#141A24',
+                        'dark-surface': '#1C2432',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                        'display': ['Playfair Display', 'Georgia', 'serif'],
+                        'premium': ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    animation: {
+                        'slide-up': 'slideUp 0.5s ease-out',
+                        'fade-in': 'fadeIn 0.3s ease-out',
+                        'pulse-glow': 'pulseGlow 3s infinite',
+                        'float-slow': 'floatSlow 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        slideUp: { '0%': { transform: 'translateY(30px)', opacity: '0' }, '100%': { transform: 'translateY(0)', opacity: '1' } },
+                        fadeIn: { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
+                        pulseGlow: { '0%, 100%': { opacity: '0.6' }, '50%': { opacity: '1' } },
+                        floatSlow: { '0%,100%': { transform: 'translateY(0px)' }, '50%': { transform: 'translateY(-8px)' } },
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <style>
+        :root, [data-theme="immigration-blue"] {
+            --color-primary: #1e3a8a;
+            --color-primary-light: #3b82f6;
+            --color-primary-dark: #172554;
+            --color-primary-bright: #93c5fd;
+            --color-accent: #f59e0b;
+            --color-bg-warm: #f8fafc;
+            --color-bg: #f8fafc;
+            --color-text-dark: #0f172a;
+            --color-text: #0f172a;
+            --color-rgb-primary: 30, 58, 138;
+            --color-rgb-light: 59, 130, 246;
+            --color-rgb-dark: 23, 37, 84;
+            --color-rgb-bright: 147, 197, 253;
+            --color-rgb-accent: 245, 158, 11;
+            --color-rgb-text: 15, 23, 42;
+        }
+
+        [data-theme="teal-trust"] {
+            --color-primary: #0f766e;
+            --color-primary-light: #14b8a6;
+            --color-primary-dark: #115e59;
+            --color-primary-bright: #5eead4;
+            --color-accent: #f59e0b;
+            --color-bg-warm: #f0fdfa;
+            --color-bg: #f0fdfa;
+            --color-text-dark: #042f2e;
+            --color-text: #042f2e;
+            --color-rgb-primary: 15, 118, 110;
+            --color-rgb-light: 20, 184, 166;
+            --color-rgb-dark: 17, 94, 89;
+            --color-rgb-bright: 94, 234, 212;
+            --color-rgb-accent: 245, 158, 11;
+            --color-rgb-text: 4, 47, 46;
+        }
+
+        [data-theme="burgundy-authority"] {
+            --color-primary: #7f1d1d;
+            --color-primary-light: #b91c1c;
+            --color-primary-dark: #450a0a;
+            --color-primary-bright: #fca5a5;
+            --color-accent: #eab308;
+            --color-bg-warm: #fef2f2;
+            --color-bg: #fef2f2;
+            --color-text-dark: #450a0a;
+            --color-text: #450a0a;
+            --color-rgb-primary: 127, 29, 29;
+            --color-rgb-light: 185, 28, 28;
+            --color-rgb-dark: 69, 10, 10;
+            --color-rgb-bright: 252, 165, 165;
+            --color-rgb-accent: 234, 179, 8;
+            --color-rgb-text: 69, 10, 10;
+        }
+
+        body { font-family: 'Inter', system-ui, sans-serif; background-color: var(--color-bg-warm); color: var(--color-text-dark); transition: background-color 0.4s ease, color 0.4s ease; }
+        .dark body { background-color: #0a0f1e; color: #e2e8f0; }
+        h1,h2,h3,h4,h5,h6 { font-family: 'Playfair Display', Georgia, serif; font-weight: 600; letter-spacing: -0.02em; }
+        .visa-gradient-text {
+            background: linear-gradient(135deg, #93c5fd 0%, #3b82f6 50%, #1e3a8a 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .dark .visa-gradient-text {
+            background: linear-gradient(135deg, #93c5fd 0%, #60a5fa 50%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .dark .text-visa-primary { color: var(--color-primary-bright) !important; }
+        .dark .border-visa-primary { border-color: var(--color-primary-bright) !important; }
+        .dark .text-neutral-dark { color: #e2e8f0; }
+        body::-webkit-scrollbar { display: none; }
+        body { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* Sidebar */
+        .sidebar {
+            position: fixed;
+            left: 0; top: 0; height: 100vh;
+            width: 280px;
+            background: #FFFFFF;
+            border-right: 1px solid rgba(var(--color-rgb-primary), 0.12);
+            transition: transform 0.3s ease;
+            z-index: 100;
+            overflow-y: auto;
+        }
+        .dark .sidebar { background: #0f172a; border-right-color: rgba(var(--color-rgb-bright), 0.15); }
+        @media (max-width: 768px) { .sidebar { transform: translateX(-100%); } .sidebar.open { transform: translateX(0); } }
+        .sidebar-overlay { position: fixed; top:0;left:0;right:0;bottom:0; background: rgba(0,0,0,0.5); z-index:99; display:none; }
+        .sidebar-overlay.open { display:block; }
+
+        .sidebar-item {
+            display: flex; align-items: center; gap: 0.75rem;
+            padding: 0.85rem 1.5rem; margin: 0.25rem 0.75rem;
+            border-radius: 12px; color: var(--color-text-dark);
+            transition: all 0.2s; cursor: pointer;
+            font-size: 0.9rem; font-weight: 500;
+        }
+        .dark .sidebar-item { color: #cbd5e1; }
+        .sidebar-item:hover { background: rgba(var(--color-rgb-primary), 0.08); color: var(--color-primary); }
+        .dark .sidebar-item:hover { background: rgba(var(--color-rgb-bright), 0.12); color: var(--color-primary-bright); }
+        .sidebar-item.active { background: var(--color-primary); color: #FFFFFF; }
+        .dark .sidebar-item.active { background: var(--color-primary-bright); color: #0a0f1e; }
+        .sidebar-item i { width: 24px; font-size: 1.05rem; text-align: center; }
+
+        .main-content { margin-left: 280px; padding: 1.5rem; min-height: 100vh; }
+        @media (max-width: 768px) { .main-content { margin-left: 0; padding-top: 70px; } }
+
+        .mobile-header {
+            display: none; position: fixed; top:0;left:0;right:0;
+            background: #FFFFFF; padding: 0.75rem 1rem;
+            border-bottom: 1px solid rgba(var(--color-rgb-primary), 0.12);
+            z-index: 50; align-items: center; justify-content: space-between;
+        }
+        .dark .mobile-header { background: #0f172a; border-bottom-color: rgba(var(--color-rgb-bright), 0.15); }
+        @media (max-width: 768px) { .mobile-header { display: flex; } }
+
+        .toggle-btn {
+            width: 36px; height: 36px; border-radius: 10px;
+            background: rgba(var(--color-rgb-primary), 0.08);
+            color: var(--color-text-dark); display: inline-flex;
+            align-items: center; justify-content: center; cursor: pointer;
+            transition: all 0.2s; border: none;
+        }
+        .dark .toggle-btn { background: rgba(var(--color-rgb-bright), 0.12); color: #e2e8f0; }
+        .toggle-btn:hover { background: var(--color-primary); color: #FFFFFF; }
+        .dark .toggle-btn:hover { background: var(--color-primary-bright); color: #0a0f1e; }
+
+        .card-design {
+            background: #FFFFFF; border-radius: 24px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(var(--color-rgb-primary), 0.12);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+        }
+        .dark .card-design { background: #111827; border-color: rgba(var(--color-rgb-bright), 0.15); }
+        .card-design:hover { border-color: var(--color-primary-light); }
+
+        .btn-primary-design {
+            background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
+            color: #FFFFFF;
+            font-weight: 600; border-radius: 60px; transition: all 0.3s;
+            box-shadow: 0 4px 12px rgba(var(--color-rgb-primary), 0.3);
+            white-space: nowrap; border: none;
+            display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; vertical-align: middle;
+        }
+        .btn-primary-design:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(var(--color-rgb-primary), 0.4); color: #FFFFFF; }
+        .dark .btn-primary-design { background: linear-gradient(135deg, var(--color-primary-bright) 0%, var(--color-primary-light) 100%); color: #0a0f1e; }
+        .dark .btn-primary-design:hover { color: #0a0f1e; }
+
+        .btn-outline-design {
+            border: 1.5px solid rgba(var(--color-rgb-primary), 0.3); color: var(--color-primary);
+            background: transparent; border-radius: 60px; font-weight: 600;
+            transition: all 0.3s; white-space: nowrap;
+            display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; vertical-align: middle;
+        }
+        .btn-outline-design:hover { background: var(--color-primary); color: #FFFFFF; transform: translateY(-2px); border-color: var(--color-primary); }
+        .dark .btn-outline-design { border-color: rgba(var(--color-rgb-bright), 0.3); color: var(--color-primary-bright); }
+        .dark .btn-outline-design:hover { background: var(--color-primary-bright); color: #0a0f1e; }
+
+        .stat-card {
+            background: #FFFFFF; border-radius: 20px; padding: 1.2rem;
+            border: 1px solid rgba(var(--color-rgb-primary), 0.12);
+            transition: all 0.3s;
+        }
+        .dark .stat-card { background: #111827; border-color: rgba(var(--color-rgb-bright), 0.15); }
+        .stat-card:hover { transform: translateY(-3px); border-color: var(--color-primary-light); }
+
+        .status-badge {
+            display: inline-flex; align-items: center; padding: 0.25rem 0.75rem;
+            border-radius: 40px; font-size: 0.7rem; font-weight: 700;
+            white-space: nowrap;
+        }
+        .status-submitted { background: #E3F2FD; color: #0D47A1; }
+        .status-review { background: #FFF3E0; color: #E65100; }
+        .status-biometrics { background: #F3E5F5; color: #6A1B9A; }
+        .status-approved { background: #E8F5E9; color: #1B5E20; }
+        .status-pending { background: #FEF3C7; color: #92400E; }
+        .status-rejected { background: #FEE2E2; color: #991B1B; }
+        .status-active { background: #E8F5E9; color: #1B5E20; }
+        .dark .status-submitted { background: #0D47A1; color: #90CAF9; }
+        .dark .status-review { background: #E65100; color: #FFCC80; }
+        .dark .status-biometrics { background: #4A148C; color: #CE93D8; }
+        .dark .status-approved { background: #1B5E20; color: #A5D6A7; }
+        .dark .status-pending { background: #92400E; color: #FDE68A; }
+        .dark .status-rejected { background: #991B1B; color: #FECACA; }
+        .dark .status-active { background: #1B5E20; color: #A5D6A7; }
+
+        .form-input {
+            width: 100%; padding: 0.75rem 1rem;
+            border-radius: 14px; border: 1.5px solid rgba(var(--color-rgb-primary), 0.2);
+            background-color: #FFFFFF; transition: all 0.3s;
+            color: var(--color-text-dark); font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+        }
+        .dark .form-input { background-color: #0a0f1e; border-color: rgba(var(--color-rgb-bright), 0.2); color: #e2e8f0; }
+        .form-input:focus { outline: none; border-color: var(--color-primary-light); box-shadow: 0 0 0 4px rgba(var(--color-rgb-primary), 0.15); }
+        .form-label { display: block; font-weight: 600; font-size: 0.85rem; margin-bottom: 0.4rem; color: var(--color-text-dark); }
+        .dark .form-label { color: #e2e8f0; }
+
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            cursor: pointer; opacity: 0.85; transition: all 0.2s ease;
+        }
+        input[type="date"]::-webkit-calendar-picker-indicator:hover { opacity: 1; }
+        .dark input[type="date"]::-webkit-calendar-picker-indicator {
+            filter: invert(1) brightness(1.2); opacity: 0.9;
+        }
+
+        .progress-bar { height: 8px; background: rgba(var(--color-rgb-primary), 0.12); border-radius: 10px; overflow: hidden; }
+        .dark .progress-bar { background: rgba(var(--color-rgb-bright), 0.15); }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, var(--color-primary-light), var(--color-primary)); border-radius: 10px; transition: width 0.6s ease; }
+        .dark .progress-fill { background: linear-gradient(90deg, var(--color-primary-bright), var(--color-primary-light)); }
+
+        .page-content.hidden { display: none; }
+        .client-card { transition: all 0.3s; cursor: pointer; }
+        .client-card:hover { transform: translateY(-2px); border-color: var(--color-primary-light); }
+
+        /* RTL support */
+        [dir="rtl"] .sidebar { left: auto; right: 0; border-right: none; border-left: 1px solid rgba(var(--color-rgb-primary), 0.12); }
+        [dir="rtl"] .main-content { margin-left: 0; margin-right: 280px; }
+        [dir="rtl"] .sidebar-item i { margin-right: 0; margin-left: 0.75rem; }
+        @media (max-width: 768px) {
+            [dir="rtl"] .sidebar { transform: translateX(100%); }
+            [dir="rtl"] .sidebar.open { transform: translateX(0); }
+            [dir="rtl"] .main-content { margin-right: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Mobile Header -->
+    <div class="mobile-header">
+        <div class="flex items-center gap-3">
+            <button id="menuToggle" class="toggle-btn"><i class="fas fa-bars"></i></button>
+            <a href="index.html" class="flex items-center gap-2 group shrink-0">
+                <div class="w-8 h-8 bg-gradient-to-br from-visa-primary-light to-visa-primary-dark rounded-full flex items-center justify-center">
+                    <i class="fas fa-passport text-white text-sm"></i>
+                </div>
+                <span class="text-lg font-display font-bold text-neutral-dark dark:text-white">Horizon<span class="visa-gradient-text">Visa</span></span>
+            </a>
+        </div>
+        <div class="flex gap-2">
+            <button id="theme-toggle-mobile" class="toggle-btn"><i class="fas fa-moon dark:hidden"></i><i class="fas fa-sun hidden dark:inline"></i></button>
+            <button id="rtl-toggle-mobile" class="toggle-btn"><i class="fas fa-exchange-alt"></i></button>
+        </div>
+    </div>
+
+    <div id="sidebarOverlay" class="sidebar-overlay"></div>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <div class="p-5 border-b border-[rgba(var(--color-rgb-primary),0.12)] dark:border-[rgba(var(--color-rgb-bright),0.15)]">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 bg-gradient-to-br from-visa-primary-light to-visa-primary-dark rounded-full flex items-center justify-center flex-shrink-0 shadow-md">
+                    <i class="fas fa-passport text-white text-base"></i>
+                </div>
+                <div>
+                    <span class="text-lg font-display font-bold text-neutral-dark dark:text-white tracking-tight">Horizon<span class="visa-gradient-text">Visa</span></span>
+                    <p class="text-xs text-neutral-dark/60 dark:text-gray-400 font-medium">Admin Portal</p>
+                </div>
+            </a>
+        </div>
+        <nav class="py-4">
+            <div class="sidebar-item active" data-page="dashboard"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></div>
+            <div class="sidebar-item" data-page="applications"><i class="fas fa-passport"></i><span>Applications</span></div>
+            <div class="sidebar-item" data-page="clients"><i class="fas fa-users"></i><span>Clients</span></div>
+            <div class="sidebar-item" data-page="appointments"><i class="fas fa-calendar-check"></i><span>Appointments</span></div>
+            <div class="sidebar-item" data-page="documents"><i class="fas fa-folder-open"></i><span>Document Review</span></div>
+            <div class="sidebar-item" data-page="messages"><i class="fas fa-comments"></i><span>Messages</span></div>
+        </nav>
+        <div class="absolute bottom-0 left-0 right-0 p-4 border-t border-[rgba(var(--color-rgb-primary),0.12)] dark:border-[rgba(var(--color-rgb-bright),0.15)]">
+            <a href="login.html" class="flex items-center justify-center gap-2 w-full p-2.5 rounded-xl bg-[rgba(var(--color-rgb-primary),0.08)] hover:bg-visa-primary transition font-semibold text-sm text-neutral-dark dark:text-gray-200 hover:text-white">
+                <i class="fas fa-sign-out-alt"></i><span>Logout</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="card-design p-4 md:p-6 flex justify-between items-center flex-wrap gap-3 mb-6">
+            <div>
+                <h1 class="text-2xl font-display font-bold" id="page-title">Dashboard</h1>
+                <p class="text-sm text-neutral-dark/60 dark:text-gray-400" id="page-subtitle">Welcome back, Admin</p>
+            </div>
+            <div class="hidden lg:flex items-center gap-4">
+                <button id="theme-toggle" class="toggle-btn"><i class="fas fa-moon dark:hidden"></i><i class="fas fa-sun hidden dark:inline"></i></button>
+                <button id="rtl-toggle" class="toggle-btn"><i class="fas fa-exchange-alt"></i></button>
+                <div class="flex items-center gap-3 border-l border-[rgba(var(--color-rgb-primary),0.12)] dark:border-[rgba(var(--color-rgb-bright),0.15)] pl-4">
+                    <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-visa-primary-light shadow-sm shrink-0 bg-visa-primary">
+                        <img src="images/avatar-chen.jpg" alt="Admin" class="w-full h-full object-cover">
+                    </div>
+                    <div class="text-left hidden lg:block">
+                        <p class="text-sm font-bold text-neutral-dark dark:text-white leading-tight">Michael Chen</p>
+                        <p class="text-[10px] text-neutral-dark/60 dark:text-gray-400">Founder & CEO</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== DASHBOARD ========== -->
+        <div id="page-dashboard" class="page-content">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+                <div class="stat-card">
+                    <div class="flex justify-between">
+                        <div>
+                            <p class="text-xs text-neutral-dark/60 dark:text-gray-400 mb-1 font-medium">Active Applications</p>
+                            <p class="text-2xl font-bold text-neutral-dark dark:text-white">142</p>
+                        </div>
+                        <div class="w-10 h-10 bg-[rgba(var(--color-rgb-primary),0.08)] dark:bg-[rgba(var(--color-rgb-bright),0.12)] rounded-full flex items-center justify-center">
+                            <i class="fas fa-passport text-visa-primary-light"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="flex justify-between">
+                        <div>
+                            <p class="text-xs text-neutral-dark/60 dark:text-gray-400 mb-1 font-medium">Under Review</p>
+                            <p class="text-2xl font-bold text-neutral-dark dark:text-white">18</p>
+                        </div>
+                        <div class="w-10 h-10 bg-[rgba(var(--color-rgb-primary),0.08)] dark:bg-[rgba(var(--color-rgb-bright),0.12)] rounded-full flex items-center justify-center">
+                            <i class="fas fa-file-signature text-visa-primary-light"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="flex justify-between">
+                        <div>
+                            <p class="text-xs text-neutral-dark/60 dark:text-gray-400 mb-1 font-medium">Approved This Month</p>
+                            <p class="text-2xl font-bold text-green-600 dark:text-green-400">47</p>
+                        </div>
+                        <div class="w-10 h-10 bg-[rgba(var(--color-rgb-primary),0.08)] dark:bg-[rgba(var(--color-rgb-bright),0.12)] rounded-full flex items-center justify-center">
+                            <i class="fas fa-check-circle text-visa-primary-light"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="flex justify-between">
+                        <div>
+                            <p class="text-xs text-neutral-dark/60 dark:text-gray-400 mb-1 font-medium">Monthly Revenue</p>
+                            <p class="text-2xl font-bold text-neutral-dark dark:text-white">$48,250</p>
+                        </div>
+                        <div class="w-10 h-10 bg-[rgba(var(--color-rgb-primary),0.08)] dark:bg-[rgba(var(--color-rgb-bright),0.12)] rounded-full flex items-center justify-center">
+                            <i class="fas fa-dollar-sign text-visa-primary-light"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- Recent Applications -->
+                <div class="card-design p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="font-display font-bold text-lg">Recent Applications</h3>
+                        <span class="text-xs font-semibold text-visa-primary-light">Last 24 hours</span>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex gap-3 pb-3 border-b border-[rgba(var(--color-rgb-primary),0.08)] dark:border-[rgba(var(--color-rgb-bright),0.1)]">
+                            <div class="w-9 h-9 rounded-full bg-visa-primary/10 dark:bg-visa-primary-bright/10 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-passport text-visa-primary-light text-sm"></i>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <p class="text-sm font-semibold text-neutral-dark dark:text-white">#HV-2026-042 · Skilled Worker</p>
+                                <p class="text-xs text-neutral-dark/60 dark:text-gray-400">Priya Sharma · United Kingdom</p>
+                            </div>
+                            <span class="status-badge status-review text-xs">Review</span>
+                        </div>
+                        <div class="flex gap-3 pb-3 border-b border-[rgba(var(--color-rgb-primary),0.08)] dark:border-[rgba(var(--color-rgb-bright),0.1)]">
+                            <div class="w-9 h-9 rounded-full bg-visa-primary/10 dark:bg-visa-primary-bright/10 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-graduation-cap text-visa-primary-light text-sm"></i>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <p class="text-sm font-semibold text-neutral-dark dark:text-white">#HV-2026-041 · Study Visa</p>
+                                <p class="text-xs text-neutral-dark/60 dark:text-gray-400">Rahul Verma · Canada</p>
+                            </div>
+                            <span class="status-badge status-submitted text-xs">Submitted</span>
+                        </div>
+                        <div class="flex gap-3">
+                            <div class="w-9 h-9 rounded-full bg-visa-primary/10 dark:bg-visa-primary-bright/10 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-users text-visa-primary-light text-sm"></i>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <p class="text-sm font-semibold text-neutral-dark dark:text-white">#HV-2026-040 · Family Visa</p>
+                                <p class="text-xs text-neutral-dark/60 dark:text-gray-400">Aisha Khan · Australia</p>
+                            </div>
+                            <span class="status-badge status-biometrics text-xs">Biometrics</span>
+                        </div>
+                    </div>
+                    <button data-nav="applications" class="btn-outline-design w-full mt-4 py-2 text-sm">View All Applications</button>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="card-design p-6">
+                    <h3 class="font-display font-bold text-lg mb-4">Quick Actions</h3>
+                    <div class="space-y-3">
+                        <button data-nav="documents" class="w-full text-left px-4 py-3 bg-[rgba(var(--color-rgb-primary),0.06)] dark:bg-[rgba(var(--color-rgb-bright),0.08)] text-neutral-dark dark:text-white rounded-xl hover:bg-[rgba(var(--color-rgb-primary),0.15)] transition flex items-center gap-3 text-sm font-medium">
+                            <i class="fas fa-file-circle-check text-visa-primary-light"></i>
+                            <span>Review Pending Documents</span>
+                            <span class="ml-auto text-xs bg-red-100 dark:bg-red-900/40 text-red-600 dark:text-red-300 px-2 py-0.5 rounded-full font-bold">12</span>
+                        </button>
+                        <button data-nav="appointments" class="w-full text-left px-4 py-3 bg-[rgba(var(--color-rgb-primary),0.06)] dark:bg-[rgba(var(--color-rgb-bright),0.08)] text-neutral-dark dark:text-white rounded-xl hover:bg-[rgba(var(--color-rgb-primary),0.15)] transition flex items-center gap-3 text-sm font-medium">
+                            <i class="fas fa-calendar-plus text-visa-primary-light"></i>
+                            <span>Today's Appointments</span>
+                            <span class="ml-auto text-xs bg-visa-primary/15 dark:bg-visa-primary-bright/20 text-visa-primary-light px-2 py-0.5 rounded-full font-bold">5</span>
+                        </button>
+                        <button data-nav="messages" class="w-full text-left px-4 py-3 bg-[rgba(var(--color-rgb-primary),0.06)] dark:bg-[rgba(var(--color-rgb-bright),0.08)] text-neutral-dark dark:text-white rounded-xl hover:bg-[rgba(var(--color-rgb-primary),0.15)] transition flex items-center gap-3 text-sm font-medium">
+                            <i class="fas fa-comments text-visa-primary-light"></i>
+                            <span>Unread Client Messages</span>
+                            <span class="ml-auto text-xs bg-visa-primary/15 dark:bg-visa-primary-bright/20 text-visa-primary-light px-2 py-0.5 rounded-full font-bold">8</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== APPLICATIONS ========== -->
+        <div id="page-applications" class="page-content hidden">
+            <div class="card-design p-6">
+                <div class="flex justify-between items-center mb-4 flex-wrap gap-3">
+                    <h3 class="font-display font-bold text-2xl">All Applications</h3>
+                    <div class="flex gap-2">
+                        <button class="btn-outline-design px-4 py-1.5 text-sm"><i class="fas fa-filter"></i> Filter</button>
+                        <button class="btn-primary-design px-4 py-1.5 text-sm"><i class="fas fa-plus"></i> New Application</button>
+                    </div>
+                </div>
+                <p class="text-sm text-neutral-dark/60 dark:text-gray-400 mb-6">Manage all visa applications and track their processing stages.</p>
+                <div class="space-y-4">
+                    <div class="p-5 bg-[rgba(var(--color-rgb-primary),0.04)] dark:bg-[rgba(var(--color-rgb-bright),0.05)] rounded-2xl border border-[rgba(var(--color-rgb-primary),0.1)]">
+                        <div class="flex flex-wrap justify-between items-start gap-3 mb-3">
+                            <div>
+                                <p class="font-bold text-lg">#HV-2026-042 · Skilled Worker Visa</p>
+                                <p class="text-sm text-neutral-dark/60 dark:text-gray-400">Priya Sharma · 🇬🇧 United Kingdom · Standard Route</p>
+                                <div class="flex items-center gap-3 mt-2 flex-wrap">
+                                    <span class="status-badge status-review">Under Review</span>
+                                    <span class="text-xs text-neutral-dark/60 dark:text-gray-400">Submitted: Jan 15, 2025</span>
+                                </div>
+                            </div>
+                            <div class="flex gap-2">
+                                <button class="btn-outline-design text-xs px-4 py-1.5"><i class="fas fa-edit mr-1"></i>Update</button>
+                                <button class="btn-primary-design text-xs px-4 py-1.5"><i class="fas fa-eye mr-1"></i>View</button>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-5 text-[10px] sm:text-xs text-neutral-dark/60 dark:text-gray-400 mb-2 font-medium">
+                            <span class="text-left truncate">Submitted</span>
+                            <span class="text-center truncate">Review</span>
+                            <span class="text-center truncate">Biometrics</span>
+                            <span class="text-center truncate">Decision</span>
+                            <span class="text-right truncate">Approved</span>
+                        </div>
+                        <div class="progress-bar"><div class="progress-fill" style="width:40%"></div></div>
+                    </div>
+
+                    <div class="p-5 bg-[rgba(var(--color-rgb-primary),0.04)] dark:bg-[rgba(var(--color-rgb-bright),0.05)] rounded-2xl border border-[rgba(var(--color-rgb-primary),0.1)]">
+                        <div class="flex flex-wrap justify-between items-start gap-3 mb-3">
+                            <div>
+                                <p class="font-bold text-lg">#HV-2026-041 · Study Visa</p>
+                                <p class="text-sm text-neutral-dark/60 dark:text-gray-400">Rahul Verma · 🇨🇦 Canada · Post-Graduate Program</p>
+                                <div class="flex items-center gap-3 mt-2 flex-wrap">
+                                    <span class="status-badge status-submitted">Submitted</span>
+                                    <span class="text-xs text-neutral-dark/60 dark:text-gray-400">Submitted: Feb 02, 2025</span>
+                                </div>
+                            </div>
+                            <div class="flex gap-2">
+                                <button class="btn-outline-design text-xs px-4 py-1.5"><i class="fas fa-edit mr-1"></i>Update</button>
+                                <button class="btn-primary-design text-xs px-4 py-1.5"><i class="fas fa-eye mr-1"></i>View</button>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-5 text-[10px] sm:text-xs text-neutral-dark/60 dark:text-gray-400 mb-2 font-medium">
+                            <span class="text-left truncate">Submitted</span>
+                            <span class="text-center truncate">Review</span>
+                            <span class="text-center truncate">Biometrics</span>
+                            <span class="text-center truncate">Decision</span>
+                            <span class="text-right truncate">Approved</span>
+                        </div>
+                        <div class="progress-bar"><div class="progress-fill" style="width:20%"></div></div>
+                    </div>
+
+                    <div class="p-5 bg-[rgba(var(--color-rgb-primary),0.04)] dark:bg-[rgba(var(--color-rgb-bright),0.05)] rounded-2xl border border-[rgba(var(--color-rgb-primary),0.1)]">
+                        <div class="flex flex-wrap justify-between items-start gap-3 mb-3">
+                            <div>
+                                <p class="font-bold text-lg">#HV-2026-040 · Family Visa</p>
+                                <p class="text-sm text-neutral-dark/60 dark:text-gray-400">Aisha Khan · 🇦🇺 Australia · Spouse Sponsorship</p>
+                                <div class="flex items-center gap-3 mt-2 flex-wrap">
+                                    <span class="status-badge status-biometrics">Biometrics Scheduled</span>
+                                    <span class="text-xs text-neutral-dark/60 dark:text-gray-400">Submitted: Feb 10, 2025</span>
+                                </div>
+                            </div>
+                            <div class="flex gap-2">
+                                <button class="btn-outline-design text-xs px-4 py-1.5"><i class="fas fa-edit mr-1"></i>Update</button>
+                                <button class="btn-primary-design text-xs px-4 py-1.5"><i class="fas fa-eye mr-1"></i>View</button>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-5 text-[10px] sm:text-xs text-neutral-dark/60 dark:text-gray-400 mb-2 font-medium">
+                            <span class="text-left truncate">Submitted</span>
+                            <span class="text-center truncate">Review</span>
+                            <span class="text-center truncate">Biometrics</span>
+                            <span class="text-center truncate">Decision</span>
+                            <span class="text-right truncate">Approved</span>
+                        </div>
+                        <div class="progress-bar"><div class="progress-fill" style="width:60%"></div></div>
+                    </div>
+
+                    <div class="p-5 bg-[rgba(var(--color-rgb-primary),0.04)] dark:bg-[rgba(var(--color-rgb-bright),0.05)] rounded-2xl border border-[rgba(var(--color-rgb-primary),0.1)]">
+                        <div class="flex flex-wrap justify-between items-start gap-3 mb-3">
+                            <div>
+                                <p class="font-bold text-lg">#HV-2026-038 · Business Visa</p>
+                                <p class="text-sm text-neutral-dark/60 dark:text-gray-400">David Park · 🇺🇸 United States · Investor Route</p>
+                                <div class="flex items-center gap-3 mt-2 flex-wrap">
+                                    <span class="status-badge status-approved">Approved</span>
+                                    <span class="text-xs text-neutral-dark/60 dark:text-gray-400">Issued: Jan 28, 2025</span>
+                                </div>
+                            </div>
+                            <div class="flex gap-2">
+                                <button class="btn-outline-design text-xs px-4 py-1.5"><i class="fas fa-download mr-1"></i>Visa PDF</button>
+                                <button class="btn-primary-design text-xs px-4 py-1.5"><i class="fas fa-eye mr-1"></i>View</button>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-5 text-[10px] sm:text-xs text-neutral-dark/60 dark:text-gray-400 mb-2 font-medium">
+                            <span class="text-left truncate">Submitted</span>
+                            <span class="text-center truncate">Review</span>
+                            <span class="text-center truncate">Biometrics</span>
+                            <span class="text-center truncate">Decision</span>
+                            <span class="text-right truncate">Approved</span>
+                        </div>
+                        <div class="progress-bar"><div class="progress-fill" style="width:100%"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== CLIENTS ========== -->
+        <div id="page-clients" class="page-content hidden">
+            <div class="card-design p-6">
+                <div class="flex justify-between items-center mb-4 flex-wrap gap-3">
+                    <h3 class="font-display font-bold text-2xl">Clients</h3>
+                    <button class="btn-primary-design px-4 py-1.5 text-sm"><i class="fas fa-plus"></i> Add Client</button>
+                </div>
+                <p class="text-sm text-neutral-dark/60 dark:text-gray-400 mb-6">Manage all registered clients and their application history.</p>
+                <div class="space-y-3">
+                    <div class="client-card card-design p-4 flex flex-wrap items-center justify-between gap-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-visa-primary-light shrink-0 bg-visa-primary">
+                                <img src="images/client-ananya.jpg" alt="Priya Sharma" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <p class="font-bold text-neutral-dark dark:text-white">Priya Sharma</p>
+                                <p class="text-xs text-neutral-dark/60 dark:text-gray-400">Skilled Worker Visa · 2 applications</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 flex-nowrap">
+                            <span class="status-badge status-active">Active</span>
+                            <span class="text-sm font-semibold text-neutral-dark/70 dark:text-slate-300">🇬🇧 UK</span>
+                            <button class="text-sm font-semibold text-visa-primary-light hover:underline">View →</button>
+                        </div>
+                    </div>
+                    <div class="client-card card-design p-4 flex flex-wrap items-center justify-between gap-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-visa-primary-light shrink-0 bg-visa-accent">
+                                <img src="images/client-rahul.jpg" alt="Rahul Verma" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <p class="font-bold text-neutral-dark dark:text-white">Rahul Verma</p>
+                                <p class="text-xs text-neutral-dark/60 dark:text-gray-400">Study Visa · 1 application</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 flex-nowrap">
+                            <span class="status-badge status-review">In Review</span>
+                            <span class="text-sm font-semibold text-neutral-dark/70 dark:text-slate-300">🇨🇦 Canada</span>
+                            <button class="text-sm font-semibold text-visa-primary-light hover:underline">View →</button>
+                        </div>
+                    </div>
+                    <div class="client-card card-design p-4 flex flex-wrap items-center justify-between gap-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-visa-primary-light shrink-0 bg-visa-primary-dark">
+                                <img src="images/client-aisha.jpg" alt="Aisha Khan" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <p class="font-bold text-neutral-dark dark:text-white">Aisha Khan</p>
+                                <p class="text-xs text-neutral-dark/60 dark:text-gray-400">Family Visa · 3 applications</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 flex-nowrap">
+                            <span class="status-badge status-biometrics">Biometrics</span>
+                            <span class="text-sm font-semibold text-neutral-dark/70 dark:text-slate-300">🇦🇺 Australia</span>
+                            <button class="text-sm font-semibold text-visa-primary-light hover:underline">View →</button>
+                        </div>
+                    </div>
+                    <div class="client-card card-design p-4 flex flex-wrap items-center justify-between gap-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-visa-primary-light shrink-0 bg-green-600">
+                                <img src="images/client-david.jpg" alt="David Park" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <p class="font-bold text-neutral-dark dark:text-white">David Park</p>
+                                <p class="text-xs text-neutral-dark/60 dark:text-gray-400">Business Visa · 2 applications</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 flex-nowrap">
+                            <span class="status-badge status-approved">Approved</span>
+                            <span class="text-sm font-semibold text-neutral-dark/70 dark:text-slate-300">🇺🇸 USA</span>
+                            <button class="text-sm font-semibold text-visa-primary-light hover:underline">View →</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== APPOINTMENTS ========== -->
+        <div id="page-appointments" class="page-content hidden">
+            <div class="card-design p-6">
+                <div class="flex justify-between items-center mb-4 flex-wrap gap-3">
+                    <div>
+                        <h3 class="font-display font-bold text-2xl mb-1">Counseling Appointments</h3>
+                        <p class="text-sm text-neutral-dark/60 dark:text-gray-400">Manage all scheduled sessions between clients and advisors.</p>
+                    </div>
+                    <button class="btn-primary-design px-4 py-2 text-sm"><i class="fas fa-calendar-plus"></i> Schedule Session</button>
+                </div>
+
+                <h4 class="font-display font-bold text-sm uppercase tracking-wider text-neutral-dark/60 dark:text-gray-400 mb-3 mt-6">Today · Mar 5, 2025</h4>
+                <div class="space-y-3 mb-6">
+                    <div class="p-4 bg-[rgba(var(--color-rgb-primary),0.06)] dark:bg-[rgba(var(--color-rgb-bright),0.08)] rounded-xl border border-[rgba(var(--color-rgb-primary),0.15)] flex flex-wrap justify-between items-center gap-3">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-visa-primary flex flex-col items-center justify-center text-white flex-shrink-0">
+                                <span class="text-[10px] font-bold uppercase leading-none">10:30</span>
+                                <span class="text-[10px] font-bold uppercase leading-none mt-0.5">AM</span>
+                            </div>
+                            <div>
+                                <p class="font-bold text-sm text-neutral-dark dark:text-white">Priya Sharma · Interview Prep</p>
+                                <p class="text-xs text-neutral-dark/60 dark:text-gray-400">with Sarah Williams · Video Call (Zoom)</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-2">
+                            <button class="btn-outline-design text-xs px-3 py-1.5">Reschedule</button>
+                            <button class="btn-primary-design text-xs px-3 py-1.5"><i class="fas fa-video"></i> Join</button>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-[rgba(var(--color-rgb-primary),0.06)] dark:bg-[rgba(var(--color-rgb-bright),0.08)] rounded-xl border border-[rgba(var(--color-rgb-primary),0.15)] flex flex-wrap justify-between items-center gap-3">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-visa-primary flex flex-col items-center justify-center text-white flex-shrink-0">
+                                <span class="text-[10px] font-bold uppercase leading-none">2:00</span>
+                                <span class="text-[10px] font-bold uppercase leading-none mt-0.5">PM</span>
+                            </div>
+                            <div>
+                                <p class="font-bold text-sm text-neutral-dark dark:text-white">Rahul Verma · Document Review</p>
+                                <p class="text-xs text-neutral-dark/60 dark:text-gray-400">with David Okafor · Phone Call</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-2">
+                            <button class="btn-outline-design text-xs px-3 py-1.5">Reschedule</button>
+                            <button class="btn-primary-design text-xs px-3 py-1.5"><i class="fas fa-phone"></i> Call</button>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-[rgba(var(--color-rgb-primary),0.06)] dark:bg-[rgba(var(--color-rgb-bright),0.08)] rounded-xl border border-[rgba(var(--color-rgb-primary),0.15)] flex flex-wrap justify-between items-center gap-3">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-visa-primary flex flex-col items-center justify-center text-white flex-shrink-0">
+                                <span class="text-[10px] font-bold uppercase leading-none">4:30</span>
+                                <span class="text-[10px] font-bold uppercase leading-none mt-0.5">PM</span>
+                            </div>
+                            <div>
+                                <p class="font-bold text-sm text-neutral-dark dark:text-white">Aisha Khan · Initial Consultation</p>
+                                <p class="text-xs text-neutral-dark/60 dark:text-gray-400">with Sarah Williams · Office Visit</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-2">
+                            <button class="btn-outline-design text-xs px-3 py-1.5">Reschedule</button>
+                            <button class="btn-primary-design text-xs px-3 py-1.5"><i class="fas fa-check"></i> Confirm</button>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="font-display font-bold text-sm uppercase tracking-wider text-neutral-dark/60 dark:text-gray-400 mb-3">Upcoming · This Week</h4>
+                <div class="space-y-2">
+                    <div class="p-4 rounded-xl border border-[rgba(var(--color-rgb-primary),0.1)] dark:border-[rgba(var(--color-rgb-bright),0.1)] flex flex-wrap justify-between items-center gap-3">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-[rgba(var(--color-rgb-primary),0.12)] dark:bg-[rgba(var(--color-rgb-bright),0.12)] flex flex-col items-center justify-center text-visa-primary-light flex-shrink-0">
+                                <span class="text-[10px] font-bold uppercase leading-none">Mar</span>
+                                <span class="text-base font-bold leading-none mt-0.5">7</span>
+                            </div>
+                            <div>
+                                <p class="font-bold text-sm text-neutral-dark dark:text-white">David Park · Business Visa Strategy</p>
+                                <p class="text-xs text-neutral-dark/60 dark:text-gray-400">with Michael Chen · 11:00 AM · Office Visit</p>
+                            </div>
+                        </div>
+                        <button class="btn-outline-design text-xs px-3 py-1.5">View Details</button>
+                    </div>
+                    <div class="p-4 rounded-xl border border-[rgba(var(--color-rgb-primary),0.1)] dark:border-[rgba(var(--color-rgb-bright),0.1)] flex flex-wrap justify-between items-center gap-3">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-[rgba(var(--color-rgb-primary),0.12)] dark:bg-[rgba(var(--color-rgb-bright),0.12)] flex flex-col items-center justify-center text-visa-primary-light flex-shrink-0">
+                                <span class="text-[10px] font-bold uppercase leading-none">Mar</span>
+                                <span class="text-base font-bold leading-none mt-0.5">10</span>
+                            </div>
+                            <div>
+                                <p class="font-bold text-sm text-neutral-dark dark:text-white">Priya Sharma · Biometrics Prep</p>
+                                <p class="text-xs text-neutral-dark/60 dark:text-gray-400">with David Okafor · 9:00 AM · Phone Call</p>
+                            </div>
+                        </div>
+                        <button class="btn-outline-design text-xs px-3 py-1.5">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== DOCUMENT REVIEW ========== -->
+        <div id="page-documents" class="page-content hidden">
+            <div class="card-design p-6">
+                <div class="flex justify-between items-center mb-4 flex-wrap gap-3">
+                    <div>
+                        <h3 class="font-display font-bold text-2xl mb-1">Document Review Queue</h3>
+                        <p class="text-sm text-neutral-dark/60 dark:text-gray-400">Review, verify, or request changes on client-uploaded documents.</p>
+                    </div>
+                    <span class="status-badge status-review text-xs">12 Pending</span>
+                </div>
+
+                <div class="space-y-3 mt-6">
+                    <div class="p-4 bg-[rgba(var(--color-rgb-primary),0.04)] dark:bg-[rgba(var(--color-rgb-bright),0.05)] rounded-xl border border-[rgba(var(--color-rgb-primary),0.1)] flex flex-wrap justify-between items-center gap-3">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-clock text-amber-600 dark:text-amber-400"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-sm text-neutral-dark dark:text-white">Employment Letter (Updated)</p>
+                                <p class="text-xs text-neutral-dark/60 dark:text-gray-400">Priya Sharma · #HV-2026-042 · 1.2 MB · PDF</p>
+                                <p class="text-xs text-visa-primary-light mt-1">Uploaded 2 hours ago</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-2">
+                            <button class="btn-outline-design text-xs px-3 py-1.5"><i class="fas fa-times"></i> Request Change</button>
+                            <button class="btn-primary-design text-xs px-3 py-1.5"><i class="fas fa-check"></i> Approve</button>
+                        </div>
+                    </div>
+
+                    <div class="p-4 bg-[rgba(var(--color-rgb-primary),0.04)] dark:bg-[rgba(var(--color-rgb-bright),0.05)] rounded-xl border border-[rgba(var(--color-rgb-primary),0.1)] flex flex-wrap justify-between items-center gap-3">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-clock text-amber-600 dark:text-amber-400"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-sm text-neutral-dark dark:text-white">Bank Statements (Q1 2025)</p>
+                                <p class="text-xs text-neutral-dark/60 dark:text-gray-400">Rahul Verma · #HV-2026-041 · 1.8 MB · PDF</p>
+                                <p class="text-xs text-visa-primary-light mt-1">Uploaded 5 hours ago</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-2">
+                            <button class="btn-outline-design text-xs px-3 py-1.5"><i class="fas fa-times"></i> Request Change</button>
+                            <button class="btn-primary-design text-xs px-3 py-1.5"><i class="fas fa-check"></i> Approve</button>
+                        </div>
+                    </div>
+
+                    <div class="p-4 bg-[rgba(var(--color-rgb-primary),0.04)] dark:bg-[rgba(var(--color-rgb-bright),0.05)] rounded-xl border border-[rgba(var(--color-rgb-primary),0.1)] flex flex-wrap justify-between items-center gap-3">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-clock text-amber-600 dark:text-amber-400"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-sm text-neutral-dark dark:text-white">IELTS Test Results</p>
+                                <p class="text-xs text-neutral-dark/60 dark:text-gray-400">Aisha Khan · #HV-2026-040 · 0.9 MB · PDF</p>
+                                <p class="text-xs text-visa-primary-light mt-1">Uploaded yesterday</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-2">
+                            <button class="btn-outline-design text-xs px-3 py-1.5"><i class="fas fa-times"></i> Request Change</button>
+                            <button class="btn-primary-design text-xs px-3 py-1.5"><i class="fas fa-check"></i> Approve</button>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-xl border border-[rgba(var(--color-rgb-primary),0.1)] dark:border-[rgba(var(--color-rgb-bright),0.1)] flex flex-wrap justify-between items-center gap-3 opacity-70">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-check text-green-600 dark:text-green-400"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-sm text-neutral-dark dark:text-white">TB Test Certificate</p>
+                                <p class="text-xs text-neutral-dark/60 dark:text-gray-400">David Park · #HV-2026-038 · Approved 3 days ago</p>
+                            </div>
+                        </div>
+                        <span class="status-badge status-approved text-xs">Verified</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== MESSAGES ========== -->
+        <div id="page-messages" class="page-content hidden">
+            <div class="card-design p-6">
+                <h3 class="font-display font-bold text-2xl mb-4">Messages</h3>
+                <p class="text-sm text-neutral-dark/60 dark:text-gray-400 mb-6">Communicate with clients about their applications.</p>
+                <div class="space-y-4">
+                    <div class="p-4 bg-[rgba(var(--color-rgb-primary),0.05)] dark:bg-[rgba(var(--color-rgb-bright),0.08)] rounded-xl">
+                        <div class="flex justify-between items-start flex-wrap gap-2">
+                            <div class="flex items-start gap-3">
+                                <div class="w-10 h-10 rounded-full overflow-hidden flex-shrink-0 bg-visa-primary">
+                                    <img src="images/client-ananya.jpg" alt="Priya" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <p class="font-bold text-sm text-neutral-dark dark:text-white">Priya Sharma <span class="text-xs font-normal text-neutral-dark/60">· Client</span></p>
+                                    <p class="text-sm mt-1 text-neutral-dark/80 dark:text-slate-300">Can I reschedule my biometrics appointment to next week?</p>
+                                </div>
+                            </div>
+                            <span class="text-xs text-neutral-dark/60 dark:text-gray-400 whitespace-nowrap">Today, 11:00 AM</span>
+                        </div>
+                        <div class="mt-2 flex gap-2 ml-13">
+                            <button class="btn-primary-design px-4 py-1 text-sm">Reply</button>
+                        </div>
+                    </div>
+
+                    <div class="p-4 bg-[#FFFFFF] dark:bg-[#0a0f1e] rounded-xl border border-[rgba(var(--color-rgb-primary),0.12)] dark:border-[rgba(var(--color-rgb-bright),0.15)]">
+                        <div class="flex justify-between items-start flex-wrap gap-2">
+                            <div class="flex items-start gap-3">
+                                <div class="w-10 h-10 rounded-full overflow-hidden flex-shrink-0 bg-visa-primary">
+                                    <img src="images/avatar-chen.jpg" alt="Michael Chen" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <p class="font-bold text-sm text-neutral-dark dark:text-white">Michael Chen <span class="text-xs font-normal text-neutral-dark/60">· You</span></p>
+                                    <p class="text-sm mt-1 text-neutral-dark/80 dark:text-slate-300">Absolutely! I've updated your appointment to Mar 12. You'll receive a confirmation email shortly.</p>
+                                </div>
+                            </div>
+                            <span class="text-xs text-neutral-dark/60 dark:text-gray-400 whitespace-nowrap">Yesterday, 6:30 PM</span>
+                        </div>
+                    </div>
+
+                    <div class="p-4 bg-[rgba(var(--color-rgb-primary),0.05)] dark:bg-[rgba(var(--color-rgb-bright),0.08)] rounded-xl">
+                        <div class="flex justify-between items-start flex-wrap gap-2">
+                            <div class="flex items-start gap-3">
+                                <div class="w-10 h-10 rounded-full overflow-hidden flex-shrink-0 bg-visa-accent">
+                                    <img src="images/client-rahul.jpg" alt="Rahul Verma" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <p class="font-bold text-sm text-neutral-dark dark:text-white">Rahul Verma <span class="text-xs font-normal text-neutral-dark/60">· Client</span></p>
+                                    <p class="text-sm mt-1 text-neutral-dark/80 dark:text-slate-300">Is my application still on track for March processing?</p>
+                                </div>
+                            </div>
+                            <span class="text-xs text-neutral-dark/60 dark:text-gray-400 whitespace-nowrap">Yesterday, 2:00 PM</span>
+                        </div>
+                        <div class="mt-2 flex gap-2 ml-13">
+                            <button class="btn-primary-design px-4 py-1 text-sm">Reply</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-6">
+                    <label class="form-label">Send a Message</label>
+                    <div class="flex gap-3">
+                        <input type="text" class="form-input flex-1" placeholder="Type your message..." />
+                        <button class="btn-primary-design px-6 py-2"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // RTL Toggle
+            const rtlToggle = document.getElementById('rtl-toggle');
+            const rtlToggleMobile = document.getElementById('rtl-toggle-mobile');
+            function setRTL(isRTL) {
+                document.documentElement.setAttribute('dir', isRTL ? 'rtl' : 'ltr');
+                localStorage.setItem('visa-dir', isRTL ? 'rtl' : 'ltr');
+            }
+            const savedDir = localStorage.getItem('visa-dir');
+            setRTL(savedDir === 'rtl');
+            if (rtlToggle) rtlToggle.addEventListener('click', () => setRTL(document.documentElement.getAttribute('dir') !== 'rtl'));
+            if (rtlToggleMobile) rtlToggleMobile.addEventListener('click', () => setRTL(document.documentElement.getAttribute('dir') !== 'rtl'));
+
+            // Theme Toggle
+            const themeToggle = document.getElementById('theme-toggle');
+            const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+            function setTheme(isDark) {
+                if (isDark) document.documentElement.classList.add('dark');
+                else document.documentElement.classList.remove('dark');
+                [themeToggle, themeToggleMobile].forEach(btn => {
+                    if (btn) {
+                        let moon = btn.querySelector('.fa-moon'), sun = btn.querySelector('.fa-sun');
+                        if (isDark) { moon?.classList.add('hidden'); sun?.classList.remove('hidden'); }
+                        else { moon?.classList.remove('hidden'); sun?.classList.add('hidden'); }
+                    }
+                });
+                localStorage.setItem('visa-theme', isDark ? 'dark' : 'light');
+            }
+            const savedTheme = localStorage.getItem('visa-theme');
+            setTheme(savedTheme === 'dark');
+            if (themeToggle) themeToggle.addEventListener('click', () => setTheme(!document.documentElement.classList.contains('dark')));
+            if (themeToggleMobile) themeToggleMobile.addEventListener('click', () => setTheme(!document.documentElement.classList.contains('dark')));
+
+            // Mobile Sidebar
+            const menuToggle = document.getElementById('menuToggle');
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebarOverlay');
+            function closeSidebar() { sidebar.classList.remove('open'); overlay.classList.remove('open'); }
+            function openSidebar() { sidebar.classList.add('open'); overlay.classList.add('open'); }
+            if (menuToggle) menuToggle.addEventListener('click', (e) => { e.stopPropagation(); sidebar.classList.contains('open') ? closeSidebar() : openSidebar(); });
+            if (overlay) overlay.addEventListener('click', closeSidebar);
+            window.addEventListener('resize', () => { if (window.innerWidth > 768 && sidebar.classList.contains('open')) closeSidebar(); });
+
+            // Navigation
+            const sidebarItems = document.querySelectorAll('.sidebar-item');
+            const pages = document.querySelectorAll('.page-content');
+            const pageTitle = document.getElementById('page-title');
+            const pageSubtitle = document.getElementById('page-subtitle');
+            const titles = {
+                dashboard: { title: 'Dashboard', subtitle: 'Welcome back, Michael' },
+                applications: { title: 'Applications', subtitle: 'Manage all visa applications' },
+                clients: { title: 'Clients', subtitle: 'Manage registered clients' },
+                appointments: { title: 'Appointments', subtitle: 'Manage counseling sessions' },
+                documents: { title: 'Document Review', subtitle: 'Verify client submissions' },
+                messages: { title: 'Messages', subtitle: 'Communicate with clients' }
+            };
+            function navigateTo(page) {
+                sidebarItems.forEach(i => i.classList.remove('active'));
+                document.querySelector(`.sidebar-item[data-page="${page}"]`)?.classList.add('active');
+                pages.forEach(p => p.classList.add('hidden'));
+                document.getElementById(`page-${page}`)?.classList.remove('hidden');
+                if (titles[page]) { pageTitle.textContent = titles[page].title; pageSubtitle.textContent = titles[page].subtitle; }
+                closeSidebar();
+            }
+            sidebarItems.forEach(item => { item.addEventListener('click', () => { navigateTo(item.getAttribute('data-page')); }); });
+            document.querySelectorAll('[data-nav]').forEach(btn => { btn.addEventListener('click', () => { navigateTo(btn.getAttribute('data-nav')); }); });
+        });
+    </script>
+</body>
+</html>

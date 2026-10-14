@@ -1,0 +1,1523 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth" data-theme="immigration-blue">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visa Services | Horizon Visa Immigration Consultancy</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%231e3a8a'%3E%3Cpath d='M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z'/%3E%3C/svg%3E">
+    <meta name="description" content="Explore our comprehensive visa services — work, study, family, business, and permanent residency. Expert guidance for every visa type.">
+    <script src="tailwind.js"></script>
+    <script>
+        if (typeof tailwind === 'undefined') {
+            document.write('<script src="https://cdn.tailwindcss.com"><\/script>');
+        }
+    </script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'visa-primary': 'rgba(var(--color-rgb-primary), <alpha-value>)',
+                        'visa-primary-light': 'rgba(var(--color-rgb-light), <alpha-value>)',
+                        'visa-primary-dark': 'rgba(var(--color-rgb-dark), <alpha-value>)',
+                        'visa-primary-bright': 'rgba(var(--color-rgb-bright), <alpha-value>)',
+                        'visa-accent': 'rgba(var(--color-rgb-accent), <alpha-value>)',
+                        'visa-bg': 'var(--color-bg)',
+                        'visa-text': 'var(--color-text)',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                        'serif': ['Playfair Display', 'Georgia', 'serif'],
+                        'display': ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    animation: {
+                        'slide-up': 'slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
+                        'fade-in': 'fadeIn 0.4s ease-out',
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-soft': 'pulseSoft 3s infinite',
+                    },
+                    keyframes: {
+                        slideUp: {
+                            '0%': { transform: 'translateY(30px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        pulseSoft: {
+                            '0%, 100%': { opacity: '0.7' },
+                            '50%': { opacity: '1' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <script>
+        if (localStorage.getItem('visa-theme') === 'dark') {
+            document.documentElement.classList.add('dark');
+        }
+        if (localStorage.getItem('visa-dir') === 'rtl') {
+            document.documentElement.dir = 'rtl';
+            document.documentElement.lang = 'ar';
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root,
+        [data-theme="immigration-blue"] {
+            --color-primary: #1e3a8a;
+            --color-primary-light: #3b82f6;
+            --color-primary-dark: #172554;
+            --color-primary-bright: #93c5fd;
+            --color-accent: #f59e0b;
+            --color-bg: #f8fafc;
+            --color-text: #0f172a;
+            --color-rgb-primary: 30, 58, 138;
+            --color-rgb-light: 59, 130, 246;
+            --color-rgb-dark: 23, 37, 84;
+            --color-rgb-bright: 147, 197, 253;
+            --color-rgb-accent: 245, 158, 11;
+        }
+
+        [data-theme="teal-trust"] {
+            --color-primary: #0f766e;
+            --color-primary-light: #14b8a6;
+            --color-primary-dark: #115e59;
+            --color-primary-bright: #5eead4;
+            --color-accent: #f59e0b;
+            --color-bg: #f0fdfa;
+            --color-text: #042f2e;
+            --color-rgb-primary: 15, 118, 110;
+            --color-rgb-light: 20, 184, 166;
+            --color-rgb-dark: 17, 94, 89;
+            --color-rgb-bright: 94, 234, 212;
+            --color-rgb-accent: 245, 158, 11;
+        }
+
+        [data-theme="burgundy-authority"] {
+            --color-primary: #7f1d1d;
+            --color-primary-light: #b91c1c;
+            --color-primary-dark: #450a0a;
+            --color-primary-bright: #fca5a5;
+            --color-accent: #eab308;
+            --color-bg: #fef2f2;
+            --color-text: #2a0a0a;
+            --color-rgb-primary: 127, 29, 29;
+            --color-rgb-light: 185, 28, 28;
+            --color-rgb-dark: 69, 10, 10;
+            --color-rgb-bright: 252, 165, 165;
+            --color-rgb-accent: 234, 179, 8;
+        }
+
+        * { scrollbar-width: thin; scrollbar-color: rgba(var(--color-rgb-primary), 0.4) transparent; }
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: var(--color-bg); }
+        .dark ::-webkit-scrollbar-track { background: #0a0f1e; }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(var(--color-rgb-primary), 0.4);
+            border-radius: 9999px;
+            border: 2px solid transparent;
+            background-clip: padding-box;
+        }
+        ::-webkit-scrollbar-thumb:hover { background: var(--color-primary); }
+        .dark ::-webkit-scrollbar-thumb { background: rgba(var(--color-rgb-bright), 0.3); }
+
+        html { overflow-x: hidden; }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            transition: background-color 0.4s ease, color 0.4s ease;
+            overflow-x: hidden;
+        }
+
+        .dark body { background-color: #0a0f1e; color: #e2e8f0; }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--color-primary-bright) 0%, var(--color-primary) 60%, var(--color-primary-dark) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .dark .gradient-text {
+            background: linear-gradient(135deg, var(--color-primary-bright) 0%, var(--color-primary-light) 50%, var(--color-primary) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-item {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.5rem 0;
+            font-weight: 600;
+            font-size: 0.82rem;
+            letter-spacing: 0.04em;
+            color: var(--color-text);
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .dark .nav-item { color: #cbd5e1; }
+        .nav-item:hover { color: var(--color-primary-light); }
+        .dark .nav-item:hover { color: var(--color-primary-bright); }
+
+        .nav-item::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--color-primary-light), var(--color-primary));
+            transition: width 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .dark .nav-item::after { background: linear-gradient(90deg, var(--color-primary-bright), var(--color-primary-light)); }
+        [dir="rtl"] .nav-item::after { left: auto; right: 0; }
+        .nav-item:hover::after, .nav-item.active::after { width: 100%; }
+        .nav-item.active { color: var(--color-primary-light) !important; font-weight: 700; }
+        .dark .nav-item.active { color: var(--color-primary-bright) !important; }
+
+        .desktop-nav-container { display: flex; align-items: center; gap: 2rem; }
+        .dropdown { position: relative; }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            min-width: 220px;
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 16px;
+            padding: 0.75rem 0;
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 1000;
+            border: 1px solid rgba(var(--color-rgb-primary), 0.15);
+            backdrop-filter: blur(12px);
+        }
+
+        .dark .dropdown-menu {
+            background: rgba(15, 23, 42, 0.98);
+            border-color: rgba(var(--color-rgb-bright), 0.2);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.6);
+        }
+
+        .dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+        [dir="rtl"] .dropdown-menu { left: auto; right: 0; }
+
+        .dropdown-item {
+            display: flex;
+            align-items: center;
+            padding: 0.7rem 1.5rem;
+            color: var(--color-text);
+            transition: all 0.2s ease;
+            white-space: nowrap;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .dark .dropdown-item { color: #cbd5e1; }
+
+        .dropdown-item:hover {
+            background: rgba(var(--color-rgb-primary), 0.08);
+            color: var(--color-primary-light);
+            padding-left: 1.75rem;
+        }
+
+        .dark .dropdown-item:hover { background: rgba(var(--color-rgb-bright), 0.1); color: var(--color-primary-bright); }
+        [dir="rtl"] .dropdown-item:hover { padding-left: 1.5rem; padding-right: 1.75rem; }
+
+        .dropdown-item i {
+            margin-right: 0.75rem;
+            width: 18px;
+            text-align: center;
+            color: var(--color-primary-light);
+        }
+
+        [dir="rtl"] .dropdown-item i { margin-right: 0; margin-left: 0.75rem; }
+        .dark .dropdown-item i { color: var(--color-primary-bright); }
+
+        .btn-nested {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.65rem;
+            padding: 0.45rem 0.65rem 0.45rem 1.25rem;
+            border-radius: 9999px;
+            font-weight: 700;
+            font-size: 0.78rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
+            color: #FFFFFF !important;
+            box-shadow: 0 8px 20px -5px rgba(var(--color-rgb-primary), 0.4);
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .dark .btn-nested {
+            background: linear-gradient(135deg, var(--color-primary-bright) 0%, var(--color-primary-light) 100%);
+            color: #0a0f1e !important;
+            box-shadow: 0 8px 20px -5px rgba(var(--color-rgb-bright), 0.35);
+        }
+
+        .btn-nested .icon-circle {
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 9999px;
+            background: rgba(255, 255, 255, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            color: #FFFFFF;
+        }
+
+        .dark .btn-nested .icon-circle { background: rgba(10, 15, 30, 0.25); color: #0a0f1e; }
+        .btn-nested:hover { transform: translateY(-2px); box-shadow: 0 15px 30px -8px rgba(var(--color-rgb-primary), 0.5); }
+        .dark .btn-nested:hover { box-shadow: 0 15px 30px -8px rgba(var(--color-rgb-bright), 0.45); }
+        .btn-nested:hover .icon-circle { transform: translateX(3px) rotate(45deg); }
+        .btn-nested:active { transform: scale(0.98); }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.75rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.02em;
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
+            color: white !important;
+            box-shadow: 0 8px 20px -5px rgba(var(--color-rgb-primary), 0.4);
+            border: none;
+            cursor: pointer;
+        }
+
+        .dark .btn-primary {
+            background: linear-gradient(135deg, var(--color-primary-bright) 0%, var(--color-primary-light) 100%);
+            color: #0a0f1e !important;
+            box-shadow: 0 8px 20px -5px rgba(var(--color-rgb-bright), 0.3);
+        }
+
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 15px 30px -8px rgba(var(--color-rgb-primary), 0.5); }
+        .dark .btn-primary:hover { box-shadow: 0 15px 30px -8px rgba(var(--color-rgb-bright), 0.4); }
+
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.75rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.02em;
+            transition: all 0.3s ease;
+            background: transparent;
+            color: var(--color-primary);
+            border: 1.5px solid rgba(var(--color-rgb-primary), 0.3);
+            cursor: pointer;
+        }
+
+        .dark .btn-outline { color: var(--color-primary-bright); border-color: rgba(var(--color-rgb-bright), 0.3); }
+        .btn-outline:hover { background: rgba(var(--color-rgb-primary), 0.08); border-color: var(--color-primary); transform: translateY(-2px); }
+        .dark .btn-outline:hover { background: rgba(var(--color-rgb-bright), 0.1); border-color: var(--color-primary-bright); }
+
+        .toggle-btn {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(var(--color-rgb-primary), 0.1);
+            color: var(--color-primary);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(var(--color-rgb-primary), 0.2);
+            cursor: pointer;
+        }
+
+        .dark .toggle-btn {
+            background: rgba(var(--color-rgb-bright), 0.1);
+            color: var(--color-primary-bright);
+            border-color: rgba(var(--color-rgb-bright), 0.25);
+        }
+
+        .toggle-btn:hover { background: var(--color-primary); color: white; transform: scale(1.08); }
+        .dark .toggle-btn:hover { background: var(--color-primary-bright); color: #0a0f1e; }
+        .toggle-btn.active { background: var(--color-primary); color: white; }
+        .dark .toggle-btn.active { background: var(--color-primary-bright); color: #0a0f1e; }
+
+        .mobile-menu { background: white; max-height: 0; overflow: hidden; transition: max-height 0.5s ease; }
+        .mobile-menu:not(.open) {
+            border: none !important;
+            border-width: 0 !important;
+            margin-top: 0 !important;
+            padding: 0 !important;
+            box-shadow: none !important;
+            pointer-events: none !important;
+        }
+        .dark .mobile-menu { background: #0f172a; }
+        .mobile-menu.open { max-height: 85vh; overflow-y: auto; }
+
+        .mobile-menu-item {
+            display: block;
+            padding: 1rem 1.5rem;
+            font-weight: 500;
+            color: var(--color-text);
+            border-bottom: 1px solid rgba(var(--color-rgb-primary), 0.08);
+            transition: all 0.2s ease;
+            font-size: 0.9rem;
+        }
+
+        .dark .mobile-menu-item { color: #cbd5e1; border-bottom-color: rgba(var(--color-rgb-bright), 0.1); }
+        .mobile-menu-item:hover { background-color: rgba(var(--color-rgb-primary), 0.05); color: var(--color-primary-light); }
+        .dark .mobile-menu-item:hover { background-color: rgba(var(--color-rgb-bright), 0.08); color: var(--color-primary-bright); }
+
+        .mobile-dropdown-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; background: rgba(var(--color-rgb-primary), 0.03); }
+        .dark .mobile-dropdown-content { background: rgba(15, 23, 42, 0.8); }
+        .mobile-dropdown-content.show { max-height: 300px; }
+
+        .mobile-dropdown-item {
+            display: block;
+            padding: 0.8rem 2.5rem;
+            font-size: 0.85rem;
+            color: var(--color-text);
+            transition: all 0.2s ease;
+            border-bottom: 1px solid rgba(var(--color-rgb-primary), 0.06);
+        }
+
+        .dark .mobile-dropdown-item { color: #94a3b8; border-bottom-color: rgba(var(--color-rgb-bright), 0.08); }
+        .mobile-dropdown-item:hover { color: var(--color-primary-light); background-color: rgba(var(--color-rgb-primary), 0.08); }
+        .dark .mobile-dropdown-item:hover { background-color: rgba(var(--color-rgb-bright), 0.1); color: var(--color-primary-bright); }
+
+        .trust-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            background: rgba(var(--color-rgb-primary), 0.08);
+            color: var(--color-primary);
+            border: 1px solid rgba(var(--color-rgb-primary), 0.15);
+        }
+
+        .dark .trust-badge {
+            background: rgba(var(--color-rgb-bright), 0.1);
+            color: var(--color-primary-bright);
+            border-color: rgba(var(--color-rgb-bright), 0.2);
+        }
+
+        .premium-line {
+            width: 70px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--color-primary-light), var(--color-primary-bright), transparent);
+            margin: 1.25rem 0;
+            border-radius: 2px;
+        }
+
+        .dark .premium-line {
+            background: linear-gradient(90deg, var(--color-primary-bright), var(--color-primary-light), transparent);
+        }
+
+        /* SERVICES PAGE UNIQUE STYLES */
+        .service-hero-card {
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            border: 1px solid rgba(var(--color-rgb-primary), 0.1);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .dark .service-hero-card {
+            background: #111827;
+            border-color: rgba(var(--color-rgb-bright), 0.1);
+        }
+
+        .service-hero-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 30px 60px -20px rgba(var(--color-rgb-primary), 0.25);
+            border-color: rgba(var(--color-rgb-primary), 0.25);
+        }
+
+        .dark .service-hero-card:hover {
+            border-color: rgba(var(--color-rgb-bright), 0.25);
+            box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.7);
+        }
+
+        .service-number {
+            position: absolute;
+            top: 1.25rem;
+            right: 1.5rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1;
+            color: rgba(var(--color-rgb-primary), 0.08);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .dark .service-number {
+            color: rgba(var(--color-rgb-bright), 0.08);
+        }
+
+        .feature-check {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            font-size: 0.8rem;
+            color: rgba(var(--color-text), 0.75);
+            line-height: 1.5;
+        }
+
+        .dark .feature-check {
+            color: #94a3b8;
+        }
+
+        .feature-check i {
+            color: var(--color-primary-light);
+            margin-top: 0.15rem;
+            flex-shrink: 0;
+        }
+
+        .dark .feature-check i {
+            color: var(--color-primary-bright);
+        }
+
+        .pricing-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            background: rgba(var(--color-rgb-accent), 0.12);
+            color: var(--color-accent);
+            border: 1px solid rgba(var(--color-rgb-accent), 0.2);
+        }
+
+        .dark .pricing-badge {
+            background: rgba(var(--color-rgb-accent), 0.15);
+            border-color: rgba(var(--color-rgb-accent), 0.3);
+        }
+
+        .process-step {
+            background: white;
+            border-radius: 24px;
+            padding: 2rem;
+            border: 1px solid rgba(var(--color-rgb-primary), 0.08);
+            transition: all 0.4s ease;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dark .process-step {
+            background: #111827;
+            border-color: rgba(var(--color-rgb-bright), 0.1);
+        }
+
+        .process-step::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--color-primary-light), var(--color-primary-bright));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .process-step:hover::before { transform: scaleX(1); }
+
+        .process-step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px -15px rgba(var(--color-rgb-primary), 0.15);
+            border-color: rgba(var(--color-rgb-primary), 0.2);
+        }
+
+        .dark .process-step:hover {
+            border-color: rgba(var(--color-rgb-bright), 0.25);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
+        }
+
+        .process-number {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary));
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+            box-shadow: 0 8px 20px -5px rgba(var(--color-rgb-primary), 0.4);
+        }
+
+        .dark .process-number {
+            background: linear-gradient(135deg, var(--color-primary-bright), var(--color-primary-light));
+            color: #0a0f1e;
+        }
+
+        .addon-card {
+            background: white;
+            border-radius: 20px;
+            padding: 1.5rem;
+            border: 1px solid rgba(var(--color-rgb-primary), 0.08);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            height: 100%;
+        }
+
+        .dark .addon-card {
+            background: #111827;
+            border-color: rgba(var(--color-rgb-bright), 0.1);
+        }
+
+        .addon-card:hover {
+            border-color: rgba(var(--color-rgb-primary), 0.25);
+            transform: translateX(5px);
+        }
+
+        .dark .addon-card:hover {
+            border-color: rgba(var(--color-rgb-bright), 0.25);
+        }
+
+        .addon-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: rgba(var(--color-rgb-primary), 0.1);
+            color: var(--color-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+            border: 1px solid rgba(var(--color-rgb-primary), 0.12);
+        }
+
+        .dark .addon-icon {
+            background: rgba(var(--color-rgb-bright), 0.1);
+            color: var(--color-primary-bright);
+            border-color: rgba(var(--color-rgb-bright), 0.15);
+        }
+
+        .compare-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(var(--color-rgb-primary), 0.1);
+        }
+
+        .dark .compare-table {
+            border-color: rgba(var(--color-rgb-bright), 0.1);
+        }
+
+        .compare-table th {
+            background: rgba(var(--color-rgb-primary), 0.06);
+            padding: 1.25rem 1rem;
+            text-align: left;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--color-primary);
+            border-bottom: 1px solid rgba(var(--color-rgb-primary), 0.1);
+        }
+
+        .dark .compare-table th {
+            background: rgba(var(--color-rgb-bright), 0.06);
+            color: var(--color-primary-bright);
+            border-bottom-color: rgba(var(--color-rgb-bright), 0.1);
+        }
+
+        .compare-table td {
+            padding: 1rem;
+            font-size: 0.85rem;
+            border-bottom: 1px solid rgba(var(--color-rgb-primary), 0.06);
+            background: white;
+        }
+
+        .dark .compare-table td {
+            background: #111827;
+            border-bottom-color: rgba(var(--color-rgb-bright), 0.06);
+        }
+
+        .compare-table tr:last-child td { border-bottom: none; }
+
+        .compare-table tr:hover td {
+            background: rgba(var(--color-rgb-primary), 0.03);
+        }
+
+        .dark .compare-table tr:hover td {
+            background: rgba(var(--color-rgb-bright), 0.04);
+        }
+
+        @media (max-width: 1279px) {
+            .desktop-toggle-group { display: none !important; }
+        }
+    </style>
+</head>
+
+<body class="bg-visa-bg dark:bg-[#0a0f1e] text-visa-text dark:text-slate-200 transition-colors duration-400">
+
+    <!-- ========== HEADER ========== -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-[#0f172a]/95 backdrop-blur-xl border-b border-visa-primary/15 dark:border-visa-primary-bright/20 shadow-sm transition-all duration-300">
+        <nav
+            class="w-full px-4 sm:px-6 lg:px-8 py-3.5 sm:py-4 flex items-center justify-between transition-colors duration-400">
+            <a href="index.html" class="flex items-center gap-3 group flex-nowrap shrink-0" dir="ltr">
+                <div class="w-10 h-10 bg-gradient-to-br from-visa-primary-light to-visa-primary-dark rounded-full flex items-center justify-center flex-shrink-0 shadow-md group-hover:rotate-6 transition duration-300">
+                    <i class="fas fa-passport text-white text-base"></i>
+                </div>
+                <div class="flex flex-col whitespace-nowrap leading-none">
+                    <span class="text-xl sm:text-2xl font-serif font-bold tracking-tight text-visa-text dark:text-white">
+                        Horizon<span class="gradient-text">Visa</span>
+                    </span>
+                    <span class="text-[8px] sm:text-[9px] font-sans font-semibold tracking-[0.2em] text-visa-primary-light dark:text-visa-primary-bright uppercase mt-1">
+                        Immigration Consultancy
+                    </span>
+                </div>
+            </a>
+
+            <div class="hidden xl:flex items-center">
+                <div class="desktop-nav-container">
+                    <div class="flex items-center gap-4 xl:gap-6">
+                        <div class="dropdown">
+                            <button class="nav-item flex items-center gap-1.5">
+                                Home <i class="fas fa-chevron-down text-[9px] opacity-70"></i>
+                            </button>
+                            <div class="dropdown-menu">
+                                <a href="index.html" class="dropdown-item">Home 1</a>
+                                <a href="home2.html" class="dropdown-item">Home 2</a>
+                            </div>
+                        </div>
+                        <a href="about.html" class="nav-item">About</a>
+                        <a href="services.html" class="nav-item active">Services</a>
+                        <a href="countries.html" class="nav-item">Country Guide</a>
+                        <a href="contact.html" class="nav-item">Contact</a>
+                        <div class="dropdown">
+                            <button class="nav-item flex items-center gap-1.5">
+                                Dashboard <i class="fas fa-chevron-down text-[9px] opacity-70"></i>
+                            </button>
+                            <div class="dropdown-menu">
+                                <a href="client-dashboard.html" class="dropdown-item">Client Portal</a>
+                                <a href="admin.html" class="dropdown-item">Admin Panel</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3 ml-2">
+                        <a href="login.html" class="btn-nested !py-2 !px-4 !text-xs group">
+                            <span>Sign In</span>
+                            <span class="icon-circle !w-6 !h-6">
+                                <i class="fas fa-arrow-right text-[10px]"></i>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2 ml-4 desktop-toggle-group">
+                    <button id="theme-toggle" class="toggle-btn !w-9 !h-9" title="Toggle Dark/Light Mode">
+                        <i class="fas fa-moon text-sm"></i>
+                        <i class="fas fa-sun text-sm hidden"></i>
+                    </button>
+                    <button id="rtl-toggle" class="toggle-btn !w-9 !h-9 font-serif font-bold text-xs" title="Toggle RTL/LTR">⇄</button>
+                </div>
+            </div>
+
+            <button id="mobile-toggle"
+                class="xl:hidden text-visa-text dark:text-slate-300 p-2 focus:outline-none hover:text-visa-primary-light transition-colors"
+                aria-label="Toggle Navigation Menu">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </nav>
+
+        <div id="mobile-menu" class="mobile-menu xl:hidden w-full border-t border-visa-primary/15 dark:border-visa-primary-bright/15 shadow-xl overflow-hidden">
+            <div class="mobile-dropdown">
+                <button class="mobile-dropdown-btn flex items-center justify-between w-full mobile-menu-item">
+                    <span>Home</span> <i class="fas fa-chevron-down text-xs"></i>
+                </button>
+                <div class="mobile-dropdown-content">
+                    <a href="index.html" class="mobile-dropdown-item">Home 1</a>
+                    <a href="home2.html" class="mobile-dropdown-item">Home 2</a>
+                </div>
+            </div>
+            <a href="about.html" class="mobile-menu-item">About Us</a>
+            <a href="services.html" class="mobile-menu-item active" style="color: var(--color-primary-light); font-weight: 600;">Services</a>
+            <a href="countries.html" class="mobile-menu-item">Country Guide</a>
+            <a href="contact.html" class="mobile-menu-item">Contact</a>
+            <div class="mobile-dropdown">
+                <button class="mobile-dropdown-btn flex items-center justify-between w-full mobile-menu-item">
+                    <span>Dashboard</span> <i class="fas fa-chevron-down text-xs"></i>
+                </button>
+                <div class="mobile-dropdown-content">
+                    <a href="client-dashboard.html" class="mobile-dropdown-item">Client Portal</a>
+                    <a href="admin.html" class="mobile-dropdown-item">Admin Panel</a>
+                </div>
+            </div>
+            <div class="p-5 flex flex-col gap-3">
+                <a href="login.html" class="btn-nested justify-center !py-3 w-full text-center">
+                    <span>Client Portal Login</span>
+                    <span class="icon-circle !w-7 !h-7"><i class="fas fa-arrow-right text-xs"></i></span>
+                </a>
+            </div>
+            <div class="flex justify-center gap-3 p-4 border-t border-visa-primary/10 dark:border-visa-primary-bright/10">
+                <button id="theme-toggle-mobile" class="toggle-btn"><i class="fas fa-moon"></i><i class="fas fa-sun hidden"></i></button>
+                <button id="rtl-toggle-mobile" class="toggle-btn">⇄</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========== SERVICES SECTION 1: PAGE HERO ========== -->
+    <section class="pt-36 pb-24 sm:pt-44 sm:pb-32 lg:pt-48 lg:pb-36 min-h-[520px] sm:min-h-[580px] lg:min-h-[620px] flex items-center transition-colors duration-400 relative overflow-hidden" style="background-color: #080d1a;">
+        <!-- Hero Background Image & Gradient Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="images/services-hero-bg.jpg" alt="Global Visa Services and International Terminals" class="w-full h-full object-cover object-center filter brightness-[0.55] contrast-[1.05]" loading="eager">
+            <!-- High-Contrast Dark Gradient Overlay -->
+            <div class="absolute inset-0" style="background: linear-gradient(180deg, rgba(8, 13, 26, 0.78) 0%, rgba(8, 13, 26, 0.62) 45%, rgba(8, 13, 26, 0.95) 100%);"></div>
+            <div class="absolute inset-0 bg-radial-gradient pointer-events-none opacity-40"></div>
+        </div>
+
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-blue-500/20 to-transparent rounded-full blur-3xl pointer-events-none z-1"></div>
+        <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-tr from-sky-400/15 to-transparent rounded-full blur-3xl pointer-events-none z-1"></div>
+
+        <div class="container mx-auto px-6 relative z-10 w-full">
+            <div class="max-w-3xl mx-auto text-center">
+                <!-- Trust Badge -->
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 text-xs font-semibold tracking-wider uppercase text-white shadow-xl border border-white/20" style="background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);">
+                    <i class="fas fa-passport text-sky-400"></i>
+                    <span class="text-white">Comprehensive Visa Solutions</span>
+                </div>
+
+                <!-- Main Heading -->
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-white leading-[1.15] mb-6" style="text-shadow: 0 4px 24px rgba(0, 0, 0, 0.75);">
+                    Services Built for <span class="italic text-sky-400" style="background: linear-gradient(135deg, #60a5fa 0%, #93c5fd 50%, #ffffff 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Every Journey</span>
+                </h1>
+
+                <div class="premium-line mx-auto mb-6" style="background: linear-gradient(90deg, transparent, #60a5fa, transparent);"></div>
+
+                <!-- Subtitle / Description -->
+                <p class="text-base sm:text-lg sm:leading-relaxed max-w-2xl mx-auto mb-8 font-normal text-slate-100" style="text-shadow: 0 2px 12px rgba(0, 0, 0, 0.85);">
+                    From skilled worker visas to family reunification, we offer specialized expertise across every major immigration category. Explore our services below.
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-wrap items-center justify-center gap-4">
+                    <a href="contact.html" class="btn-primary shadow-2xl !px-7 !py-3.5 !text-sm !font-bold">
+                        <i class="fas fa-calendar-check"></i> Book Consultation
+                    </a>
+                    <a href="#work" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold tracking-wide text-white transition-all duration-300 shadow-2xl border border-white/30 hover:bg-white/25 hover:-translate-y-0.5 hover:shadow-blue-500/20" style="background: rgba(255, 255, 255, 0.14); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);">
+                        <i class="fas fa-th-large text-sky-400"></i> Explore Visa Types
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SERVICES SECTION 2: SERVICE CARDS ========== -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-white dark:bg-[#0f172a] transition-colors duration-400 border-y border-visa-primary/5 dark:border-visa-primary-bright/5">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
+                <!-- Work Visa -->
+                <div id="work" class="service-hero-card relative">
+                    <div class="service-number">01</div>
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="images/service-work-visa.jpg" alt="Work Visa" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                        <div class="absolute bottom-4 left-5 flex items-center gap-2">
+                            <div class="w-9 h-9 rounded-xl bg-white/95 dark:bg-[#1e293b]/95 backdrop-blur-sm flex items-center justify-center">
+                                <i class="fas fa-briefcase text-visa-primary-light"></i>
+                            </div>
+                            <span class="text-white font-serif font-bold text-lg">Work Visa</span>
+                        </div>
+                    </div>
+                    <div class="p-6 sm:p-7 flex-1 flex flex-col">
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="pricing-badge"><i class="fas fa-chart-line"></i> 98% Approval</span>
+                            <span class="text-xs text-visa-text/50 dark:text-slate-500">From $899</span>
+                        </div>
+                        <p class="text-sm text-visa-text/75 dark:text-slate-400 leading-relaxed mb-5">
+                            For skilled professionals, intra-company transfers, and talented individuals seeking employment opportunities abroad. We handle everything from skills assessment to employer sponsorship guidance.
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mb-6">
+                            <div class="feature-check"><i class="fas fa-check-circle text-xs"></i><span>Skilled Worker Visas</span></div>
+                            <div class="feature-check"><i class="fas fa-check-circle text-xs"></i><span>Intra-Company Transfers</span></div>
+                            <div class="feature-check"><i class="fas fa-check-circle text-xs"></i><span>Talent & Exceptional Ability</span></div>
+                            <div class="feature-check"><i class="fas fa-check-circle text-xs"></i><span>Employer Sponsorship Support</span></div>
+                            <div class="feature-check"><i class="fas fa-check-circle text-xs"></i><span>Skills Assessment Guidance</span></div>
+                            <div class="feature-check"><i class="fas fa-check-circle text-xs"></i><span>Dependents Included</span></div>
+                        </div>
+                        <div class="mt-auto flex items-center justify-between pt-4 border-t border-visa-primary/10 dark:border-visa-primary-bright/10">
+                            <span class="text-xs text-visa-text/60 dark:text-slate-400">Processing: 3–8 weeks</span>
+                            <a href="contact.html" class="text-xs font-bold text-visa-primary-light uppercase tracking-wider hover:underline flex items-center gap-1">
+                                Get Started <i class="fas fa-arrow-right text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Study Visa -->
+                <div id="study" class="service-hero-card relative">
+                    <div class="service-number">02</div>
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="images/service-student-visa.jpg" alt="Study Visa" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                        <div class="absolute bottom-4 left-5 flex items-center gap-2">
+                            <div class="w-9 h-9 rounded-xl bg-white/95 dark:bg-[#1e293b]/95 backdrop-blur-sm flex items-center justify-center">
+                                <i class="fas fa-graduation-cap text-visa-primary-light"></i>
+                            </div>
+                            <span class="text-white font-serif font-bold text-lg">Study Visa</span>
+                        </div>
+                    </div>
+                    <div class="p-6 sm:p-7 flex-1 flex flex-col">
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="pricing-badge"><i class="fas fa-chart-line"></i> 98% Approval</span>
+                            <span class="text-xs text-visa-text/50 dark:text-slate-500">From $699</span>
+                        </div>
+                        <p class="text-sm text-visa-text/75 dark:text-slate-400 leading-relaxed mb-5">
+                            For international students pursuing undergraduate, postgraduate, or research programs at top universities worldwide. We guide you from university selection through to arrival.
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mb-6">
+                            <div class="feature-check"><i class="fas fa-check-circle text-xs"></i><span>University Selection Help</span></div>
+                            <div class="feature-check"><i class="fas fa-check-circle text-xs"></i><span>Student Visa Applications</span></div>
+                            <div class="feature-check"><i class="fas fa-check-circle text-xs"></i><span>Scholarship Guidance</span></div>
+                            <div class="feature-check"><i class="fas fa-check-circle text-xs"></i><span>Financial Documentation</span></div>
+                            <div class="feature-check"><i class="fas fa-check-circle text-xs"></i><span>Pre-Departure Briefing</span></div>
+                            <div class="feature-check"><i class="fas fa-check-circle text-xs"></i><span>Post-Study Work Options</span></div>
+                        </div>
+                        <div class="mt-auto flex items-center justify-between pt-4 border-t border-visa-primary/10 dark:border-visa-primary-bright/10">
+                            <span class="text-xs text-visa-text/60 dark:text-slate-400">Processing: 2–6 weeks</span>
+                            <a href="contact.html" class="text-xs font-bold text-visa-primary-light uppercase tracking-wider hover:underline flex items-center gap-1">
+                                Get Started <i class="fas fa-arrow-right text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Family Visa -->
+                <div id="family" class="service-hero-card relative">
+                    <div class="service-number">03</div>
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="images/service-family-visa.jpg" alt="Family Visa" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                        <div class="absolute bottom-4 left-5 flex items-center gap-2">
+                            <div class="w-9 h-9 rounded-xl bg-white/95 dark:bg-[#1e293b]/95 backdrop-blur-sm flex items-center justify-center">
+                                <i class="fas fa-users text-visa-primary-light"></i>
+                            </div>
+                            <span class="text-white font-serif font-bold text-lg">Family Visa</span>
+                        </div>
+                    </div>
+                    <div class="p-6 sm:p-7 flex-1 flex flex-col">
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="pricing-badge"><i class="fas fa-chart-line"></i> 97% Approval</span>
+                            <span class="text-xs text-visa-text/50 dark:text-slate-500">From $799</span>
+                        </div>
+                        <p class="text-sm text-visa-text/75 dark:text-slate-400 leading-relaxed mb-5">
+                            For spouses, partners, children, and parents seeking to reunite with family members abroad. We handle the emotional and legal complexities with care and precision.
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mb-6">
+                            <div class="feature-check"><i class="fas fa-check-circle text-xs"></i><span>Spouse & Partner Visas</span></div>
+                            <div class="feature-check"><i class="fas fa-check-circle text-xs"></i><span>Child & Parent Visas</span></div>
+                            <div class="feature-check"><i class="fas fa-check-circle text-xs"></i><span>Relationship Evidence Prep</span></div>
+                            <div class="feature-check"><i class="fas fa-check-circle text-xs"></i><span>Sponsorship Guidance</span></div>
+                            <div class="feature-check"><i class="fas fa-check-circle text-xs"></i><span>Fiancé(e) Visas</span></div>
+                            <div class="feature-check"><i class="fas fa-check-circle text-xs"></i><span>Dependent Applications</span></div>
+                        </div>
+                        <div class="mt-auto flex items-center justify-between pt-4 border-t border-visa-primary/10 dark:border-visa-primary-bright/10">
+                            <span class="text-xs text-visa-text/60 dark:text-slate-400">Processing: 6–12 weeks</span>
+                            <a href="contact.html" class="text-xs font-bold text-visa-primary-light uppercase tracking-wider hover:underline flex items-center gap-1">
+                                Get Started <i class="fas fa-arrow-right text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Business Visa -->
+                <div id="business" class="service-hero-card relative">
+                    <div class="service-number">04</div>
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="images/service-business-visa.jpg" alt="Business Visa" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                        <div class="absolute bottom-4 left-5 flex items-center gap-2">
+                            <div class="w-9 h-9 rounded-xl bg-white/95 dark:bg-[#1e293b]/95 backdrop-blur-sm flex items-center justify-center">
+                                <i class="fas fa-chart-line text-visa-primary-light"></i>
+                            </div>
+                            <span class="text-white font-serif font-bold text-lg">Business Visa</span>
+                        </div>
+                    </div>
+                    <div class="p-6 sm:p-7 flex-1 flex flex-col">
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="pricing-badge"><i class="fas fa-chart-line"></i> 96% Approval</span>
+                            <span class="text-xs text-visa-text/50 dark:text-slate-500">From $1,299</span>
+                        </div>
+                        <p class="text-sm text-visa-text/75 dark:text-slate-400 leading-relaxed mb-5">
+                            For entrepreneurs, investors, and business owners looking to establish or expand ventures internationally. We navigate complex business immigration laws.
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mb-6">
+                            <div class="feature-check"><i class="fas fa-check-circle text-xs"></i><span>Investor Visas</span></div>
+                            <div class="feature-check"><i class="fas fa-check-circle text-xs"></i><span>Entrepreneur & Start-up Visas</span></div>
+                            <div class="feature-check"><i class="fas fa-check-circle text-xs"></i><span>Business Plan Review</span></div>
+                            <div class="feature-check"><i class="fas fa-check-circle text-xs"></i><span>Investment Documentation</span></div>
+                            <div class="feature-check"><i class="fas fa-check-circle text-xs"></i><span>Sole Representative Visas</span></div>
+                            <div class="feature-check"><i class="fas fa-check-circle text-xs"></i><span>Company Formation Guidance</span></div>
+                        </div>
+                        <div class="mt-auto flex items-center justify-between pt-4 border-t border-visa-primary/10 dark:border-visa-primary-bright/10">
+                            <span class="text-xs text-visa-text/60 dark:text-slate-400">Processing: 4–12 weeks</span>
+                            <a href="contact.html" class="text-xs font-bold text-visa-primary-light uppercase tracking-wider hover:underline flex items-center gap-1">
+                                Get Started <i class="fas fa-arrow-right text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PR + Citizenship Row -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto mt-8">
+                <!-- Permanent Residency -->
+                <div id="pr" class="service-hero-card relative">
+                    <div class="service-number">05</div>
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="images/service-pr-visa.jpg" alt="Permanent Residency" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                        <div class="absolute bottom-4 left-5 flex items-center gap-2">
+                            <div class="w-9 h-9 rounded-xl bg-white/95 dark:bg-[#1e293b]/95 backdrop-blur-sm flex items-center justify-center">
+                                <i class="fas fa-home text-visa-primary-light"></i>
+                            </div>
+                            <span class="text-white font-serif font-bold text-lg">Permanent Residency</span>
+                        </div>
+                    </div>
+                    <div class="p-6 sm:p-7 flex-1 flex flex-col">
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="pricing-badge"><i class="fas fa-crown"></i> Premium</span>
+                            <span class="text-xs text-visa-text/50 dark:text-slate-500">Custom Quote</span>
+                        </div>
+                        <p class="text-sm text-visa-text/75 dark:text-slate-400 leading-relaxed mb-5">
+                            For those seeking to make a country their permanent home. We handle the most complex residency pathways, including points-based systems and investment routes.
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mb-6">
+                            <div class="feature-check"><i class="fas fa-check-circle text-xs"></i><span>Points-Based Systems</span></div>
+                            <div class="feature-check"><i class="fas fa-check-circle text-xs"></i><span>Express Entry (Canada)</span></div>
+                            <div class="feature-check"><i class="fas fa-check-circle text-xs"></i><span>Skilled Migration (Australia)</span></div>
+                            <div class="feature-check"><i class="fas fa-check-circle text-xs"></i><span>Investor Residency</span></div>
+                            <div class="feature-check"><i class="fas fa-check-circle text-xs"></i><span>Citizenship Pathways</span></div>
+                            <div class="feature-check"><i class="fas fa-check-circle text-xs"></i><span>Renewal & Extensions</span></div>
+                        </div>
+                        <div class="mt-auto flex items-center justify-between pt-4 border-t border-visa-primary/10 dark:border-visa-primary-bright/10">
+                            <span class="text-xs text-visa-text/60 dark:text-slate-400">Processing: Varies by country</span>
+                            <a href="contact.html" class="text-xs font-bold text-visa-primary-light uppercase tracking-wider hover:underline flex items-center gap-1">
+                                Get Started <i class="fas fa-arrow-right text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visitor & Transit -->
+                <div id="visitor" class="service-hero-card relative">
+                    <div class="service-number">06</div>
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="images/service-tourist-visa.jpg" alt="Visitor Visa" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                        <div class="absolute bottom-4 left-5 flex items-center gap-2">
+                            <div class="w-9 h-9 rounded-xl bg-white/95 dark:bg-[#1e293b]/95 backdrop-blur-sm flex items-center justify-center">
+                                <i class="fas fa-plane text-visa-primary-light"></i>
+                            </div>
+                            <span class="text-white font-serif font-bold text-lg">Visitor & Transit</span>
+                        </div>
+                    </div>
+                    <div class="p-6 sm:p-7 flex-1 flex flex-col">
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="pricing-badge"><i class="fas fa-bolt"></i> Fast Track</span>
+                            <span class="text-xs text-visa-text/50 dark:text-slate-500">From $299</span>
+                        </div>
+                        <p class="text-sm text-visa-text/75 dark:text-slate-400 leading-relaxed mb-5">
+                            For tourists, business travelers, and those transiting through a country. Quick turnaround and high approval rates for short-term visits.
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mb-6">
+                            <div class="feature-check"><i class="fas fa-check-circle text-xs"></i><span>Tourist Visas</span></div>
+                            <div class="feature-check"><i class="fas fa-check-circle text-xs"></i><span>Business Visitor Visas</span></div>
+                            <div class="feature-check"><i class="fas fa-check-circle text-xs"></i><span>Transit Visas</span></div>
+                            <div class="feature-check"><i class="fas fa-check-circle text-xs"></i><span>Family Visit Visas</span></div>
+                            <div class="feature-check"><i class="fas fa-check-circle text-xs"></i><span>Invitation Letter Prep</span></div>
+                            <div class="feature-check"><i class="fas fa-check-circle text-xs"></i><span>Travel Insurance Guidance</span></div>
+                        </div>
+                        <div class="mt-auto flex items-center justify-between pt-4 border-t border-visa-primary/10 dark:border-visa-primary-bright/10">
+                            <span class="text-xs text-visa-text/60 dark:text-slate-400">Processing: 1–3 weeks</span>
+                            <a href="contact.html" class="text-xs font-bold text-visa-primary-light uppercase tracking-wider hover:underline flex items-center gap-1">
+                                Get Started <i class="fas fa-arrow-right text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SERVICES SECTION 3: PROCESS ========== -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-visa-bg dark:bg-[#0a0f1e] transition-colors duration-400">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-14">
+                <span class="trust-badge mb-3">How It Works</span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-visa-text dark:text-white mt-3 mb-3">
+                    Our Proven <span class="gradient-text italic">5-Step Process</span>
+                </h2>
+                <p class="text-sm text-visa-text/70 dark:text-slate-400">A clear, structured approach that has delivered a 98% success rate across thousands of applications.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 max-w-7xl mx-auto">
+                <!-- Step 1 -->
+                <div class="process-step">
+                    <div class="process-number">01</div>
+                    <h3 class="text-base font-serif font-bold text-visa-text dark:text-white mb-2">Free Consultation</h3>
+                    <p class="text-xs text-visa-text/70 dark:text-slate-400 leading-relaxed">
+                        We assess your profile and identify the best visa pathway for your goals.
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="process-step">
+                    <div class="process-number">02</div>
+                    <h3 class="text-base font-serif font-bold text-visa-text dark:text-white mb-2">Strategy & Plan</h3>
+                    <p class="text-xs text-visa-text/70 dark:text-slate-400 leading-relaxed">
+                        We create a personalized roadmap with timelines, documents, and milestones.
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="process-step">
+                    <div class="process-number">03</div>
+                    <h3 class="text-base font-serif font-bold text-visa-text dark:text-white mb-2">Document Prep</h3>
+                    <p class="text-xs text-visa-text/70 dark:text-slate-400 leading-relaxed">
+                        Our team prepares, reviews, and perfects every document in your application.
+                    </p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="process-step">
+                    <div class="process-number">04</div>
+                    <h3 class="text-base font-serif font-bold text-visa-text dark:text-white mb-2">Submission</h3>
+                    <p class="text-xs text-visa-text/70 dark:text-slate-400 leading-relaxed">
+                        We submit your application and track it through every stage of processing.
+                    </p>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="process-step">
+                    <div class="process-number">05</div>
+                    <h3 class="text-base font-serif font-bold text-visa-text dark:text-white mb-2">Approval & Beyond</h3>
+                    <p class="text-xs text-visa-text/70 dark:text-slate-400 leading-relaxed">
+                        Once approved, we guide you through pre-departure and settling-in support.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SERVICES SECTION 4: ADD-ON SERVICES ========== -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-white dark:bg-[#0f172a] transition-colors duration-400 border-y border-visa-primary/5 dark:border-visa-primary-bright/5">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-14">
+                <span class="trust-badge mb-3">Enhance Your Application</span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-visa-text dark:text-white mt-3 mb-3">
+                    Premium <span class="gradient-text italic">Add-On Services</span>
+                </h2>
+                <p class="text-sm text-visa-text/70 dark:text-slate-400">Optional services to strengthen your application and give you peace of mind.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
+                <!-- Add-on 1 -->
+                <div class="addon-card">
+                    <div class="addon-icon">
+                        <i class="fas fa-file-signature"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-serif font-bold text-sm text-visa-text dark:text-white mb-1">Document Translation</h3>
+                        <p class="text-xs text-visa-text/60 dark:text-slate-400 leading-relaxed">Certified translation of academic, legal, and personal documents in 50+ languages.</p>
+                    </div>
+                </div>
+
+                <!-- Add-on 2 -->
+                <div class="addon-card">
+                    <div class="addon-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-serif font-bold text-sm text-visa-text dark:text-white mb-1">IELTS/TOEFL Coaching</h3>
+                        <p class="text-xs text-visa-text/60 dark:text-slate-400 leading-relaxed">Expert language test preparation with mock exams and personalized feedback.</p>
+                    </div>
+                </div>
+
+                <!-- Add-on 3 -->
+                <div class="addon-card">
+                    <div class="addon-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-serif font-bold text-sm text-visa-text dark:text-white mb-1">University Applications</h3>
+                        <p class="text-xs text-visa-text/60 dark:text-slate-400 leading-relaxed">End-to-end support for course selection, applications, and scholarship essays.</p>
+                    </div>
+                </div>
+
+                <!-- Add-on 4 -->
+                <div class="addon-card">
+                    <div class="addon-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-serif font-bold text-sm text-visa-text dark:text-white mb-1">Accommodation Support</h3>
+                        <p class="text-xs text-visa-text/60 dark:text-slate-400 leading-relaxed">Help finding housing, understanding rental laws, and settling into your new city.</p>
+                    </div>
+                </div>
+
+                <!-- Add-on 5 -->
+                <div class="addon-card">
+                    <div class="addon-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-serif font-bold text-sm text-visa-text dark:text-white mb-1">Job Search Assistance</h3>
+                        <p class="text-xs text-visa-text/60 dark:text-slate-400 leading-relaxed">Resume tailoring, interview prep, and introductions to employers in your field.</p>
+                    </div>
+                </div>
+
+                <!-- Add-on 6 -->
+                <div class="addon-card">
+                    <div class="addon-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-serif font-bold text-sm text-visa-text dark:text-white mb-1">Priority Processing</h3>
+                        <p class="text-xs text-visa-text/60 dark:text-slate-400 leading-relaxed">Expedited handling with direct liaison to immigration authorities where available.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SERVICES SECTION 5: COMPARISON TABLE ========== -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-visa-bg dark:bg-[#0a0f1e] transition-colors duration-400">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="trust-badge mb-3">At a Glance</span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-visa-text dark:text-white mt-3 mb-3">
+                    Compare Visa <span class="gradient-text italic">Categories</span>
+                </h2>
+                <p class="text-sm text-visa-text/70 dark:text-slate-400">Key details across our most popular visa types.</p>
+            </div>
+
+            <div class="max-w-5xl mx-auto overflow-x-auto rounded-2xl">
+                <table class="compare-table">
+                    <thead>
+                        <tr>
+                            <th>Visa Type</th>
+                            <th>Processing Time</th>
+                            <th>Approval Rate</th>
+                            <th>Dependents</th>
+                            <th>Path to PR</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="font-semibold text-visa-text dark:text-white">Work Visa</td>
+                            <td>3–8 weeks</td>
+                            <td><span class="text-green-600 dark:text-green-400 font-bold">98%</span></td>
+                            <td><i class="fas fa-check-circle text-green-500"></i></td>
+                            <td><i class="fas fa-check-circle text-green-500"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="font-semibold text-visa-text dark:text-white">Study Visa</td>
+                            <td>2–6 weeks</td>
+                            <td><span class="text-green-600 dark:text-green-400 font-bold">98%</span></td>
+                            <td><i class="fas fa-check-circle text-green-500"></i></td>
+                            <td><i class="fas fa-check-circle text-green-500"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="font-semibold text-visa-text dark:text-white">Family Visa</td>
+                            <td>6–12 weeks</td>
+                            <td><span class="text-green-600 dark:text-green-400 font-bold">97%</span></td>
+                            <td><i class="fas fa-check-circle text-green-500"></i></td>
+                            <td><i class="fas fa-check-circle text-green-500"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="font-semibold text-visa-text dark:text-white">Business Visa</td>
+                            <td>4–12 weeks</td>
+                            <td><span class="text-green-600 dark:text-green-400 font-bold">96%</span></td>
+                            <td><i class="fas fa-check-circle text-green-500"></i></td>
+                            <td><i class="fas fa-check-circle text-green-500"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="font-semibold text-visa-text dark:text-white">Visitor Visa</td>
+                            <td>1–3 weeks</td>
+                            <td><span class="text-green-600 dark:text-green-400 font-bold">99%</span></td>
+                            <td><i class="fas fa-minus text-gray-400"></i></td>
+                            <td><i class="fas fa-minus text-gray-400"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SERVICES SECTION 6: CTA ========== -->
+    <section class="py-16 sm:py-20 bg-gradient-to-br from-visa-primary-dark via-visa-primary to-visa-primary-dark dark:from-[#0f172a] dark:via-[#1e3a8a] dark:to-[#0f172a] text-white transition-colors duration-400 relative overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent pointer-events-none"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-3xl mx-auto text-center">
+                <span class="text-white/70 font-semibold text-xs tracking-[0.2em] uppercase">Not Sure Which Visa?</span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold mb-4 mt-3">Let's Find Your Path</h2>
+                <p class="text-base sm:text-lg text-white/80 mb-8 leading-relaxed">
+                    Book a free consultation and we'll help you identify the best visa option for your unique situation.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="contact.html" class="bg-white text-visa-primary-dark px-8 py-4 rounded-full font-bold text-xs uppercase tracking-widest hover:shadow-2xl transition duration-300 flex items-center justify-center gap-2">
+                        <i class="fas fa-calendar-check"></i> Book Free Consultation
+                    </a>
+                    <a href="countries.html" class="border-2 border-white/40 text-white px-8 py-4 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-white/10 transition duration-300 flex items-center justify-center gap-2">
+                        <i class="fas fa-globe"></i> Explore Country Guides
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="py-16 bg-white dark:bg-[#0a0f1e] transition-colors duration-400 border-t border-visa-primary/10 dark:border-visa-primary-bright/10">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+                <div>
+                    <a href="index.html" class="flex items-center gap-3 mb-5 group flex-nowrap shrink-0 inline-flex" dir="ltr">
+                        <div class="w-10 h-10 bg-gradient-to-br from-visa-primary-light to-visa-primary-dark rounded-full flex items-center justify-center flex-shrink-0 shadow-md group-hover:rotate-6 transition duration-300">
+                            <i class="fas fa-passport text-white text-base"></i>
+                        </div>
+                        <div class="flex flex-col whitespace-nowrap leading-none">
+                            <span class="text-xl sm:text-2xl font-serif font-bold tracking-tight text-visa-text dark:text-white">
+                                Horizon<span class="gradient-text">Visa</span>
+                            </span>
+                            <span class="text-[8px] sm:text-[9px] font-sans font-semibold tracking-[0.2em] text-visa-primary-light dark:text-visa-primary-bright uppercase mt-1">
+                                Immigration Consultancy
+                            </span>
+                        </div>
+                    </a>
+                    <p class="text-sm text-visa-text/70 dark:text-slate-400 mb-6 leading-relaxed">
+                        Expert immigration & visa consultancy. Guiding you to new horizons with clarity and confidence.
+                    </p>
+                    <div class="flex gap-3">
+                        <a href="#" class="toggle-btn !w-10 !h-10 text-sm" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="toggle-btn !w-10 !h-10 text-sm" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="toggle-btn !w-10 !h-10 text-sm" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="toggle-btn !w-10 !h-10 text-sm" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-visa-text dark:text-white text-base font-serif font-bold mb-5">Quick Links</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="index.html" class="text-visa-text/70 dark:text-slate-400 hover:text-visa-primary-light dark:hover:text-visa-primary-bright transition">Home</a></li>
+                        <li><a href="services.html" class="text-visa-text/70 dark:text-slate-400 hover:text-visa-primary-light dark:hover:text-visa-primary-bright transition">Visa Services</a></li>
+                        <li><a href="countries.html" class="text-visa-text/70 dark:text-slate-400 hover:text-visa-primary-light dark:hover:text-visa-primary-bright transition">Country Guide</a></li>
+                        <li><a href="about.html" class="text-visa-text/70 dark:text-slate-400 hover:text-visa-primary-light dark:hover:text-visa-primary-bright transition">About Us</a></li>
+                        <li><a href="contact.html" class="text-visa-text/70 dark:text-slate-400 hover:text-visa-primary-light dark:hover:text-visa-primary-bright transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-visa-text dark:text-white text-base font-serif font-bold mb-5">Visa Categories</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="services.html#work" class="text-visa-text/70 dark:text-slate-400 hover:text-visa-primary-light dark:hover:text-visa-primary-bright transition">Work Visa</a></li>
+                        <li><a href="services.html#study" class="text-visa-text/70 dark:text-slate-400 hover:text-visa-primary-light dark:hover:text-visa-primary-bright transition">Study Visa</a></li>
+                        <li><a href="services.html#family" class="text-visa-text/70 dark:text-slate-400 hover:text-visa-primary-light dark:hover:text-visa-primary-bright transition">Family Visa</a></li>
+                        <li><a href="services.html#business" class="text-visa-text/70 dark:text-slate-400 hover:text-visa-primary-light dark:hover:text-visa-primary-bright transition">Business Visa</a></li>
+                        <li><a href="services.html#pr" class="text-visa-text/70 dark:text-slate-400 hover:text-visa-primary-light dark:hover:text-visa-primary-bright transition">Permanent Residency</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-visa-text dark:text-white text-base font-serif font-bold mb-5">Head Office</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start gap-3 text-visa-text/70 dark:text-slate-400">
+                            <i class="fas fa-map-marker-alt text-visa-primary-light w-4 mt-0.5"></i>
+                            <span>100 Congress Ave, Suite 2000<br>Austin, TX 78701</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-visa-text/70 dark:text-slate-400">
+                            <i class="fas fa-phone text-visa-primary-light w-4"></i>
+                            <span>+1 (800) 555-0199</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-visa-text/70 dark:text-slate-400">
+                            <i class="fas fa-envelope text-visa-primary-light w-4"></i>
+                            <span>hello@horizonvisa.com</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-visa-text/70 dark:text-slate-400">
+                            <i class="fas fa-clock text-visa-primary-light w-4"></i>
+                            <span>Mon–Fri: 9AM–6PM CST</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-visa-primary/10 dark:border-visa-primary-bright/10 mt-12 pt-8 text-center">
+                <p class="text-xs text-visa-text/60 dark:text-slate-500">© 2026 Horizon Visa Consultancy. All rights reserved.</p>
+                <p class="text-[11px] text-visa-text/40 dark:text-slate-600 mt-1">Immigration advice is regulated. Our advisors are licensed and registered.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.documentElement.setAttribute('data-theme', 'immigration-blue');
+
+            const themeToggle = document.getElementById('theme-toggle');
+            const themeIcon = themeToggle?.querySelector('.fa-moon');
+            const themeIconSun = themeToggle?.querySelector('.fa-sun');
+            const mobileThemeToggle = document.getElementById('theme-toggle-mobile');
+            const mobileThemeIcon = mobileThemeToggle?.querySelector('.fa-moon');
+            const mobileThemeIconSun = mobileThemeToggle?.querySelector('.fa-sun');
+
+            function setTheme(isDark) {
+                if (isDark) {
+                    document.documentElement.classList.add('dark');
+                    if (themeIcon) themeIcon.classList.add('hidden');
+                    if (themeIconSun) themeIconSun.classList.remove('hidden');
+                    if (themeToggle) themeToggle.classList.add('active');
+                    if (mobileThemeIcon) mobileThemeIcon.classList.add('hidden');
+                    if (mobileThemeIconSun) mobileThemeIconSun.classList.remove('hidden');
+                    if (mobileThemeToggle) mobileThemeToggle.classList.add('active');
+                    localStorage.setItem('visa-theme', 'dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                    if (themeIcon) themeIcon.classList.remove('hidden');
+                    if (themeIconSun) themeIconSun.classList.add('hidden');
+                    if (themeToggle) themeToggle.classList.remove('active');
+                    if (mobileThemeIcon) mobileThemeIcon.classList.remove('hidden');
+                    if (mobileThemeIconSun) mobileThemeIconSun.classList.add('hidden');
+                    if (mobileThemeToggle) mobileThemeToggle.classList.remove('active');
+                    localStorage.setItem('visa-theme', 'light');
+                }
+            }
+
+            function toggleTheme() { setTheme(!document.documentElement.classList.contains('dark')); }
+
+            if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
+            if (mobileThemeToggle) mobileThemeToggle.addEventListener('click', toggleTheme);
+
+            setTheme(localStorage.getItem('visa-theme') === 'dark');
+
+            const rtlToggle = document.getElementById('rtl-toggle');
+            const mobileRtlToggle = document.getElementById('rtl-toggle-mobile');
+
+            function toggleRTL() {
+                if (document.documentElement.dir === 'rtl') {
+                    document.documentElement.dir = 'ltr';
+                    document.documentElement.lang = 'en';
+                    if (rtlToggle) rtlToggle.classList.remove('active');
+                    if (mobileRtlToggle) mobileRtlToggle.classList.remove('active');
+                    localStorage.setItem('visa-dir', 'ltr');
+                } else {
+                    document.documentElement.dir = 'rtl';
+                    document.documentElement.lang = 'ar';
+                    if (rtlToggle) rtlToggle.classList.add('active');
+                    if (mobileRtlToggle) mobileRtlToggle.classList.add('active');
+                    localStorage.setItem('visa-dir', 'rtl');
+                }
+            }
+
+            if (rtlToggle) rtlToggle.addEventListener('click', toggleRTL);
+            if (mobileRtlToggle) mobileRtlToggle.addEventListener('click', toggleRTL);
+
+            if (localStorage.getItem('visa-dir') === 'rtl') {
+                document.documentElement.dir = 'rtl';
+                document.documentElement.lang = 'ar';
+                if (rtlToggle) rtlToggle.classList.add('active');
+                if (mobileRtlToggle) mobileRtlToggle.classList.add('active');
+            }
+
+            const mobileToggle = document.getElementById('mobile-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileToggleIcon = document.querySelector('#mobile-toggle i');
+
+            if (mobileToggle) {
+                mobileToggle.addEventListener('click', () => {
+                    const isOpening = !mobileMenu.classList.contains('open');
+                    if (isOpening) {
+                        mobileMenu.classList.add('open');
+                        mobileToggleIcon.classList.remove('fa-bars');
+                        mobileToggleIcon.classList.add('fa-times');
+                        document.body.style.overflow = 'hidden';
+                    } else {
+                        mobileMenu.classList.remove('open');
+                        mobileToggleIcon.classList.remove('fa-times');
+                        mobileToggleIcon.classList.add('fa-bars');
+                        document.body.style.overflow = '';
+                        document.querySelectorAll('.mobile-dropdown-content').forEach(c => c.classList.remove('show'));
+                    }
+                });
+            }
+
+            document.querySelectorAll('.mobile-dropdown-btn').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const dropdown = e.target.closest('.mobile-dropdown');
+                    const content = dropdown.querySelector('.mobile-dropdown-content');
+                    const icon = dropdown.querySelector('.fa-chevron-down');
+                    const isOpening = !content.classList.contains('show');
+                    content.classList.toggle('show');
+                    icon.style.transform = content.classList.contains('show') ? 'rotate(180deg)' : 'rotate(0deg)';
+                    if (isOpening) {
+                        document.querySelectorAll('.mobile-dropdown-content').forEach(other => {
+                            if (other !== content) {
+                                other.classList.remove('show');
+                                const otherIcon = other.parentElement.querySelector('.fa-chevron-down');
+                                if (otherIcon) otherIcon.style.transform = 'rotate(0deg)';
+                            }
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

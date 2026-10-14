@@ -1,0 +1,1919 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth" data-theme="immigration-blue">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizon Visa | Immigration & Visa Consultancy</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%231e3a8a'%3E%3Cpath d='M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z'/%3E%3C/svg%3E">
+    <meta name="description" content="Expert immigration & visa consultancy. Trusted guidance for work, study, family, and business visas. 98% success rate.">
+    <script src="tailwind.js"></script>
+    <script>
+        if (typeof tailwind === 'undefined') {
+            document.write('<script src="https://cdn.tailwindcss.com"><\/script>');
+        }
+    </script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'visa-primary': 'rgba(var(--color-rgb-primary), <alpha-value>)',
+                        'visa-primary-light': 'rgba(var(--color-rgb-light), <alpha-value>)',
+                        'visa-primary-dark': 'rgba(var(--color-rgb-dark), <alpha-value>)',
+                        'visa-primary-bright': 'rgba(var(--color-rgb-bright), <alpha-value>)',
+                        'visa-accent': 'rgba(var(--color-rgb-accent), <alpha-value>)',
+                        'visa-bg': 'var(--color-bg)',
+                        'visa-text': 'var(--color-text)',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                        'serif': ['Playfair Display', 'Georgia', 'serif'],
+                        'display': ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    animation: {
+                        'slide-up': 'slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
+                        'fade-in': 'fadeIn 0.4s ease-out',
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-soft': 'pulseSoft 3s infinite',
+                    },
+                    keyframes: {
+                        slideUp: {
+                            '0%': { transform: 'translateY(30px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        pulseSoft: {
+                            '0%, 100%': { opacity: '0.7' },
+                            '50%': { opacity: '1' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <script>
+        if (localStorage.getItem('visa-theme') === 'dark') {
+            document.documentElement.classList.add('dark');
+        }
+        if (localStorage.getItem('visa-dir') === 'rtl') {
+            document.documentElement.dir = 'rtl';
+            document.documentElement.lang = 'ar';
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root,
+        [data-theme="immigration-blue"] {
+            --color-primary: #1e3a8a;
+            --color-primary-light: #3b82f6;
+            --color-primary-dark: #172554;
+            --color-primary-bright: #93c5fd;
+            --color-accent: #f59e0b;
+            --color-bg: #f8fafc;
+            --color-text: #0f172a;
+            --color-rgb-primary: 30, 58, 138;
+            --color-rgb-light: 59, 130, 246;
+            --color-rgb-dark: 23, 37, 84;
+            --color-rgb-bright: 147, 197, 253;
+            --color-rgb-accent: 245, 158, 11;
+        }
+
+        [data-theme="teal-trust"] {
+            --color-primary: #0f766e;
+            --color-primary-light: #14b8a6;
+            --color-primary-dark: #115e59;
+            --color-primary-bright: #5eead4;
+            --color-accent: #f59e0b;
+            --color-bg: #f0fdfa;
+            --color-text: #042f2e;
+            --color-rgb-primary: 15, 118, 110;
+            --color-rgb-light: 20, 184, 166;
+            --color-rgb-dark: 17, 94, 89;
+            --color-rgb-bright: 94, 234, 212;
+            --color-rgb-accent: 245, 158, 11;
+        }
+
+        [data-theme="burgundy-authority"] {
+            --color-primary: #7f1d1d;
+            --color-primary-light: #b91c1c;
+            --color-primary-dark: #450a0a;
+            --color-primary-bright: #fca5a5;
+            --color-accent: #eab308;
+            --color-bg: #fef2f2;
+            --color-text: #2a0a0a;
+            --color-rgb-primary: 127, 29, 29;
+            --color-rgb-light: 185, 28, 28;
+            --color-rgb-dark: 69, 10, 10;
+            --color-rgb-bright: 252, 165, 165;
+            --color-rgb-accent: 234, 179, 8;
+        }
+
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: rgba(var(--color-rgb-primary), 0.4) transparent;
+        }
+
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: var(--color-bg); }
+        .dark ::-webkit-scrollbar-track { background: #0a0f1e; }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(var(--color-rgb-primary), 0.4);
+            border-radius: 9999px;
+            border: 2px solid transparent;
+            background-clip: padding-box;
+        }
+        ::-webkit-scrollbar-thumb:hover { background: var(--color-primary); }
+        .dark ::-webkit-scrollbar-thumb { background: rgba(var(--color-rgb-bright), 0.3); }
+
+        html { overflow-x: hidden; }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            transition: background-color 0.4s ease, color 0.4s ease;
+            overflow-x: hidden;
+        }
+
+        .dark body { background-color: #0a0f1e; color: #e2e8f0; }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--color-primary-bright) 0%, var(--color-primary) 60%, var(--color-primary-dark) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .dark .gradient-text {
+            background: linear-gradient(135deg, var(--color-primary-bright) 0%, var(--color-primary-light) 50%, var(--color-primary) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Premium Navigation */
+        .nav-item {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.5rem 0;
+            font-weight: 600;
+            font-size: 0.82rem;
+            letter-spacing: 0.04em;
+            color: var(--color-text);
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .dark .nav-item { color: #cbd5e1; }
+        .nav-item:hover { color: var(--color-primary-light); }
+        .dark .nav-item:hover { color: var(--color-primary-bright); }
+
+        .nav-item::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--color-primary-light), var(--color-primary));
+            transition: width 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .dark .nav-item::after {
+            background: linear-gradient(90deg, var(--color-primary-bright), var(--color-primary-light));
+        }
+
+        [dir="rtl"] .nav-item::after { left: auto; right: 0; }
+        .nav-item:hover::after, .nav-item.active::after { width: 100%; }
+        .nav-item.active { color: var(--color-primary-light) !important; font-weight: 700; }
+        .dark .nav-item.active { color: var(--color-primary-bright) !important; }
+
+        .desktop-nav-container { display: flex; align-items: center; gap: 2rem; }
+
+        .dropdown { position: relative; }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            min-width: 220px;
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 16px;
+            padding: 0.75rem 0;
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 1000;
+            border: 1px solid rgba(var(--color-rgb-primary), 0.15);
+            backdrop-filter: blur(12px);
+        }
+
+        .dark .dropdown-menu {
+            background: rgba(15, 23, 42, 0.98);
+            border-color: rgba(var(--color-rgb-bright), 0.2);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.6);
+        }
+
+        .dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+        [dir="rtl"] .dropdown-menu { left: auto; right: 0; }
+
+        .dropdown-item {
+            display: flex;
+            align-items: center;
+            padding: 0.7rem 1.5rem;
+            color: var(--color-text);
+            transition: all 0.2s ease;
+            white-space: nowrap;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .dark .dropdown-item { color: #cbd5e1; }
+
+        .dropdown-item:hover {
+            background: rgba(var(--color-rgb-primary), 0.08);
+            color: var(--color-primary-light);
+            padding-left: 1.75rem;
+        }
+
+        .dark .dropdown-item:hover {
+            background: rgba(var(--color-rgb-bright), 0.1);
+            color: var(--color-primary-bright);
+        }
+
+        [dir="rtl"] .dropdown-item:hover { padding-left: 1.5rem; padding-right: 1.75rem; }
+
+        .dropdown-item i {
+            margin-right: 0.75rem;
+            width: 18px;
+            text-align: center;
+            color: var(--color-primary-light);
+        }
+
+        [dir="rtl"] .dropdown-item i { margin-right: 0; margin-left: 0.75rem; }
+        .dark .dropdown-item i { color: var(--color-primary-bright); }
+
+        /* Button-in-Button Nested Architecture */
+        .btn-nested {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.65rem;
+            padding: 0.45rem 0.65rem 0.45rem 1.25rem;
+            border-radius: 9999px;
+            font-weight: 700;
+            font-size: 0.78rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
+            color: #FFFFFF !important;
+            box-shadow: 0 8px 20px -5px rgba(var(--color-rgb-primary), 0.4);
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .dark .btn-nested {
+            background: linear-gradient(135deg, var(--color-primary-bright) 0%, var(--color-primary-light) 100%);
+            color: #0a0f1e !important;
+            box-shadow: 0 8px 20px -5px rgba(var(--color-rgb-bright), 0.35);
+        }
+
+        .btn-nested .icon-circle {
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 9999px;
+            background: rgba(255, 255, 255, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            color: #FFFFFF;
+        }
+
+        .dark .btn-nested .icon-circle { background: rgba(10, 15, 30, 0.25); color: #0a0f1e; }
+        .btn-nested:hover { transform: translateY(-2px); box-shadow: 0 15px 30px -8px rgba(var(--color-rgb-primary), 0.5); }
+        .dark .btn-nested:hover { box-shadow: 0 15px 30px -8px rgba(var(--color-rgb-bright), 0.45); }
+        .btn-nested:hover .icon-circle { transform: translateX(3px) rotate(45deg); }
+        .btn-nested:active { transform: scale(0.98); }
+
+        /* Buttons */
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.75rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.02em;
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
+            color: white !important;
+            box-shadow: 0 8px 20px -5px rgba(var(--color-rgb-primary), 0.4);
+            border: none;
+            cursor: pointer;
+        }
+
+        .dark .btn-primary {
+            background: linear-gradient(135deg, var(--color-primary-bright) 0%, var(--color-primary-light) 100%);
+            color: #0a0f1e !important;
+            box-shadow: 0 8px 20px -5px rgba(var(--color-rgb-bright), 0.3);
+        }
+
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 15px 30px -8px rgba(var(--color-rgb-primary), 0.5); }
+        .dark .btn-primary:hover { box-shadow: 0 15px 30px -8px rgba(var(--color-rgb-bright), 0.4); }
+
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.75rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.02em;
+            transition: all 0.3s ease;
+            background: transparent;
+            color: var(--color-primary);
+            border: 1.5px solid rgba(var(--color-rgb-primary), 0.3);
+            cursor: pointer;
+        }
+
+        .dark .btn-outline { color: var(--color-primary-bright); border-color: rgba(var(--color-rgb-bright), 0.3); }
+        .btn-outline:hover { background: rgba(var(--color-rgb-primary), 0.08); border-color: var(--color-primary); transform: translateY(-2px); }
+        .dark .btn-outline:hover { background: rgba(var(--color-rgb-bright), 0.1); border-color: var(--color-primary-bright); }
+
+        .toggle-btn {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(var(--color-rgb-primary), 0.1);
+            color: var(--color-primary);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(var(--color-rgb-primary), 0.2);
+            cursor: pointer;
+        }
+
+        .dark .toggle-btn {
+            background: rgba(var(--color-rgb-bright), 0.1);
+            color: var(--color-primary-bright);
+            border-color: rgba(var(--color-rgb-bright), 0.25);
+        }
+
+        .toggle-btn:hover { background: var(--color-primary); color: white; transform: scale(1.08); }
+        .dark .toggle-btn:hover { background: var(--color-primary-bright); color: #0a0f1e; }
+        .toggle-btn.active { background: var(--color-primary); color: white; }
+        .dark .toggle-btn.active { background: var(--color-primary-bright); color: #0a0f1e; }
+
+        /* Mobile Menu */
+        .mobile-menu { background: white; max-height: 0; overflow: hidden; transition: max-height 0.5s ease; }
+        .mobile-menu:not(.open) {
+            border: none !important;
+            border-width: 0 !important;
+            margin-top: 0 !important;
+            padding: 0 !important;
+            box-shadow: none !important;
+            pointer-events: none !important;
+        }
+        .dark .mobile-menu { background: #0f172a; }
+        .mobile-menu.open { max-height: 85vh; overflow-y: auto; }
+
+        .mobile-menu-item {
+            display: block;
+            padding: 1rem 1.5rem;
+            font-weight: 500;
+            color: var(--color-text);
+            border-bottom: 1px solid rgba(var(--color-rgb-primary), 0.08);
+            transition: all 0.2s ease;
+            font-size: 0.9rem;
+        }
+
+        .dark .mobile-menu-item { color: #cbd5e1; border-bottom-color: rgba(var(--color-rgb-bright), 0.1); }
+        .mobile-menu-item:hover { background-color: rgba(var(--color-rgb-primary), 0.05); color: var(--color-primary-light); }
+        .dark .mobile-menu-item:hover { background-color: rgba(var(--color-rgb-bright), 0.08); color: var(--color-primary-bright); }
+
+        .mobile-dropdown-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; background: rgba(var(--color-rgb-primary), 0.03); }
+        .dark .mobile-dropdown-content { background: rgba(15, 23, 42, 0.8); }
+        .mobile-dropdown-content.show { max-height: 300px; }
+
+        .mobile-dropdown-item {
+            display: block;
+            padding: 0.8rem 2.5rem;
+            font-size: 0.85rem;
+            color: var(--color-text);
+            transition: all 0.2s ease;
+            border-bottom: 1px solid rgba(var(--color-rgb-primary), 0.06);
+        }
+
+        .dark .mobile-dropdown-item { color: #94a3b8; border-bottom-color: rgba(var(--color-rgb-bright), 0.08); }
+        .mobile-dropdown-item:hover { color: var(--color-primary-light); background-color: rgba(var(--color-rgb-primary), 0.08); }
+        .dark .mobile-dropdown-item:hover { background-color: rgba(var(--color-rgb-bright), 0.1); color: var(--color-primary-bright); }
+
+        /* Trust Badge */
+        .trust-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            background: rgba(var(--color-rgb-primary), 0.08);
+            color: var(--color-primary);
+            border: 1px solid rgba(var(--color-rgb-primary), 0.15);
+        }
+
+        .dark .trust-badge {
+            background: rgba(var(--color-rgb-bright), 0.1);
+            color: var(--color-primary-bright);
+            border-color: rgba(var(--color-rgb-bright), 0.2);
+        }
+
+        .premium-line {
+            width: 70px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--color-primary-light), var(--color-primary-bright), transparent);
+            margin: 1.25rem 0;
+            border-radius: 2px;
+        }
+
+        .dark .premium-line {
+            background: linear-gradient(90deg, var(--color-primary-bright), var(--color-primary-light), transparent);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            line-height: 1;
+            color: var(--color-primary);
+        }
+
+        .dark .stat-number { color: var(--color-primary-bright); }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #22c55e;
+            box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.2);
+            animation: pulseSoft 2s infinite;
+        }
+
+        /* HOME 2 UNIQUE STYLES */
+        .journey-step {
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .journey-step::before {
+            content: '';
+            position: absolute;
+            left: 1.25rem;
+            top: 3rem;
+            bottom: -2rem;
+            width: 2px;
+            background: linear-gradient(180deg, var(--color-primary-light), rgba(var(--color-rgb-primary), 0.1));
+        }
+
+        .journey-step:last-child::before { display: none; }
+
+        .journey-dot {
+            position: absolute;
+            left: 0.5rem;
+            top: 0.25rem;
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 50%;
+            background: var(--color-primary-light);
+            border: 3px solid var(--color-bg);
+            box-shadow: 0 0 0 3px rgba(var(--color-rgb-primary), 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.6rem;
+            font-weight: 700;
+        }
+
+        .dark .journey-dot {
+            border-color: #0a0f1e;
+            box-shadow: 0 0 0 3px rgba(var(--color-rgb-bright), 0.15);
+        }
+
+        .stat-card {
+            background: white;
+            border-radius: 20px;
+            padding: 1.5rem;
+            border: 1px solid rgba(var(--color-rgb-primary), 0.08);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dark .stat-card {
+            background: #111827;
+            border-color: rgba(var(--color-rgb-bright), 0.1);
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--color-primary-light), var(--color-primary-bright));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .stat-card:hover::before { transform: scaleX(1); }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px -15px rgba(var(--color-rgb-primary), 0.2);
+            border-color: rgba(var(--color-rgb-primary), 0.2);
+        }
+
+        .dark .stat-card:hover {
+            border-color: rgba(var(--color-rgb-bright), 0.25);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
+        }
+
+        .testimonial-card {
+            background: white;
+            border-radius: 24px;
+            padding: 2rem;
+            border: 1px solid rgba(var(--color-rgb-primary), 0.08);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .dark .testimonial-card {
+            background: #111827;
+            border-color: rgba(var(--color-rgb-bright), 0.1);
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 1rem;
+            right: 2rem;
+            font-size: 5rem;
+            font-family: 'Playfair Display', serif;
+            color: rgba(var(--color-rgb-primary), 0.08);
+            line-height: 1;
+        }
+
+        .dark .testimonial-card::before {
+            color: rgba(var(--color-rgb-bright), 0.08);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px -15px rgba(var(--color-rgb-primary), 0.15);
+        }
+
+        .dark .testimonial-card:hover {
+            box-shadow: 0 25px 50px -15px rgba(0, 0, 0, 0.7);
+        }
+
+        .flag-circle {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .dark .flag-circle {
+            border-color: #1e293b;
+        }
+
+        .visa-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.3rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            background: rgba(var(--color-rgb-primary), 0.1);
+            color: var(--color-primary);
+            border: 1px solid rgba(var(--color-rgb-primary), 0.15);
+        }
+
+        .dark .visa-badge {
+            background: rgba(var(--color-rgb-bright), 0.12);
+            color: var(--color-primary-bright);
+            border-color: rgba(var(--color-rgb-bright), 0.2);
+        }
+
+        .accordion-item {
+            border: 1px solid rgba(var(--color-rgb-primary), 0.1);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .dark .accordion-item {
+            background: #111827;
+            border-color: rgba(var(--color-rgb-bright), 0.1);
+        }
+
+        .accordion-item:hover {
+            border-color: rgba(var(--color-rgb-primary), 0.25);
+        }
+
+        .dark .accordion-item:hover {
+            border-color: rgba(var(--color-rgb-bright), 0.25);
+        }
+
+        .accordion-header {
+            padding: 1.25rem 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: background 0.3s ease;
+        }
+
+        .accordion-header:hover {
+            background: rgba(var(--color-rgb-primary), 0.03);
+        }
+
+        .dark .accordion-header:hover {
+            background: rgba(var(--color-rgb-bright), 0.05);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .accordion-content.open {
+            max-height: 400px;
+        }
+
+        .accordion-inner {
+            padding: 0 1.5rem 1.5rem;
+            font-size: 0.875rem;
+            line-height: 1.7;
+            color: rgba(var(--color-text), 0.8);
+        }
+
+        .dark .accordion-inner {
+            color: #94a3b8;
+        }
+
+        .accordion-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-icon.rotated {
+            transform: rotate(180deg);
+        }
+
+        .glow-card {
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+        }
+
+        .glow-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 24px;
+            padding: 1px;
+            background: linear-gradient(135deg, rgba(var(--color-rgb-primary), 0.4), transparent, rgba(var(--color-rgb-primary), 0.1));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+
+        .dark .glow-card::before {
+            background: linear-gradient(135deg, rgba(var(--color-rgb-bright), 0.3), transparent, rgba(var(--color-rgb-bright), 0.1));
+        }
+
+        /* Goal Filter Tabs & Bento Card */
+        .goal-tab {
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .goal-tab.active {
+            background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary));
+            color: #ffffff !important;
+            box-shadow: 0 4px 14px -2px rgba(var(--color-rgb-primary), 0.4);
+            transform: translateY(-1px);
+        }
+        .dark .goal-tab.active {
+            background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary-bright));
+            box-shadow: 0 4px 14px -2px rgba(var(--color-rgb-bright), 0.4);
+        }
+        .bento-card {
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s ease, opacity 0.3s ease;
+        }
+        .bento-card:hover {
+            transform: translateY(-4px);
+        }
+
+        @media (max-width: 1279px) {
+            .desktop-toggle-group { display: none !important; }
+        }
+    </style>
+</head>
+
+<body class="bg-visa-bg dark:bg-[#0a0f1e] text-visa-text dark:text-slate-200 transition-colors duration-400">
+
+    <!-- ========== HEADER ========== -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-[#0f172a]/95 backdrop-blur-xl border-b border-visa-primary/15 dark:border-visa-primary-bright/20 shadow-sm transition-all duration-300">
+        <nav
+            class="w-full px-4 sm:px-6 lg:px-8 py-3.5 sm:py-4 flex items-center justify-between transition-colors duration-400">
+            <a href="index.html" class="flex items-center gap-3 group flex-nowrap shrink-0" dir="ltr">
+                <div class="w-10 h-10 bg-gradient-to-br from-visa-primary-light to-visa-primary-dark rounded-full flex items-center justify-center flex-shrink-0 shadow-md group-hover:rotate-6 transition duration-300">
+                    <i class="fas fa-passport text-white text-base"></i>
+                </div>
+                <div class="flex flex-col whitespace-nowrap leading-none">
+                    <span class="text-xl sm:text-2xl font-serif font-bold tracking-tight text-visa-text dark:text-white">
+                        Horizon<span class="gradient-text">Visa</span>
+                    </span>
+                    <span class="text-[8px] sm:text-[9px] font-sans font-semibold tracking-[0.2em] text-visa-primary-light dark:text-visa-primary-bright uppercase mt-1">
+                        Immigration Consultancy
+                    </span>
+                </div>
+            </a>
+
+            <div class="hidden xl:flex items-center">
+                <div class="desktop-nav-container">
+                    <div class="flex items-center gap-4 xl:gap-6">
+                        <div class="dropdown">
+                            <button class="nav-item active flex items-center gap-1.5" style="color: var(--color-primary-light); font-weight: 700;">
+                                Home <i class="fas fa-chevron-down text-[9px] opacity-70"></i>
+                            </button>
+                            <div class="dropdown-menu">
+                                <a href="index.html" class="dropdown-item">Home 1</a>
+                                <a href="home2.html" class="dropdown-item" style="background: rgba(var(--color-rgb-primary),0.08); color: var(--color-primary-light); border-left: 3px solid var(--color-primary-light); font-weight: 700;">Home 2</a>
+                            </div>
+                        </div>
+                        <a href="about.html" class="nav-item">About</a>
+                        <a href="services.html" class="nav-item">Services</a>
+                        <a href="countries.html" class="nav-item">Country Guide</a>
+                        <a href="contact.html" class="nav-item">Contact</a>
+                        <div class="dropdown">
+                            <button class="nav-item flex items-center gap-1.5">
+                                Dashboard <i class="fas fa-chevron-down text-[9px] opacity-70"></i>
+                            </button>
+                            <div class="dropdown-menu">
+                                <a href="client-dashboard.html" class="dropdown-item">Client Portal</a>
+                                <a href="admin.html" class="dropdown-item">Admin Panel</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3 ml-2">
+                        <a href="login.html" class="btn-nested !py-2 !px-4 !text-xs group">
+                            <span>Sign In</span>
+                            <span class="icon-circle !w-6 !h-6">
+                                <i class="fas fa-arrow-right text-[10px]"></i>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2 ml-4 desktop-toggle-group">
+                    <button id="theme-toggle" class="toggle-btn !w-9 !h-9" title="Toggle Dark/Light Mode">
+                        <i class="fas fa-moon text-sm"></i>
+                        <i class="fas fa-sun text-sm hidden"></i>
+                    </button>
+                    <button id="rtl-toggle" class="toggle-btn !w-9 !h-9 font-serif font-bold text-xs" title="Toggle RTL/LTR">⇄</button>
+                </div>
+            </div>
+
+            <button id="mobile-toggle"
+                class="xl:hidden text-visa-text dark:text-slate-300 p-2 focus:outline-none hover:text-visa-primary-light transition-colors"
+                aria-label="Toggle Navigation Menu">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </nav>
+
+        <div id="mobile-menu" class="mobile-menu xl:hidden w-full border-t border-visa-primary/15 dark:border-visa-primary-bright/15 shadow-xl overflow-hidden">
+            <div class="mobile-dropdown">
+                <button class="mobile-dropdown-btn flex items-center justify-between w-full mobile-menu-item active" style="color: var(--color-primary-light); font-weight: 600;">
+                    <span>Home</span> <i class="fas fa-chevron-down text-xs"></i>
+                </button>
+                <div class="mobile-dropdown-content">
+                    <a href="index.html" class="mobile-dropdown-item">Home 1</a>
+                    <a href="home2.html" class="mobile-dropdown-item" style="background: rgba(var(--color-rgb-primary),0.08); color: var(--color-primary-light); font-weight: 600;">Home 2</a>
+                </div>
+            </div>
+            <a href="about.html" class="mobile-menu-item">About Us</a>
+            <a href="services.html" class="mobile-menu-item">Services</a>
+            <a href="countries.html" class="mobile-menu-item">Country Guide</a>
+            <a href="contact.html" class="mobile-menu-item">Contact</a>
+            <div class="mobile-dropdown">
+                <button class="mobile-dropdown-btn flex items-center justify-between w-full mobile-menu-item">
+                    <span>Dashboard</span> <i class="fas fa-chevron-down text-xs"></i>
+                </button>
+                <div class="mobile-dropdown-content">
+                    <a href="client-dashboard.html" class="mobile-dropdown-item">Client Portal</a>
+                    <a href="admin.html" class="mobile-dropdown-item">Admin Panel</a>
+                </div>
+            </div>
+            <div class="p-5 flex flex-col gap-3">
+                <a href="login.html" class="btn-nested justify-center !py-3 w-full text-center">
+                    <span>Client Portal Login</span>
+                    <span class="icon-circle !w-7 !h-7"><i class="fas fa-arrow-right text-xs"></i></span>
+                </a>
+            </div>
+            <div class="flex justify-center gap-3 p-4 border-t border-visa-primary/10 dark:border-visa-primary-bright/10">
+                <button id="theme-toggle-mobile" class="toggle-btn"><i class="fas fa-moon"></i><i class="fas fa-sun hidden"></i></button>
+                <button id="rtl-toggle-mobile" class="toggle-btn">⇄</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========== HOME 2 SECTION 1: SPLIT HERO WITH IMAGE ========== -->
+    <section class="min-h-[auto] lg:min-h-screen flex items-center pt-28 pb-12 sm:pt-32 sm:pb-16 lg:pt-36 lg:pb-16 bg-visa-bg dark:bg-[#0a0f1e] overflow-hidden transition-colors duration-400 relative">
+        <div class="absolute top-1/3 left-0 w-[500px] h-[500px] bg-gradient-to-r from-visa-primary/10 to-transparent rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="container mx-auto px-6 relative z-10 w-full">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <!-- Left Content -->
+                <div class="animate-slide-up">
+                    <div class="trust-badge mb-6">
+                        <span class="status-dot"></span>
+                        <span>Trusted by 12,000+ Clients Worldwide</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-serif font-bold text-visa-text dark:text-white leading-[1.08] tracking-tight mb-6">
+                        Navigate Borders <br>
+                        <span class="gradient-text italic">With Confidence</span>
+                    </h1>
+
+                    <div class="premium-line"></div>
+
+                    <p class="text-base sm:text-lg text-visa-text/80 dark:text-slate-300 max-w-lg mb-8 leading-relaxed">
+                        From complex immigration paperwork to your first day in a new country — we're the experienced hand guiding you through every step of the journey.
+                    </p>
+
+                    <div class="flex flex-wrap gap-4 mb-10">
+                        <a href="contact.html" class="btn-primary">
+                            <i class="fas fa-calendar-check"></i> Start Your Application
+                        </a>
+                        <a href="services.html" class="btn-outline">
+                            <i class="fas fa-play-circle"></i> How It Works
+                        </a>
+                    </div>
+
+                    <!-- Inline Stats -->
+                    <div class="flex flex-wrap gap-8 pt-8 border-t border-visa-primary/10 dark:border-visa-primary-bright/10">
+                        <div>
+                            <div class="text-3xl font-serif font-bold text-visa-primary dark:text-visa-primary-bright">98%</div>
+                            <div class="text-xs font-medium text-visa-text/60 dark:text-slate-400 mt-1">Success Rate</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-serif font-bold text-visa-primary dark:text-visa-primary-bright">45+</div>
+                            <div class="text-xs font-medium text-visa-text/60 dark:text-slate-400 mt-1">Countries</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-serif font-bold text-visa-primary dark:text-visa-primary-bright">15+</div>
+                            <div class="text-xs font-medium text-visa-text/60 dark:text-slate-400 mt-1">Years Experience</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Image -->
+                <div class="relative flex justify-center lg:justify-end">
+                    <div class="relative w-full max-w-[480px]">
+                        <div class="absolute -top-4 -left-4 w-full h-full rounded-3xl border-2 border-visa-primary/20 dark:border-visa-primary-bright/20"></div>
+                        <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+                            <img src="images/home2-consultation.jpg" alt="Immigration consultation" class="w-full h-[500px] object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+                            <!-- Floating Card -->
+                            <div class="absolute bottom-6 left-6 right-6 bg-white/95 dark:bg-[#1e293b]/95 backdrop-blur-xl rounded-2xl p-4 shadow-xl border border-visa-primary/10 dark:border-visa-primary-bright/10">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center">
+                                        <i class="fas fa-check text-green-500"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-sm font-bold text-visa-text dark:text-white">Visa Approved!</div>
+                                        <div class="text-xs text-visa-text/60 dark:text-slate-400">Skilled Worker • UK</div>
+                                    </div>
+                                    <div class="ml-auto text-visa-primary-light font-bold text-sm">98%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== HOME 2 SECTION 2: JOURNEY TIMELINE ========== -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-white dark:bg-[#0f172a] transition-colors duration-400 border-y border-visa-primary/5 dark:border-visa-primary-bright/5">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-14">
+                <span class="trust-badge mb-3">Your Roadmap</span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-visa-text dark:text-white mt-3 mb-3">
+                    The <span class="gradient-text italic">4-Step</span> Journey
+                </h2>
+                <p class="text-sm text-visa-text/70 dark:text-slate-400">From first consultation to landing in your new country — here's how we get you there.</p>
+            </div>
+
+            <div class="max-w-3xl mx-auto">
+                <!-- Step 1 -->
+                <div class="journey-step pb-10">
+                    <div class="journey-dot">1</div>
+                    <div class="bg-visa-bg dark:bg-[#0a0f1e] rounded-2xl p-6 border border-visa-primary/10 dark:border-visa-primary-bright/10">
+                        <div class="flex items-center gap-3 mb-2">
+                            <i class="fas fa-comments text-visa-primary-light text-lg"></i>
+                            <h3 class="text-lg font-serif font-bold text-visa-text dark:text-white">Free Consultation</h3>
+                        </div>
+                        <p class="text-sm text-visa-text/70 dark:text-slate-400 leading-relaxed">
+                            We assess your profile, discuss your goals, and identify the best visa pathway for your unique situation. No obligation, no pressure.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="journey-step pb-10">
+                    <div class="journey-dot">2</div>
+                    <div class="bg-visa-bg dark:bg-[#0a0f1e] rounded-2xl p-6 border border-visa-primary/10 dark:border-visa-primary-bright/10">
+                        <div class="flex items-center gap-3 mb-2">
+                            <i class="fas fa-file-alt text-visa-primary-light text-lg"></i>
+                            <h3 class="text-lg font-serif font-bold text-visa-text dark:text-white">Document Preparation</h3>
+                        </div>
+                        <p class="text-sm text-visa-text/70 dark:text-slate-400 leading-relaxed">
+                            Our team meticulously prepares and reviews every document — from financial statements to recommendation letters — ensuring nothing is missed.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="journey-step pb-10">
+                    <div class="journey-dot">3</div>
+                    <div class="bg-visa-bg dark:bg-[#0a0f1e] rounded-2xl p-6 border border-visa-primary/10 dark:border-visa-primary-bright/10">
+                        <div class="flex items-center gap-3 mb-2">
+                            <i class="fas fa-paper-plane text-visa-primary-light text-lg"></i>
+                            <h3 class="text-lg font-serif font-bold text-visa-text dark:text-white">Application Submission</h3>
+                        </div>
+                        <p class="text-sm text-visa-text/70 dark:text-slate-400 leading-relaxed">
+                            We submit your application with a comprehensive cover letter and supporting evidence, then track it through every stage of processing.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="journey-step">
+                    <div class="journey-dot">4</div>
+                    <div class="bg-visa-bg dark:bg-[#0a0f1e] rounded-2xl p-6 border border-visa-primary/10 dark:border-visa-primary-bright/10">
+                        <div class="flex items-center gap-3 mb-2">
+                            <i class="fas fa-plane-departure text-visa-primary-light text-lg"></i>
+                            <h3 class="text-lg font-serif font-bold text-visa-text dark:text-white">Approval & Beyond</h3>
+                        </div>
+                        <p class="text-sm text-visa-text/70 dark:text-slate-400 leading-relaxed">
+                            Once approved, we guide you through pre-departure preparations, accommodation, and settling-in support for your new chapter.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="contact.html" class="btn-primary">
+                    <i class="fas fa-rocket"></i> Begin Your Journey
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== HOME 2 SECTION 3: STATS & TRUST ========== -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-visa-bg dark:bg-[#0a0f1e] transition-colors duration-400">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+                <!-- Left: Stats Grid -->
+                <div class="grid grid-cols-2 gap-5">
+                    <div class="stat-card">
+                        <div class="text-4xl font-serif font-bold text-visa-primary dark:text-visa-primary-bright mb-2">98%</div>
+                        <div class="text-sm font-semibold text-visa-text dark:text-white mb-1">Approval Rate</div>
+                        <div class="text-xs text-visa-text/60 dark:text-slate-400">Across all visa categories</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="text-4xl font-serif font-bold text-visa-primary dark:text-visa-primary-bright mb-2">12k+</div>
+                        <div class="text-sm font-semibold text-visa-text dark:text-white mb-1">Clients Served</div>
+                        <div class="text-xs text-visa-text/60 dark:text-slate-400">Since 2010</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="text-4xl font-serif font-bold text-visa-primary dark:text-visa-primary-bright mb-2">45+</div>
+                        <div class="text-sm font-semibold text-visa-text dark:text-white mb-1">Countries</div>
+                        <div class="text-xs text-visa-text/60 dark:text-slate-400">Global coverage</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="text-4xl font-serif font-bold text-visa-primary dark:text-visa-primary-bright mb-2">4.9</div>
+                        <div class="text-sm font-semibold text-visa-text dark:text-white mb-1">Client Rating</div>
+                        <div class="text-xs text-visa-text/60 dark:text-slate-400">Based on 3,200+ reviews</div>
+                    </div>
+                </div>
+
+                <!-- Right: Copy -->
+                <div>
+                    <span class="trust-badge mb-3">Why We're Different</span>
+                    <h2 class="text-3xl sm:text-4xl font-serif font-bold text-visa-text dark:text-white mt-3 mb-4">
+                        Numbers That <span class="gradient-text italic">Speak Trust</span>
+                    </h2>
+                    <p class="text-sm text-visa-text/70 dark:text-slate-400 leading-relaxed mb-6">
+                        For over 15 years, we've been the trusted partner for individuals and families navigating the complex world of immigration. Our track record isn't just a number — it's thousands of successful new beginnings.
+                    </p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-3 text-sm text-visa-text/80 dark:text-slate-300">
+                            <i class="fas fa-check-circle text-visa-primary-light"></i>
+                            <span>Licensed and regulated immigration advisors</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-visa-text/80 dark:text-slate-300">
+                            <i class="fas fa-check-circle text-visa-primary-light"></i>
+                            <span>Former immigration officers on our team</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-visa-text/80 dark:text-slate-300">
+                            <i class="fas fa-check-circle text-visa-primary-light"></i>
+                            <span>End-to-end support from application to arrival</span>
+                        </li>
+                    </ul>
+                    <a href="about.html" class="btn-outline">
+                        <i class="fas fa-arrow-right"></i> Learn More About Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== HOME 2 SECTION 4: FEATURED DESTINATIONS (BENTO EDITORIAL) ========== -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-white dark:bg-[#0f172a] transition-colors duration-400 border-t border-visa-primary/10 dark:border-visa-primary-bright/10">
+        <div class="container mx-auto px-4 sm:px-6">
+            <!-- Section Header -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 max-w-7xl mx-auto">
+                <div class="max-w-2xl">
+                    <span class="trust-badge mb-3">
+                        <i class="fas fa-globe text-visa-primary-light"></i> Global Horizons
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-visa-text dark:text-white mt-3 mb-3">
+                        Curated Destinations for <span class="gradient-text italic">Your Ambitions</span>
+                    </h2>
+                    <p class="text-sm sm:text-base text-visa-text/70 dark:text-slate-400">
+                        Explore our highest-demand immigration corridors with government-accredited pathways, expedited processing, and settlement assistance.
+                    </p>
+                </div>
+                <!-- Action Link -->
+                <div class="shrink-0">
+                    <a href="countries.html" class="inline-flex items-center gap-2 text-sm font-semibold text-visa-primary-light dark:text-visa-primary-bright hover:underline">
+                        <span>View All 45+ Countries</span>
+                        <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Pathway Goal Filter Tabs -->
+            <div class="flex items-center gap-2 sm:gap-3 overflow-x-auto pb-4 mb-8 max-w-7xl mx-auto scrollbar-none">
+                <button type="button" class="goal-tab active px-4 py-2 sm:px-5 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold bg-slate-100 dark:bg-slate-800 text-visa-text/70 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 flex items-center gap-2 shrink-0 cursor-pointer" data-goal="all">
+                    <i class="fas fa-compass text-xs"></i>
+                    <span>All Destinations</span>
+                </button>
+                <button type="button" class="goal-tab px-4 py-2 sm:px-5 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold bg-slate-100 dark:bg-slate-800 text-visa-text/70 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 flex items-center gap-2 shrink-0 cursor-pointer" data-goal="pr">
+                    <i class="fas fa-id-card text-xs"></i>
+                    <span>Direct PR Pathways</span>
+                </button>
+                <button type="button" class="goal-tab px-4 py-2 sm:px-5 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold bg-slate-100 dark:bg-slate-800 text-visa-text/70 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 flex items-center gap-2 shrink-0 cursor-pointer" data-goal="work">
+                    <i class="fas fa-briefcase text-xs"></i>
+                    <span>Skilled & Tech Visas</span>
+                </button>
+                <button type="button" class="goal-tab px-4 py-2 sm:px-5 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold bg-slate-100 dark:bg-slate-800 text-visa-text/70 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 flex items-center gap-2 shrink-0 cursor-pointer" data-goal="invest">
+                    <i class="fas fa-gem text-xs"></i>
+                    <span>Golden & Investor Visas</span>
+                </button>
+            </div>
+
+            <!-- Asymmetric Bento Grid -->
+            <div id="countries-bento-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+                <!-- CARD 1: Canada (Wide Spotlight - 2 cols on lg) -->
+                <div class="bento-card relative rounded-3xl overflow-hidden group shadow-lg hover:shadow-2xl md:col-span-2 lg:col-span-2 min-h-[420px] sm:min-h-[440px] flex flex-col justify-between p-6 sm:p-8" data-goal="pr work">
+                    <img src="images/country-canada.jpg" alt="Canada Immigration" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 to-black/25"></div>
+                    
+                    <!-- Top Floating Header -->
+                    <div class="relative z-10 flex items-center justify-between gap-3">
+                        <div class="flex items-center gap-3">
+                            <img src="https://flagcdn.com/w80/ca.png" alt="Canada Flag" class="w-10 h-7 rounded-md object-cover shadow-md border border-white/30 shrink-0">
+                            <div>
+                                <span class="text-[11px] font-semibold tracking-wider uppercase text-emerald-400">Featured Spotlight</span>
+                                <h3 class="text-2xl sm:text-3xl font-serif font-bold text-white leading-tight">Canada</h3>
+                            </div>
+                        </div>
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold backdrop-blur-md bg-white/20 border border-white/30 text-white shadow-sm shrink-0">
+                            <i class="fas fa-check-circle text-emerald-400"></i> 98% Success
+                        </span>
+                    </div>
+
+                    <!-- Bottom Details -->
+                    <div class="relative z-10 pt-16">
+                        <p class="text-sm sm:text-base text-white/90 font-light mb-4 max-w-xl leading-relaxed">
+                            The world's leading permanent residency system offering direct citizenship pathways, world-class healthcare, and universal education for families.
+                        </p>
+                        
+                        <!-- Pathways Badges -->
+                        <div class="flex flex-wrap items-center gap-2 mb-6">
+                            <span class="px-3 py-1 rounded-full text-xs font-medium backdrop-blur-md bg-black/40 text-white/90 border border-white/20">Express Entry (CRS)</span>
+                            <span class="px-3 py-1 rounded-full text-xs font-medium backdrop-blur-md bg-black/40 text-white/90 border border-white/20">Provincial Nominee (PNP)</span>
+                            <span class="px-3 py-1 rounded-full text-xs font-medium backdrop-blur-md bg-black/40 text-white/90 border border-white/20">Study-to-PR</span>
+                            <span class="px-3 py-1 rounded-full text-xs font-medium backdrop-blur-md bg-emerald-500/20 text-emerald-300 border border-emerald-400/30">
+                                <i class="fas fa-bolt text-[10px] mr-1"></i> Fast Track: 6–8 Mos
+                            </span>
+                        </div>
+
+                        <!-- Card Footer Link -->
+                        <div class="flex items-center justify-between pt-4 border-t border-white/15">
+                            <div class="text-xs text-white/70">
+                                Target Quota: <strong class="text-white">485,000 New PRs/yr</strong>
+                            </div>
+                            <a href="countries.html" class="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-white bg-white/20 hover:bg-white hover:text-visa-text backdrop-blur-md px-4 py-2 rounded-xl transition-all duration-300 group-hover:bg-white group-hover:text-visa-text">
+                                <span>Explore Canada Pathways</span>
+                                <i class="fas fa-arrow-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 2: United Kingdom (Portrait - 1 col) -->
+                <div class="bento-card relative rounded-3xl overflow-hidden group shadow-lg hover:shadow-2xl md:col-span-1 lg:col-span-1 min-h-[420px] sm:min-h-[440px] flex flex-col justify-between p-6 sm:p-8" data-goal="work">
+                    <img src="images/country-uk.jpg" alt="United Kingdom Immigration" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 to-black/25"></div>
+                    
+                    <!-- Top Floating Header -->
+                    <div class="relative z-10 flex items-center justify-between gap-3">
+                        <div class="flex items-center gap-3">
+                            <img src="https://flagcdn.com/w80/gb.png" alt="UK Flag" class="w-10 h-7 rounded-md object-cover shadow-md border border-white/30 shrink-0">
+                            <div>
+                                <span class="text-[11px] font-semibold tracking-wider uppercase text-sky-400">Global Hub</span>
+                                <h3 class="text-xl sm:text-2xl font-serif font-bold text-white leading-tight">United Kingdom</h3>
+                            </div>
+                        </div>
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold backdrop-blur-md bg-white/20 border border-white/30 text-white shadow-sm shrink-0">
+                            <i class="fas fa-check-circle text-emerald-400"></i> 96%
+                        </span>
+                    </div>
+
+                    <!-- Bottom Details -->
+                    <div class="relative z-10 pt-16">
+                        <p class="text-sm text-white/90 font-light mb-4 leading-relaxed">
+                            Premier career capital with expedited endorsements for tech founders, researchers, and licensed professionals.
+                        </p>
+                        
+                        <!-- Pathways Badges -->
+                        <div class="flex flex-wrap items-center gap-1.5 mb-6">
+                            <span class="px-2.5 py-1 rounded-full text-xs font-medium backdrop-blur-md bg-black/40 text-white/90 border border-white/20">Skilled Worker</span>
+                            <span class="px-2.5 py-1 rounded-full text-xs font-medium backdrop-blur-md bg-black/40 text-white/90 border border-white/20">Global Talent</span>
+                            <span class="px-2.5 py-1 rounded-full text-xs font-medium backdrop-blur-md bg-sky-500/20 text-sky-300 border border-sky-400/30">3–8 Wks</span>
+                        </div>
+
+                        <!-- Card Footer Link -->
+                        <div class="flex items-center justify-between pt-4 border-t border-white/15">
+                            <div class="text-xs text-white/70">ILR after 5 yrs</div>
+                            <a href="countries.html" class="inline-flex items-center gap-2 text-xs font-semibold text-white bg-white/20 hover:bg-white hover:text-visa-text backdrop-blur-md px-3.5 py-2 rounded-xl transition-all duration-300 group-hover:bg-white group-hover:text-visa-text">
+                                <span>Explore UK</span>
+                                <i class="fas fa-arrow-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 3: Australia (1 col) -->
+                <div class="bento-card relative rounded-3xl overflow-hidden group shadow-lg hover:shadow-2xl md:col-span-1 lg:col-span-1 min-h-[380px] flex flex-col justify-between p-6 sm:p-7" data-goal="pr work">
+                    <img src="images/country-australia.jpg" alt="Australia Immigration" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 to-black/25"></div>
+                    
+                    <!-- Top Floating Header -->
+                    <div class="relative z-10 flex items-center justify-between gap-3">
+                        <div class="flex items-center gap-3">
+                            <img src="https://flagcdn.com/w80/au.png" alt="Australia Flag" class="w-10 h-7 rounded-md object-cover shadow-md border border-white/30 shrink-0">
+                            <div>
+                                <span class="text-[11px] font-semibold tracking-wider uppercase text-amber-400">Points PR</span>
+                                <h3 class="text-xl font-serif font-bold text-white leading-tight">Australia</h3>
+                            </div>
+                        </div>
+                        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold backdrop-blur-md bg-white/20 border border-white/30 text-white shadow-sm shrink-0">
+                            <i class="fas fa-check-circle text-emerald-400"></i> 97%
+                        </span>
+                    </div>
+
+                    <!-- Bottom Details -->
+                    <div class="relative z-10 pt-12">
+                        <p class="text-sm text-white/90 font-light mb-3 leading-relaxed">
+                            Sun-soaked lifestyle, world-leading minimum wages, and direct Permanent Residency via SkillSelect streams.
+                        </p>
+                        
+                        <div class="flex flex-wrap items-center gap-1.5 mb-5">
+                            <span class="px-2.5 py-1 rounded-full text-xs font-medium backdrop-blur-md bg-black/40 text-white/90 border border-white/20">Subclass 189 / 190</span>
+                            <span class="px-2.5 py-1 rounded-full text-xs font-medium backdrop-blur-md bg-black/40 text-white/90 border border-white/20">TSS 482</span>
+                            <span class="px-2.5 py-1 rounded-full text-xs font-medium backdrop-blur-md bg-amber-500/20 text-amber-300 border border-amber-400/30">4–9 Mos</span>
+                        </div>
+
+                        <div class="flex items-center justify-between pt-3.5 border-t border-white/15">
+                            <span class="text-xs text-white/70">Medicare Included</span>
+                            <a href="countries.html" class="inline-flex items-center gap-1.5 text-xs font-semibold text-white bg-white/20 hover:bg-white hover:text-visa-text backdrop-blur-md px-3 py-1.5 rounded-lg transition-all duration-300 group-hover:bg-white group-hover:text-visa-text">
+                                <span>Details</span>
+                                <i class="fas fa-arrow-right text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 4: United States (1 col) -->
+                <div class="bento-card relative rounded-3xl overflow-hidden group shadow-lg hover:shadow-2xl md:col-span-1 lg:col-span-1 min-h-[380px] flex flex-col justify-between p-6 sm:p-7" data-goal="work invest">
+                    <img src="images/country-usa.jpg" alt="USA Immigration" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 to-black/25"></div>
+                    
+                    <!-- Top Floating Header -->
+                    <div class="relative z-10 flex items-center justify-between gap-3">
+                        <div class="flex items-center gap-3">
+                            <img src="https://flagcdn.com/w80/us.png" alt="USA Flag" class="w-10 h-7 rounded-md object-cover shadow-md border border-white/30 shrink-0">
+                            <div>
+                                <span class="text-[11px] font-semibold tracking-wider uppercase text-rose-400">Green Card</span>
+                                <h3 class="text-xl font-serif font-bold text-white leading-tight">United States</h3>
+                            </div>
+                        </div>
+                        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold backdrop-blur-md bg-white/20 border border-white/30 text-white shadow-sm shrink-0">
+                            <i class="fas fa-check-circle text-emerald-400"></i> 94%
+                        </span>
+                    </div>
+
+                    <!-- Bottom Details -->
+                    <div class="relative z-10 pt-12">
+                        <p class="text-sm text-white/90 font-light mb-3 leading-relaxed">
+                            Home to the world's highest compensation, tech frontier, and prestigious EB-1, EB-2 NIW and investor tracks.
+                        </p>
+                        
+                        <div class="flex flex-wrap items-center gap-1.5 mb-5">
+                            <span class="px-2.5 py-1 rounded-full text-xs font-medium backdrop-blur-md bg-black/40 text-white/90 border border-white/20">EB-2 NIW</span>
+                            <span class="px-2.5 py-1 rounded-full text-xs font-medium backdrop-blur-md bg-black/40 text-white/90 border border-white/20">EB-1A Extraordinary</span>
+                            <span class="px-2.5 py-1 rounded-full text-xs font-medium backdrop-blur-md bg-rose-500/20 text-rose-300 border border-rose-400/30">EB-5</span>
+                        </div>
+
+                        <div class="flex items-center justify-between pt-3.5 border-t border-white/15">
+                            <span class="text-xs text-white/70">Attorney Guided</span>
+                            <a href="countries.html" class="inline-flex items-center gap-1.5 text-xs font-semibold text-white bg-white/20 hover:bg-white hover:text-visa-text backdrop-blur-md px-3 py-1.5 rounded-lg transition-all duration-300 group-hover:bg-white group-hover:text-visa-text">
+                                <span>Details</span>
+                                <i class="fas fa-arrow-right text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 5: New Zealand (1 col) -->
+                <div class="bento-card relative rounded-3xl overflow-hidden group shadow-lg hover:shadow-2xl md:col-span-1 lg:col-span-1 min-h-[380px] flex flex-col justify-between p-6 sm:p-7" data-goal="pr work">
+                    <img src="images/country-new-zealand.jpg" alt="New Zealand Immigration" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 to-black/25"></div>
+                    
+                    <!-- Top Floating Header -->
+                    <div class="relative z-10 flex items-center justify-between gap-3">
+                        <div class="flex items-center gap-3">
+                            <img src="https://flagcdn.com/w80/nz.png" alt="New Zealand Flag" class="w-10 h-7 rounded-md object-cover shadow-md border border-white/30 shrink-0">
+                            <div>
+                                <span class="text-[11px] font-semibold tracking-wider uppercase text-teal-400">Green List PR</span>
+                                <h3 class="text-xl font-serif font-bold text-white leading-tight">New Zealand</h3>
+                            </div>
+                        </div>
+                        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold backdrop-blur-md bg-white/20 border border-white/30 text-white shadow-sm shrink-0">
+                            <i class="fas fa-check-circle text-emerald-400"></i> 99%
+                        </span>
+                    </div>
+
+                    <!-- Bottom Details -->
+                    <div class="relative z-10 pt-12">
+                        <p class="text-sm text-white/90 font-light mb-3 leading-relaxed">
+                            Unmatched peace of mind, pristine nature, and fast-track Green List residence for in-demand sectors.
+                        </p>
+                        
+                        <div class="flex flex-wrap items-center gap-1.5 mb-5">
+                            <span class="px-2.5 py-1 rounded-full text-xs font-medium backdrop-blur-md bg-black/40 text-white/90 border border-white/20">Skilled Migrant (SMC)</span>
+                            <span class="px-2.5 py-1 rounded-full text-xs font-medium backdrop-blur-md bg-black/40 text-white/90 border border-white/20">Green List Tier 1</span>
+                            <span class="px-2.5 py-1 rounded-full text-xs font-medium backdrop-blur-md bg-teal-500/20 text-teal-300 border border-teal-400/30">4–6 Mos</span>
+                        </div>
+
+                        <div class="flex items-center justify-between pt-3.5 border-t border-white/15">
+                            <span class="text-xs text-white/70">Top Global Safety</span>
+                            <a href="countries.html" class="inline-flex items-center gap-1.5 text-xs font-semibold text-white bg-white/20 hover:bg-white hover:text-visa-text backdrop-blur-md px-3 py-1.5 rounded-lg transition-all duration-300 group-hover:bg-white group-hover:text-visa-text">
+                                <span>Details</span>
+                                <i class="fas fa-arrow-right text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 6: Germany (Wide Spotlight - 2 cols on lg) -->
+                <div class="bento-card relative rounded-3xl overflow-hidden group shadow-lg hover:shadow-2xl md:col-span-2 lg:col-span-2 min-h-[400px] flex flex-col justify-between p-6 sm:p-8" data-goal="work invest">
+                    <img src="images/country-germany.jpg" alt="Germany Immigration" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 to-black/25"></div>
+                    
+                    <!-- Top Floating Header -->
+                    <div class="relative z-10 flex items-center justify-between gap-3">
+                        <div class="flex items-center gap-3">
+                            <img src="https://flagcdn.com/w80/de.png" alt="Germany Flag" class="w-10 h-7 rounded-md object-cover shadow-md border border-white/30 shrink-0">
+                            <div>
+                                <span class="text-[11px] font-semibold tracking-wider uppercase text-yellow-400">EU Engine</span>
+                                <h3 class="text-2xl sm:text-3xl font-serif font-bold text-white leading-tight">Germany</h3>
+                            </div>
+                        </div>
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold backdrop-blur-md bg-white/20 border border-white/30 text-white shadow-sm shrink-0">
+                            <i class="fas fa-check-circle text-emerald-400"></i> 97% Success
+                        </span>
+                    </div>
+
+                    <!-- Bottom Details -->
+                    <div class="relative z-10 pt-16">
+                        <p class="text-sm sm:text-base text-white/90 font-light mb-4 max-w-xl leading-relaxed">
+                            Europe's economic titan offering the modern Opportunity Card (Chancenkarte), EU Blue Card, and tuition-free world-class universities with Schengen mobility.
+                        </p>
+                        
+                        <!-- Pathways Badges -->
+                        <div class="flex flex-wrap items-center gap-2 mb-6">
+                            <span class="px-3 py-1 rounded-full text-xs font-medium backdrop-blur-md bg-black/40 text-white/90 border border-white/20">EU Blue Card</span>
+                            <span class="px-3 py-1 rounded-full text-xs font-medium backdrop-blur-md bg-black/40 text-white/90 border border-white/20">Opportunity Card (Chancenkarte)</span>
+                            <span class="px-3 py-1 rounded-full text-xs font-medium backdrop-blur-md bg-black/40 text-white/90 border border-white/20">Freelancer / Investor</span>
+                            <span class="px-3 py-1 rounded-full text-xs font-medium backdrop-blur-md bg-yellow-500/20 text-yellow-300 border border-yellow-400/30">
+                                <i class="fas fa-clock text-[10px] mr-1"></i> 4–8 Weeks
+                            </span>
+                        </div>
+
+                        <!-- Card Footer Link -->
+                        <div class="flex items-center justify-between pt-4 border-t border-white/15">
+                            <div class="text-xs text-white/70">
+                                Permanent Settlement in <strong class="text-white">21–27 Months</strong>
+                            </div>
+                            <a href="countries.html" class="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-white bg-white/20 hover:bg-white hover:text-visa-text backdrop-blur-md px-4 py-2 rounded-xl transition-all duration-300 group-hover:bg-white group-hover:text-visa-text">
+                                <span>Explore German Visas</span>
+                                <i class="fas fa-arrow-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 7: United Arab Emirates (1 col) -->
+                <div class="bento-card relative rounded-3xl overflow-hidden group shadow-lg hover:shadow-2xl md:col-span-2 lg:col-span-1 min-h-[400px] flex flex-col justify-between p-6 sm:p-8" data-goal="invest work">
+                    <img src="images/country-uae.jpg" alt="UAE Golden Visa" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 to-black/25"></div>
+                    
+                    <!-- Top Floating Header -->
+                    <div class="relative z-10 flex items-center justify-between gap-3">
+                        <div class="flex items-center gap-3">
+                            <img src="https://flagcdn.com/w80/ae.png" alt="UAE Flag" class="w-10 h-7 rounded-md object-cover shadow-md border border-white/30 shrink-0">
+                            <div>
+                                <span class="text-[11px] font-semibold tracking-wider uppercase text-amber-300">Tax Free 0%</span>
+                                <h3 class="text-xl sm:text-2xl font-serif font-bold text-white leading-tight">United Arab Emirates</h3>
+                            </div>
+                        </div>
+                        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold backdrop-blur-md bg-white/20 border border-white/30 text-white shadow-sm shrink-0">
+                            <i class="fas fa-check-circle text-emerald-400"></i> 99%
+                        </span>
+                    </div>
+
+                    <!-- Bottom Details -->
+                    <div class="relative z-10 pt-16">
+                        <p class="text-sm text-white/90 font-light mb-4 leading-relaxed">
+                            Zero personal tax, premier global luxury, and self-sponsored 10-year residency for investors and tech talent.
+                        </p>
+                        
+                        <!-- Pathways Badges -->
+                        <div class="flex flex-wrap items-center gap-1.5 mb-6">
+                            <span class="px-2.5 py-1 rounded-full text-xs font-medium backdrop-blur-md bg-black/40 text-white/90 border border-white/20">10-Yr Golden Visa</span>
+                            <span class="px-2.5 py-1 rounded-full text-xs font-medium backdrop-blur-md bg-black/40 text-white/90 border border-white/20">Green Visa</span>
+                            <span class="px-2.5 py-1 rounded-full text-xs font-medium backdrop-blur-md bg-amber-500/20 text-amber-300 border border-amber-400/30">2–4 Wks</span>
+                        </div>
+
+                        <!-- Card Footer Link -->
+                        <div class="flex items-center justify-between pt-4 border-t border-white/15">
+                            <div class="text-xs text-white/70">100% Foreign Ownership</div>
+                            <a href="countries.html" class="inline-flex items-center gap-2 text-xs font-semibold text-white bg-white/20 hover:bg-white hover:text-visa-text backdrop-blur-md px-3.5 py-2 rounded-xl transition-all duration-300 group-hover:bg-white group-hover:text-visa-text">
+                                <span>Explore UAE</span>
+                                <i class="fas fa-arrow-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Interactive Discovery Banner -->
+            <div class="mt-12 max-w-7xl mx-auto rounded-3xl p-6 sm:p-8 bg-gradient-to-r from-visa-primary/10 via-visa-accent/10 to-visa-primary/5 dark:from-visa-primary-bright/10 dark:via-visa-accent/5 dark:to-transparent border border-visa-primary/20 dark:border-visa-primary-bright/20 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
+                <div class="flex items-center gap-5">
+                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-visa-primary-light to-visa-primary-dark text-white flex items-center justify-center text-xl shrink-0 shadow-md">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-serif font-bold text-visa-text dark:text-white mb-1">
+                            Unsure which country matches your credentials?
+                        </h4>
+                        <p class="text-xs sm:text-sm text-visa-text/70 dark:text-slate-400">
+                            Our registered immigration strategists evaluate your age, education, and career points in 60 seconds with zero obligation.
+                        </p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3 shrink-0 w-full md:w-auto">
+                    <a href="contact.html" class="btn-primary w-full md:w-auto text-center justify-center">
+                        <i class="fas fa-calculator text-xs"></i>
+                        <span>Free Profile Assessment</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== HOME 2 SECTION 5: FAQ ACCORDION ========== -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-visa-bg dark:bg-[#0a0f1e] transition-colors duration-400 border-t border-visa-primary/10 dark:border-visa-primary-bright/10">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-14">
+                <span class="trust-badge mb-3">Common Questions</span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-visa-text dark:text-white mt-3 mb-3">
+                    Frequently Asked <span class="gradient-text italic" style="font-family: Georgia, 'Times New Roman', serif;">Questions</span>
+                </h2>
+                <p class="text-sm text-visa-text/70 dark:text-slate-400">Everything you need to know before starting your immigration journey.</p>
+            </div>
+
+            <div class="max-w-3xl mx-auto space-y-4">
+                <!-- FAQ 1 -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-full bg-visa-primary/10 dark:bg-visa-primary-bright/10 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-question text-visa-primary-light text-xs"></i>
+                            </div>
+                            <span class="font-semibold text-sm text-visa-text dark:text-white">How long does the visa process take?</span>
+                        </div>
+                        <i class="fas fa-chevron-down text-visa-primary-light text-xs accordion-icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-inner">
+                            Processing times vary by visa type and country. Generally, work visas take 3–8 weeks, student visas 2–6 weeks, and family visas 6–12 weeks. During your free consultation, we'll give you a personalized timeline based on your specific case and target country.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-full bg-visa-primary/10 dark:bg-visa-primary-bright/10 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-question text-visa-primary-light text-xs"></i>
+                            </div>
+                            <span class="font-semibold text-sm text-visa-text dark:text-white">What documents do I need for my application?</span>
+                        </div>
+                        <i class="fas fa-chevron-down text-visa-primary-light text-xs accordion-icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-inner">
+                            Required documents depend on your visa type and destination country, but typically include: valid passport, proof of funds, educational credentials, employment letters, language test scores, and medical certificates. We provide a personalized checklist and review every document before submission.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-full bg-visa-primary/10 dark:bg-visa-primary-bright/10 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-question text-visa-primary-light text-xs"></i>
+                            </div>
+                            <span class="font-semibold text-sm text-visa-text dark:text-white">Can my family accompany me?</span>
+                        </div>
+                        <i class="fas fa-chevron-down text-visa-primary-light text-xs accordion-icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-inner">
+                            In most cases, yes. Many work and study visas allow dependents (spouse and children under 18) to accompany the primary applicant. Specific rules vary by country and visa category. We'll advise you on the best approach for your family's situation during your consultation.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-full bg-visa-primary/10 dark:bg-visa-primary-bright/10 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-question text-visa-primary-light text-xs"></i>
+                            </div>
+                            <span class="font-semibold text-sm text-visa-text dark:text-white">What if my visa application is rejected?</span>
+                        </div>
+                        <i class="fas fa-chevron-down text-visa-primary-light text-xs accordion-icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-inner">
+                            While our 98% success rate means rejections are rare, if your application is refused, we'll analyze the refusal letter, identify the issues, and advise on the best path forward — whether that's an appeal, administrative review, or a fresh application addressing the concerns.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 5 -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-full bg-visa-primary/10 dark:bg-visa-primary-bright/10 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-question text-visa-primary-light text-xs"></i>
+                            </div>
+                            <span class="font-semibold text-sm text-visa-text dark:text-white">How much do your services cost?</span>
+                        </div>
+                        <i class="fas fa-chevron-down text-visa-primary-light text-xs accordion-icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-inner">
+                            Our fees depend on the complexity of your case and visa type. We offer transparent, fixed-fee pricing with no hidden charges. Your initial consultation is completely free, and we'll provide a detailed quote before you commit to anything.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== HOME 2 SECTION 6: TESTIMONIALS ========== -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-white dark:bg-[#0f172a] transition-colors duration-400 border-t border-visa-primary/10 dark:border-visa-primary-bright/10">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-14">
+                <span class="trust-badge mb-3">Client Stories</span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-visa-text dark:text-white mt-3 mb-3">
+                    Real People, <span class="gradient-text italic">Real Results</span>
+                </h2>
+                <p class="text-sm text-visa-text/70 dark:text-slate-400">Hear from clients who successfully started their new lives abroad.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <div class="flex items-center gap-1 text-visa-accent text-xs mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-sm text-visa-text/80 dark:text-slate-300 leading-relaxed mb-6 relative z-10">
+                        "Horizon Visa made my Canadian dream a reality. Their attention to detail on my Express Entry profile was incredible. Approved in just 8 weeks!"
+                    </p>
+                    <div class="flex items-center gap-3 pt-4 border-t border-visa-primary/10 dark:border-visa-primary-bright/10">
+                        <img src="images/rajesh-kumar.jpg" alt="Rajesh Kumar" class="w-11 h-11 rounded-full object-cover object-center border-2 border-visa-primary-light/30 dark:border-visa-primary-bright/30 shadow-md shrink-0" loading="lazy">
+                        <div>
+                            <div class="font-semibold text-sm text-visa-text dark:text-white">Rajesh Kumar</div>
+                            <div class="text-xs text-visa-text/60 dark:text-slate-400 flex items-center gap-1.5 mt-0.5">
+                                <span>Express Entry • Canada</span>
+                                <img src="https://flagcdn.com/w40/ca.png" alt="Canada" class="w-3.5 h-2.5 rounded-sm object-cover inline-block">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <div class="flex items-center gap-1 text-visa-accent text-xs mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-sm text-visa-text/80 dark:text-slate-300 leading-relaxed mb-6 relative z-10">
+                        "As a single mother, I was overwhelmed by the UK spouse visa process. My case manager held my hand through every step. Forever grateful."
+                    </p>
+                    <div class="flex items-center gap-3 pt-4 border-t border-visa-primary/10 dark:border-visa-primary-bright/10">
+                        <img src="images/per3.jpg" alt="Maria Ahmed" class="w-11 h-11 rounded-full object-cover object-center border-2 border-visa-primary-light/30 dark:border-visa-primary-bright/30 shadow-md shrink-0" loading="lazy">
+                        <div>
+                            <div class="font-semibold text-sm text-visa-text dark:text-white">Maria Ahmed</div>
+                            <div class="text-xs text-visa-text/60 dark:text-slate-400 flex items-center gap-1.5 mt-0.5">
+                                <span>Spouse Visa • UK</span>
+                                <img src="https://flagcdn.com/w40/gb.png" alt="UK" class="w-3.5 h-2.5 rounded-sm object-cover inline-block">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card md:col-span-2 lg:col-span-1">
+                    <div class="flex items-center gap-1 text-visa-accent text-xs mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-sm text-visa-text/80 dark:text-slate-300 leading-relaxed mb-6 relative z-10">
+                        "After a previous rejection, I was losing hope. Horizon Visa identified the issues and helped me reapply successfully. Now I'm studying in Melbourne!"
+                    </p>
+                    <div class="flex items-center gap-3 pt-4 border-t border-visa-primary/10 dark:border-visa-primary-bright/10">
+                        <img src="images/lena-petrova.jpg" alt="Lena Petrova" class="w-11 h-11 rounded-full object-cover object-center border-2 border-visa-primary-light/30 dark:border-visa-primary-bright/30 shadow-md shrink-0" loading="lazy">
+                        <div>
+                            <div class="font-semibold text-sm text-visa-text dark:text-white">Lena Petrova</div>
+                            <div class="text-xs text-visa-text/60 dark:text-slate-400 flex items-center gap-1.5 mt-0.5">
+                                <span>Student Visa • Australia</span>
+                                <img src="https://flagcdn.com/w40/au.png" alt="Australia" class="w-3.5 h-2.5 rounded-sm object-cover inline-block">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="contact.html" class="btn-primary">
+                    <i class="fas fa-star"></i> Start Your Success Story
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== HOME 2 SECTION 7: CTA ========== -->
+    <section class="py-16 sm:py-20 bg-gradient-to-br from-visa-primary-dark via-visa-primary to-visa-primary-dark dark:from-[#0f172a] dark:via-[#1e3a8a] dark:to-[#0f172a] text-white transition-colors duration-400 relative overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent pointer-events-none"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-3xl mx-auto text-center">
+                <span class="text-white/70 font-semibold text-xs tracking-[0.2em] uppercase">Take the First Step</span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold mb-4 mt-3">Your New Life Awaits</h2>
+                <p class="text-base sm:text-lg text-white/80 mb-8 leading-relaxed">
+                    Book your free consultation today. Let's turn your immigration dreams into a concrete plan.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="contact.html" class="bg-white text-visa-primary-dark px-8 py-4 rounded-full font-bold text-xs uppercase tracking-widest hover:shadow-2xl transition duration-300 flex items-center justify-center gap-2">
+                        <i class="fas fa-calendar-check"></i> Book Free Consultation
+                    </a>
+                    <a href="services.html" class="border-2 border-white/40 text-white px-8 py-4 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-white/10 transition duration-300 flex items-center justify-center gap-2">
+                        <i class="fas fa-passport"></i> Explore Visa Types
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="py-16 bg-white dark:bg-[#0a0f1e] transition-colors duration-400 border-t border-visa-primary/10 dark:border-visa-primary-bright/10">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+                <div>
+                    <a href="index.html" class="flex items-center gap-3 mb-5 group flex-nowrap shrink-0 inline-flex" dir="ltr">
+                        <div class="w-10 h-10 bg-gradient-to-br from-visa-primary-light to-visa-primary-dark rounded-full flex items-center justify-center flex-shrink-0 shadow-md group-hover:rotate-6 transition duration-300">
+                            <i class="fas fa-passport text-white text-base"></i>
+                        </div>
+                        <div class="flex flex-col whitespace-nowrap leading-none">
+                            <span class="text-xl sm:text-2xl font-serif font-bold tracking-tight text-visa-text dark:text-white">
+                                Horizon<span class="gradient-text">Visa</span>
+                            </span>
+                            <span class="text-[8px] sm:text-[9px] font-sans font-semibold tracking-[0.2em] text-visa-primary-light dark:text-visa-primary-bright uppercase mt-1">
+                                Immigration Consultancy
+                            </span>
+                        </div>
+                    </a>
+                    <p class="text-sm text-visa-text/70 dark:text-slate-400 mb-6 leading-relaxed">
+                        Expert immigration & visa consultancy. Guiding you to new horizons with clarity and confidence.
+                    </p>
+                    <div class="flex gap-3">
+                        <a href="#" class="toggle-btn !w-10 !h-10 text-sm" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="toggle-btn !w-10 !h-10 text-sm" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="toggle-btn !w-10 !h-10 text-sm" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="toggle-btn !w-10 !h-10 text-sm" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-visa-text dark:text-white text-base font-serif font-bold mb-5">Quick Links</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="index.html" class="text-visa-text/70 dark:text-slate-400 hover:text-visa-primary-light dark:hover:text-visa-primary-bright transition">Home</a></li>
+                        <li><a href="services.html" class="text-visa-text/70 dark:text-slate-400 hover:text-visa-primary-light dark:hover:text-visa-primary-bright transition">Visa Services</a></li>
+                        <li><a href="countries.html" class="text-visa-text/70 dark:text-slate-400 hover:text-visa-primary-light dark:hover:text-visa-primary-bright transition">Country Guide</a></li>
+                        <li><a href="about.html" class="text-visa-text/70 dark:text-slate-400 hover:text-visa-primary-light dark:hover:text-visa-primary-bright transition">About Us</a></li>
+                        <li><a href="contact.html" class="text-visa-text/70 dark:text-slate-400 hover:text-visa-primary-light dark:hover:text-visa-primary-bright transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-visa-text dark:text-white text-base font-serif font-bold mb-5">Visa Categories</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="services.html#work" class="text-visa-text/70 dark:text-slate-400 hover:text-visa-primary-light dark:hover:text-visa-primary-bright transition">Work Visa</a></li>
+                        <li><a href="services.html#study" class="text-visa-text/70 dark:text-slate-400 hover:text-visa-primary-light dark:hover:text-visa-primary-bright transition">Study Visa</a></li>
+                        <li><a href="services.html#family" class="text-visa-text/70 dark:text-slate-400 hover:text-visa-primary-light dark:hover:text-visa-primary-bright transition">Family Visa</a></li>
+                        <li><a href="services.html#business" class="text-visa-text/70 dark:text-slate-400 hover:text-visa-primary-light dark:hover:text-visa-primary-bright transition">Business Visa</a></li>
+                        <li><a href="services.html#pr" class="text-visa-text/70 dark:text-slate-400 hover:text-visa-primary-light dark:hover:text-visa-primary-bright transition">Permanent Residency</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-visa-text dark:text-white text-base font-serif font-bold mb-5">Head Office</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start gap-3 text-visa-text/70 dark:text-slate-400">
+                            <i class="fas fa-map-marker-alt text-visa-primary-light w-4 mt-0.5"></i>
+                            <span>100 Congress Ave, Suite 2000<br>Austin, TX 78701</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-visa-text/70 dark:text-slate-400">
+                            <i class="fas fa-phone text-visa-primary-light w-4"></i>
+                            <span>+1 (800) 555-0199</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-visa-text/70 dark:text-slate-400">
+                            <i class="fas fa-envelope text-visa-primary-light w-4"></i>
+                            <span>hello@horizonvisa.com</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-visa-text/70 dark:text-slate-400">
+                            <i class="fas fa-clock text-visa-primary-light w-4"></i>
+                            <span>Mon–Fri: 9AM–6PM CST</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-visa-primary/10 dark:border-visa-primary-bright/10 mt-12 pt-8 text-center">
+                <p class="text-xs text-visa-text/60 dark:text-slate-500">© 2026 Horizon Visa Consultancy. All rights reserved.</p>
+                <p class="text-[11px] text-visa-text/40 dark:text-slate-600 mt-1">Immigration advice is regulated. Our advisors are licensed and registered.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.documentElement.setAttribute('data-theme', 'immigration-blue');
+
+            const themeToggle = document.getElementById('theme-toggle');
+            const themeIcon = themeToggle?.querySelector('.fa-moon');
+            const themeIconSun = themeToggle?.querySelector('.fa-sun');
+            const mobileThemeToggle = document.getElementById('theme-toggle-mobile');
+            const mobileThemeIcon = mobileThemeToggle?.querySelector('.fa-moon');
+            const mobileThemeIconSun = mobileThemeToggle?.querySelector('.fa-sun');
+
+            function setTheme(isDark) {
+                if (isDark) {
+                    document.documentElement.classList.add('dark');
+                    if (themeIcon) themeIcon.classList.add('hidden');
+                    if (themeIconSun) themeIconSun.classList.remove('hidden');
+                    if (themeToggle) themeToggle.classList.add('active');
+                    if (mobileThemeIcon) mobileThemeIcon.classList.add('hidden');
+                    if (mobileThemeIconSun) mobileThemeIconSun.classList.remove('hidden');
+                    if (mobileThemeToggle) mobileThemeToggle.classList.add('active');
+                    localStorage.setItem('visa-theme', 'dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                    if (themeIcon) themeIcon.classList.remove('hidden');
+                    if (themeIconSun) themeIconSun.classList.add('hidden');
+                    if (themeToggle) themeToggle.classList.remove('active');
+                    if (mobileThemeIcon) mobileThemeIcon.classList.remove('hidden');
+                    if (mobileThemeIconSun) mobileThemeIconSun.classList.add('hidden');
+                    if (mobileThemeToggle) mobileThemeToggle.classList.remove('active');
+                    localStorage.setItem('visa-theme', 'light');
+                }
+            }
+
+            function toggleTheme() { setTheme(!document.documentElement.classList.contains('dark')); }
+
+            if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
+            if (mobileThemeToggle) mobileThemeToggle.addEventListener('click', toggleTheme);
+
+            setTheme(localStorage.getItem('visa-theme') === 'dark');
+
+            const rtlToggle = document.getElementById('rtl-toggle');
+            const mobileRtlToggle = document.getElementById('rtl-toggle-mobile');
+
+            function toggleRTL() {
+                if (document.documentElement.dir === 'rtl') {
+                    document.documentElement.dir = 'ltr';
+                    document.documentElement.lang = 'en';
+                    if (rtlToggle) rtlToggle.classList.remove('active');
+                    if (mobileRtlToggle) mobileRtlToggle.classList.remove('active');
+                    localStorage.setItem('visa-dir', 'ltr');
+                } else {
+                    document.documentElement.dir = 'rtl';
+                    document.documentElement.lang = 'ar';
+                    if (rtlToggle) rtlToggle.classList.add('active');
+                    if (mobileRtlToggle) mobileRtlToggle.classList.add('active');
+                    localStorage.setItem('visa-dir', 'rtl');
+                }
+            }
+
+            if (rtlToggle) rtlToggle.addEventListener('click', toggleRTL);
+            if (mobileRtlToggle) mobileRtlToggle.addEventListener('click', toggleRTL);
+
+            if (localStorage.getItem('visa-dir') === 'rtl') {
+                document.documentElement.dir = 'rtl';
+                document.documentElement.lang = 'ar';
+                if (rtlToggle) rtlToggle.classList.add('active');
+                if (mobileRtlToggle) mobileRtlToggle.classList.add('active');
+            }
+
+            const mobileToggle = document.getElementById('mobile-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileToggleIcon = document.querySelector('#mobile-toggle i');
+
+            if (mobileToggle) {
+                mobileToggle.addEventListener('click', () => {
+                    const isOpening = !mobileMenu.classList.contains('open');
+                    if (isOpening) {
+                        mobileMenu.classList.add('open');
+                        mobileToggleIcon.classList.remove('fa-bars');
+                        mobileToggleIcon.classList.add('fa-times');
+                        document.body.style.overflow = 'hidden';
+                    } else {
+                        mobileMenu.classList.remove('open');
+                        mobileToggleIcon.classList.remove('fa-times');
+                        mobileToggleIcon.classList.add('fa-bars');
+                        document.body.style.overflow = '';
+                        document.querySelectorAll('.mobile-dropdown-content').forEach(c => c.classList.remove('show'));
+                    }
+                });
+            }
+
+            document.querySelectorAll('.mobile-dropdown-btn').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const dropdown = e.target.closest('.mobile-dropdown');
+                    const content = dropdown.querySelector('.mobile-dropdown-content');
+                    const icon = dropdown.querySelector('.fa-chevron-down');
+                    const isOpening = !content.classList.contains('show');
+                    content.classList.toggle('show');
+                    icon.style.transform = content.classList.contains('show') ? 'rotate(180deg)' : 'rotate(0deg)';
+                    if (isOpening) {
+                        document.querySelectorAll('.mobile-dropdown-content').forEach(other => {
+                            if (other !== content) {
+                                other.classList.remove('show');
+                                const otherIcon = other.parentElement.querySelector('.fa-chevron-down');
+                                if (otherIcon) otherIcon.style.transform = 'rotate(0deg)';
+                            }
+                        });
+                    }
+                });
+            });
+
+            // FAQ Accordion
+            document.querySelectorAll('.accordion-header').forEach(header => {
+                header.addEventListener('click', () => {
+                    const item = header.parentElement;
+                    const content = item.querySelector('.accordion-content');
+                    const icon = header.querySelector('.accordion-icon');
+                    const isOpen = content.classList.contains('open');
+
+                    // Close all others
+                    document.querySelectorAll('.accordion-content').forEach(c => {
+                        if (c !== content) {
+                            c.classList.remove('open');
+                            const otherIcon = c.parentElement.querySelector('.accordion-icon');
+                            if (otherIcon) otherIcon.classList.remove('rotated');
+                        }
+                    });
+
+                    if (isOpen) {
+                        content.classList.remove('open');
+                        icon.classList.remove('rotated');
+                    } else {
+                        content.classList.add('open');
+                        icon.classList.add('rotated');
+                    }
+                });
+            });
+
+            // Countries Bento Grid Filtering by Immigration Goal
+            const goalTabs = document.querySelectorAll('.goal-tab');
+            const bentoCards = document.querySelectorAll('.bento-card');
+
+            goalTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    goalTabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+
+                    const goal = tab.getAttribute('data-goal');
+                    bentoCards.forEach(card => {
+                        const cardGoals = card.getAttribute('data-goal') ? card.getAttribute('data-goal').split(' ') : [];
+                        if (goal === 'all' || cardGoals.includes(goal)) {
+                            card.style.display = '';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'translateY(0)';
+                            }, 10);
+                        } else {
+                            card.style.opacity = '0';
+                            card.style.transform = 'translateY(8px)';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 250);
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
