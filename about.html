@@ -697,7 +697,6 @@
                         <a href="about.html" class="nav-item active">About</a>
                         <a href="services.html" class="nav-item">Services</a>
                         <a href="countries.html" class="nav-item">Country Guide</a>
-                        <a href="contact.html" class="nav-item">Contact</a>
                         <div class="dropdown">
                             <button class="nav-item flex items-center gap-1.5">
                                 Dashboard <i class="fas fa-chevron-down text-[9px] opacity-70"></i>
@@ -707,8 +706,16 @@
                                 <a href="admin.html" class="dropdown-item">Admin Panel</a>
                             </div>
                         </div>
+                        <a href="contact.html" class="nav-item">Contact</a>
                     </div>
-                    <div class="flex items-center gap-3 ml-2">
+                    <div class="flex items-center gap-3">
+                        <div class="flex items-center gap-2 desktop-toggle-group">
+                            <button id="theme-toggle" class="toggle-btn !w-9 !h-9" title="Toggle Dark/Light Mode">
+                                <i class="fas fa-moon text-sm"></i>
+                                <i class="fas fa-sun text-sm hidden"></i>
+                            </button>
+                            <button id="rtl-toggle" class="toggle-btn !w-9 !h-9 font-serif font-bold text-xs" title="Toggle RTL/LTR">⇄</button>
+                        </div>
                         <a href="login.html" class="btn-nested !py-2 !px-4 !text-xs group">
                             <span>Sign In</span>
                             <span class="icon-circle !w-6 !h-6">
@@ -716,13 +723,6 @@
                             </span>
                         </a>
                     </div>
-                </div>
-                <div class="flex items-center gap-2 ml-4 desktop-toggle-group">
-                    <button id="theme-toggle" class="toggle-btn !w-9 !h-9" title="Toggle Dark/Light Mode">
-                        <i class="fas fa-moon text-sm"></i>
-                        <i class="fas fa-sun text-sm hidden"></i>
-                    </button>
-                    <button id="rtl-toggle" class="toggle-btn !w-9 !h-9 font-serif font-bold text-xs" title="Toggle RTL/LTR">⇄</button>
                 </div>
             </div>
 
@@ -746,7 +746,6 @@
             <a href="about.html" class="mobile-menu-item active" style="color: var(--color-primary-light); font-weight: 600;">About Us</a>
             <a href="services.html" class="mobile-menu-item">Services</a>
             <a href="countries.html" class="mobile-menu-item">Country Guide</a>
-            <a href="contact.html" class="mobile-menu-item">Contact</a>
             <div class="mobile-dropdown">
                 <button class="mobile-dropdown-btn flex items-center justify-between w-full mobile-menu-item">
                     <span>Dashboard</span> <i class="fas fa-chevron-down text-xs"></i>
@@ -756,15 +755,16 @@
                     <a href="admin.html" class="mobile-dropdown-item">Admin Panel</a>
                 </div>
             </div>
-            <div class="p-5 flex flex-col gap-3">
-                <a href="login.html" class="btn-nested justify-center !py-3 w-full text-center">
-                    <span>Client Portal Login</span>
-                    <span class="icon-circle !w-7 !h-7"><i class="fas fa-arrow-right text-xs"></i></span>
-                </a>
-            </div>
+            <a href="contact.html" class="mobile-menu-item">Contact</a>
             <div class="flex justify-center gap-3 p-4 border-t border-visa-primary/10 dark:border-visa-primary-bright/10">
                 <button id="theme-toggle-mobile" class="toggle-btn"><i class="fas fa-moon"></i><i class="fas fa-sun hidden"></i></button>
                 <button id="rtl-toggle-mobile" class="toggle-btn">⇄</button>
+            </div>
+            <div class="p-5 pt-0 flex flex-col gap-3">
+                <a href="login.html" class="btn-nested justify-center !py-3 w-full text-center">
+                    <span>Sign In</span>
+                    <span class="icon-circle !w-7 !h-7"><i class="fas fa-arrow-right text-xs"></i></span>
+                </a>
             </div>
         </div>
     </header>
