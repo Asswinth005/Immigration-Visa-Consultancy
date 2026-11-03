@@ -206,8 +206,10 @@
             position: relative;
             display: inline-flex;
             align-items: center;
+            justify-content: center;
+            height: 40px;
             gap: 0.35rem;
-            padding: 0.5rem 0;
+            padding: 0 0.25rem;
             font-weight: 600;
             font-size: 0.82rem;
             letter-spacing: 0.04em;
@@ -215,6 +217,7 @@
             transition: color 0.3s ease;
             text-transform: uppercase;
             white-space: nowrap;
+            line-height: 1;
         }
 
         .dark .nav-item {
@@ -232,7 +235,7 @@
         .nav-item::after {
             content: '';
             position: absolute;
-            bottom: -2px;
+            bottom: 0px;
             left: 0;
             width: 0;
             height: 2px;
@@ -267,11 +270,15 @@
         .desktop-nav-container {
             display: flex;
             align-items: center;
+            height: 40px;
             gap: 2rem;
         }
 
         .dropdown {
             position: relative;
+            display: inline-flex;
+            align-items: center;
+            height: 40px;
         }
 
         .dropdown-menu {
@@ -360,8 +367,10 @@
         .btn-nested {
             display: inline-flex;
             align-items: center;
+            justify-content: center;
+            height: 40px;
             gap: 0.65rem;
-            padding: 0.45rem 0.65rem 0.45rem 1.25rem;
+            padding: 0 0.5rem 0 1.25rem;
             border-radius: 9999px;
             font-weight: 700;
             font-size: 0.78rem;
@@ -374,6 +383,9 @@
             border: none;
             cursor: pointer;
             text-decoration: none;
+            line-height: 1;
+            box-sizing: border-box;
+            flex-shrink: 0;
         }
 
         .dark .btn-nested {
@@ -383,15 +395,16 @@
         }
 
         .btn-nested .icon-circle {
-            width: 1.5rem;
-            height: 1.5rem;
+            width: 1.75rem;
+            height: 1.75rem;
             border-radius: 9999px;
             background: rgba(255, 255, 255, 0.25);
-            display: flex;
+            display: inline-flex;
             align-items: center;
             justify-content: center;
             transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
             color: #FFFFFF;
+            flex-shrink: 0;
         }
 
         .dark .btn-nested .icon-circle {
@@ -482,10 +495,10 @@
         }
 
         .toggle-btn {
-            width: 38px;
-            height: 38px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
-            display: flex;
+            display: inline-flex;
             align-items: center;
             justify-content: center;
             background: rgba(var(--color-rgb-primary), 0.1);
@@ -493,6 +506,8 @@
             transition: all 0.3s ease;
             border: 1px solid rgba(var(--color-rgb-primary), 0.2);
             cursor: pointer;
+            flex-shrink: 0;
+            box-sizing: border-box;
         }
 
         .dark .toggle-btn {
@@ -912,7 +927,7 @@
         <nav
             class="w-full px-4 sm:px-6 lg:px-8 py-3.5 sm:py-4 flex items-center justify-between transition-colors duration-400">
             <!-- Brand Logo -->
-            <a href="index.html" class="flex items-center gap-3 group flex-nowrap shrink-0" dir="ltr">
+            <a href="index.html" class="h-10 flex items-center gap-3 group flex-nowrap shrink-0" dir="ltr">
                 <div class="w-10 h-10 bg-gradient-to-br from-visa-primary-light to-visa-primary-dark rounded-full flex items-center justify-center flex-shrink-0 shadow-md group-hover:rotate-6 transition duration-300">
                     <i class="fas fa-passport text-white text-base"></i>
                 </div>
@@ -929,7 +944,7 @@
             <!-- Desktop Navigation -->
             <div class="hidden xl:flex items-center">
                 <div class="desktop-nav-container">
-                    <div class="flex items-center gap-4 xl:gap-6">
+                    <div class="flex items-center gap-4 xl:gap-6 h-10">
                         <!-- Home Dropdown -->
                         <div class="dropdown">
                             <button class="nav-item active flex items-center gap-1.5" style="color: var(--color-primary-light); font-weight: 700;">
@@ -954,17 +969,17 @@
                         </div>
                         <a href="contact.html" class="nav-item">Contact</a>
                     </div>
-                    <div class="flex items-center gap-3">
+                    <div class="flex items-center gap-3 h-10">
                         <div class="flex items-center gap-2 desktop-toggle-group">
-                            <button id="theme-toggle" class="toggle-btn !w-9 !h-9" title="Toggle Dark/Light Mode">
+                            <button id="theme-toggle" class="toggle-btn !w-10 !h-10" title="Toggle Dark/Light Mode">
                                 <i class="fas fa-moon text-sm"></i>
                                 <i class="fas fa-sun text-sm hidden"></i>
                             </button>
-                            <button id="rtl-toggle" class="toggle-btn !w-9 !h-9 font-serif font-bold text-xs" title="Toggle RTL/LTR">⇄</button>
+                            <button id="rtl-toggle" class="toggle-btn !w-10 !h-10 font-serif font-bold text-xs" title="Toggle RTL/LTR">⇄</button>
                         </div>
-                        <a href="login.html" class="btn-nested !py-2 !px-4 !text-xs group">
+                        <a href="login.html" class="btn-nested !h-10 !py-0 !px-4 !text-xs group">
                             <span>Sign In</span>
-                            <span class="icon-circle !w-6 !h-6">
+                            <span class="icon-circle !w-7 !h-7">
                                 <i class="fas fa-arrow-right text-[10px]"></i>
                             </span>
                         </a>
@@ -974,7 +989,7 @@
 
             <!-- Mobile Menu Toggle Button -->
             <button id="mobile-toggle"
-                class="xl:hidden text-visa-text dark:text-slate-300 p-2 focus:outline-none hover:text-visa-primary-light transition-colors"
+                class="xl:hidden w-10 h-10 rounded-xl flex items-center justify-center text-visa-text dark:text-slate-300 hover:text-visa-primary-light transition-colors"
                 aria-label="Toggle Navigation Menu">
                 <i class="fas fa-bars text-xl"></i>
             </button>
@@ -1005,8 +1020,8 @@
             </div>
             <a href="contact.html" class="mobile-menu-item">Contact</a>
             <div class="flex justify-center gap-3 p-4 border-t border-visa-primary/10 dark:border-visa-primary-bright/10">
-                <button id="theme-toggle-mobile" class="toggle-btn"><i class="fas fa-moon"></i><i class="fas fa-sun hidden"></i></button>
-                <button id="rtl-toggle-mobile" class="toggle-btn">⇄</button>
+                <button id="theme-toggle-mobile" class="toggle-btn !w-10 !h-10"><i class="fas fa-moon"></i><i class="fas fa-sun hidden"></i></button>
+                <button id="rtl-toggle-mobile" class="toggle-btn !w-10 !h-10 font-serif font-bold text-xs">⇄</button>
             </div>
             <div class="p-5 pt-0 flex flex-col gap-3">
                 <a href="login.html" class="btn-nested justify-center !py-3 w-full text-center">
